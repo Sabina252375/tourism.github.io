@@ -5,7 +5,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About us</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        
+/* Main styles for the whole website */
+
+        body{
+            padding: 0 90px;
+            font-size: larger;
+        }
+
+        section{
+            margin-bottom: 100px;
+        }
+
+        footer{
+            margin-top: 300px;
+
+        }
+
+        p{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        a:link {
+            color: #2c6e49;}
+        a:visited {
+            color: #6a4c93;}
+        a:hover {
+            color: #e76f51;}
+        a:active {
+            color: darkblue;}
+
+
+
+
+/* Styles for this page */
+
+
+        .lakes-section img {
+            border-radius: 40px;
+        }
+
+        #contact-form{
+             display: flex;
+             flex-direction: column;
+             gap: 20px;
+             width: 400px;
+             margin: 0 auto;
+        }
+        
+        
+        #contact-form input,
+        #contact-form select,
+        #contact-form textarea {
+            padding: 10px;
+            font-size: 16px;
+            box-sizing: border-box;}
+
+        #contact-form textarea {
+            height: 150px;
+            resize: vertical;}
+            
+        #contact-form button {
+            padding: 12px;
+            font-size: 16px;
+            
+        #contact-form input,
+        #contact-form select,
+        #contact-form textarea {
+            padding: 10px;
+            font-size: 16px; }
+            
+        #contact-form textarea {
+            height: 150px;
+            resize: vertical; }
+            
+            
+        #contact-form button {
+            padding: 12px;font-size: 16px;
+        }
+    }
+
+        .contacts h2{
+            color: crimson;
+
+        }
+
+        .contacts {
+            background-color: #EDF7FB;
+            padding: 40px;
+            border-radius: 25px;}
+
+        
+
+        hr{
+            margin-top: 20px;
+            margin-bottom: 20px; }
+
+        .hero img {
+             display: block;
+             max-width: 100%;
+             height: auto;
+             margin: 30px auto;
+             border-radius: 40px; }
+
+        table {
+            width: 500px;
+            margin: 20px auto;
+            border-collapse: collapse; }
+
+        th, td {
+            padding: 10px;
+            text-align: center; }
+
+    </style>
 </head>
+
 <body>
     <main>
         <section class="hero">
@@ -30,7 +145,7 @@
         
 
         <section >
-            <h3> About our team</h3>
+            <h2> About our team</h2>
             <p> We are a team of students who created this website as part of our 
                 Front-End Development assignment. We worked together to create a 
                 website about interesting places in Kazakhstan.</p>
@@ -59,7 +174,7 @@
             </table>
         </section>
 
-        <section>
+        <section class="contacts">
             <h2>Interested in Kazakhstan?</h2>
             <p>Tell us which place you would like to visit, and we will contact you!</p>
             <form id="contact-form">
@@ -84,21 +199,22 @@
             </form>
 
         </section>
+
     </main>
 
+    
+
     <footer>
-    <h3>Contact Us</h3>
-    <p>Email: our@email.com</p>
-
-    <a href="https://instagram.com/astana_it_university" target="_blank">
-        Instagram
-    </a>
-
-    <p>Phone: +7 XXX XXX XX XX</p>
-
-    <p>&copy; 2026 Kazakhstan Guides</p>
-</footer>
-
+        <hr>
+        <h3>Contact Us</h3>
+        <p>Email: our@email.com</p>
+        <a href="https://instagram.com/astana_it_university" target="_blank">
+        Instagram </a>
+        <p>Phone: +7 XXX XXX XX XX</p>
+        <p>&copy; 2026 Kazakhstan Guides</p>
+        <p style="text-align: right;">Created by: Zhanna</p>
+        <hr>
+    </footer>
 
   
 
