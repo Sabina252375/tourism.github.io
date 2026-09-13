@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapar - Almaty</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body{
+            padding: 0 90px;
+            font-size: larger;
+        }
+
+        section {
+            margin-bottom: 100px;
+        }
+
+        footer{
+            margin-top: 300px;
+        }
+
+        p{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+            'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .city-hero {
+            border-radius: 40px;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 100px;
+        }
+
+        .hero-content {
+            padding: 30px;
+        }
+
+        .hero-content h1 {
+            font-size: 55px;
+        }
+
+        .city-intro {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .city-intro > div {
+            flex: 1;
+        }
+
+        .city-image {
+            width: 45%;
+            border-radius: 40px;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .place-card {
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 15px;
+            background-color: #F0F8FC;
+        }
+
+        .place-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 40px;
+        }
+
+        .activities-section {
+            display: flex;
+            gap: 30px;
+        }
+
+        .activity-box,
+        .info-box {
+            flex: 1;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: #F0F8FC;
+        }
+    </style>
+</head>
+
+<body>
+
+<header id="main-header">
+    <div class="logo">SAPAR</div>
+
+    <nav class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="aktau.html">Aktau</a>
+        <a href="almaty.html" class="active">Almaty</a>
+        <a href="balkhash.html">Balkhash</a>
+        <a href="burabay.html">Burabay</a>
+        <a href="about.html">About Us</a>
+    </nav>
+</header>
+
+<main>
+
+    <section class="city-hero almaty-hero">
+        <div class="hero-content">
+            <p class="small-title">DISCOVER KAZAKHSTAN</p>
+            <h1>Almaty</h1>
+            <p>
+                Explore the beautiful city of Almaty, surrounded by mountains,
+                nature and unforgettable places.
+            </p>
+        </div>
+    </section>
+
+    <section class="city-intro">
+        <div>
+            <p class="section-label">WELCOME TO ALMATY</p>
+            <h2>The City of Mountains</h2>
+
+            <p>
+                Almaty is one of the most popular destinations in Kazakhstan.
+                The city combines modern life, beautiful nature, culture and
+                amazing mountain views.
+            </p>
+
+            <p>
+                It is a great destination for people who enjoy sightseeing,
+                outdoor activities, food and discovering new places.
+            </p>
+        </div>
+
+        <img
+            src="images/almaty.jpg"
+            alt="Beautiful view of Almaty city and mountains"
+            class="city-image"
+        >
+    </section>
+
+    <section class="places-section">
+        <p class="section-label">PLACES TO VISIT</p>
+        <h2>Top Places in Almaty</h2>
+
+        <div class="cards-container">
+
+            <article class="place-card">
+                <img
+                    src="images/medeu.jpg"
+                    alt="Medeu skating rink near Almaty"
+                    class="place-image"
+                >
+
+                <h3>Medeu</h3>
+
+                <p>
+                    Medeu is a famous mountain skating rink located near Almaty.
+                    It is surrounded by beautiful mountains and fresh air.
+                    Visitors can enjoy the scenery, take photos and spend time in nature.
+                </p>
+            </article>
+
+            <article class="place-card">
+                <img
+                    src="images/shymbulak.jpg"
+                    alt="Shymbulak mountain resort"
+                    class="place-image"
+                >
+
+                <h3>Shymbulak</h3>
+
+                <p>
+                    Shymbulak is a popular mountain resort near Almaty.
+                    Visitors can enjoy beautiful mountain views, fresh air and
+                    outdoor activities. It is a great place for hiking and relaxing.
+                </p>
+            </article>
+
+            <article class="place-card">
+                <img
+                    src="images/kok-tobe.jpg"
+                    alt="Kok-Tobe viewpoint in Almaty"
+                    class="place-image"
+                >
+
+                <h3>Kok-Tobe</h3>
+
+                <p>
+                    Kok-Tobe is one of the most popular viewpoints in Almaty.
+                    From the top, visitors can enjoy a panoramic view of the city.
+                    It is also a nice place for walking and taking photos.
+                </p>
+            </article>
+
+            <article class="place-card">
+                <img
+                    src="images/big-almaty-lake.jpg"
+                    alt="Big Almaty Lake"
+                    class="place-image"
+                >
+
+                <h3>Big Almaty Lake</h3>
+
+                <p>
+                    Big Almaty Lake is a beautiful mountain lake surrounded by
+                    the Trans-Ili Alatau mountains. It is known for its amazing
+                    natural scenery and peaceful atmosphere.
+                </p>
+            </article>
+
+        </div>
+    </section>
+
+    <section class="activities-section">
+
+        <div class="activity-box">
+            <p class="section-label">WHAT TO DO</p>
+            <h2>Things to Do in Almaty</h2>
+
+            <ul>
+                <li>Visit mountain resorts</li>
+                <li>Explore the city center</li>
+                <li>Take photos of mountain views</li>
+                <li>Try traditional Kazakh food</li>
+                <li>Walk around beautiful parks</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>Why choose Almaty?</h3>
+
+            <p>
+                Almaty is a good choice for travelers who want to combine
+                city life with nature. You can visit cultural places during
+                the day and enjoy the mountains later.
+            </p>
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 SAPAR — Kazakhstan Travel Agency</p>
+    <p>
+        Kenzhibayeva Sabina | 
+        Manatova Aruzhan | 
+        Kairova Zhanna
+    </p>
+</footer>
+
+</body>
+</html>

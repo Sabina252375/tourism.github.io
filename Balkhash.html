@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sapar - Balkhash</title>
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+body{
+    padding: 0 90px;
+    font-size: larger;
+}
+
+section {
+    margin-bottom: 100px;
+}
+
+footer{
+    margin-top: 300px;
+}
+
+p{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#first h1{
+    text-align: center;
+}
+
+.lakes-section img {
+    border-radius: 40px;
+}
+
+.tourism-card {
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 15px;
+    background-color: #F0F8FC;
+}
+
+.lake {
+    margin-bottom: 60px;
+}
+
+.city-hero {
+    border-radius: 40px;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 100px;
+}
+
+.hero-content {
+    padding: 30px;
+}
+
+.hero-content h1 {
+    font-size: 55px;
+}
+
+.city-intro {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.city-intro > div {
+    flex: 1;
+}
+
+.city-image {
+    width: 45%;
+    border-radius: 40px;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.place-card {
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 15px;
+    background-color: #F0F8FC;
+}
+
+.place-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 40px;
+}
+
+.table-section table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-section th,
+.table-section td {
+    padding: 15px;
+    text-align: left;
+}
+
+.table-section th {
+    background-color: #F0F8FC;
+}
+
+.activities-section {
+    display: flex;
+    gap: 30px;
+}
+
+.activity-box,
+.info-box {
+    flex: 1;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #F0F8FC;
+}
+</style>
+
+</head>
+
+<body>
+
+<header id="main-header">
+    <div class="logo">SAPAR</div>
+
+    <nav class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="aktau.html">Aktau</a>
+        <a href="almaty.html">Almaty</a>
+        <a href="balkhash.html" class="active">Balkhash</a>
+        <a href="burabay.html">Burabay</a>
+        <a href="about.html">About Us</a>
+    </nav>
+</header>
+
+<main>
+
+<section class="city-hero balkhash-hero">
+    <div class="hero-content">
+        <p class="small-title">DISCOVER KAZAKHSTAN</p>
+        <h1>Balkhash</h1>
+        <p>
+            Relax by the beautiful lake and enjoy the peaceful nature of Balkhash.
+        </p>
+    </div>
+</section>
+
+<section class="city-intro">
+    <div>
+        <p class="section-label">WELCOME TO BALKHASH</p>
+        <h2>Where the Steppe Meets the Lake</h2>
+        <p>
+            Whether you love outdoor activities or simply want to escape the city,
+            Balkhash is a perfect place to slow down and enjoy the moment.
+        </p>
+        <p>
+            Enjoy the lake, warm summer days, beautiful sunsets and relaxing moments in nature.
+        </p>
+    </div>
+
+    <img src="images/balkhash.jpg"
+         alt="Lake Balkhash with beautiful natural landscape"
+         class="city-image">
+</section>
+
+<section class="places-section">
+    <p class="section-label">PLACES TO VISIT</p>
+    <h2>Top Places in Balkhash</h2>
+
+    <div class="cards-container">
+
+        <article class="place-card">
+            <img src="images/lake-balkhash.jpg"
+                 alt="Lake Balkhash"
+                 class="place-image">
+            <h3>Lake Balkhash</h3>
+            <p>
+                Relax on the beautiful shores of Lake Balkhash, enjoy the warm sun,
+                swim in the clear water, and watch stunning sunsets. It is a perfect
+                place for a peaceful getaway with friends or family.
+            </p>
+        </article>
+
+        <article class="place-card">
+            <img src="images/bektau-ata.jpg"
+                 alt="Bektau-Ata rocky landscape"
+                 class="place-image">
+            <h3>Bektau-Ata</h3>
+            <p>
+                Explore the unique rocky landscapes of Bektau-Ata, located near Lake Balkhash.
+                Enjoy breathtaking views, unusual rock formations and a peaceful atmosphere
+                surrounded by nature. It is a great place for hiking, photography and adventure.
+            </p>
+        </article>
+
+        <article class="place-card">
+            <img src="images/palace-balkhash.jpg"
+                 alt="Palace of Culture of Metallurgists in Balkhash"
+                 class="place-image">
+            <h3>Palace of Culture of Metallurgists</h3>
+            <p>
+                Visit the Palace of Culture of Metallurgists, one of the recognizable
+                historical buildings in Balkhash. Its architecture reflects the industrial
+                history and cultural heritage of the city.
+            </p>
+        </article>
+
+        <article class="place-card">
+            <img src="images/balkhash-museum.jpg"
+                 alt="Balkhash Museum of Local Lore"
+                 class="place-image">
+            <h3>Balkhash Museum of Local Lore</h3>
+            <p>
+                Discover the history and culture of Balkhash at the local history museum.
+                Learn about the region, its nature, traditions and the development of the city.
+            </p>
+        </article>
+
+    </div>
+</section>
+
+<section class="places-section">
+    <p class="section-label">EXPERIENCES</p>
+    <h2>Things to Do in Balkhash</h2>
+
+    <div class="cards-container">
+
+        <article class="place-card">
+            <h3>Lake Relaxation</h3>
+            <p>
+                Spend a relaxing day near the lake and enjoy the peaceful atmosphere.
+            </p>
+        </article>
+
+        <article class="place-card">
+            <h3>Swimming</h3>
+            <p>
+                During warm weather, visitors can enjoy swimming and relaxing near the water.
+            </p>
+        </article>
+
+        <article class="place-card">
+            <h3>Fishing</h3>
+            <p>
+                Fishing is one of the activities visitors can enjoy while spending time near Lake Balkhash.
+            </p>
+        </article>
+
+        <article class="place-card">
+            <h3>Sunset</h3>
+            <p>
+                Enjoy the beautiful colors of the sunset and take memorable photos near the lake.
+            </p>
+        </article>
+
+    </div>
+</section>
+
+<section class="table-section">
+    <p class="section-label">PLAN YOUR TRIP</p>
+    <h2>Popular Activities</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Activity</th>
+                <th>Best Time</th>
+                <th>Duration</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Swimming</td>
+                <td>Summer</td>
+                <td>2–3 hours</td>
+            </tr>
+
+            <tr>
+                <td>Fishing</td>
+                <td>Summer</td>
+                <td>3–5 hours</td>
+            </tr>
+
+            <tr>
+                <td>Beach Walk</td>
+                <td>Evening</td>
+                <td>1–2 hours</td>
+            </tr>
+
+            <tr>
+                <td>Photography</td>
+                <td>All year</td>
+                <td>1–2 hours</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section class="activities-section">
+
+    <div class="activity-box">
+        <p class="section-label">TRAVEL IDEA</p>
+        <h2>Why Visit Balkhash?</h2>
+
+        <ol>
+            <li>Enjoy nature and fresh air.</li>
+            <li>Spend time near the lake.</li>
+            <li>Explore Bektau-Ata.</li>
+            <li>Take beautiful photos.</li>
+        </ol>
+    </div>
+
+    <div class="info-box">
+        <h3>A Peaceful Escape</h3>
+        <p>
+            Balkhash is a good choice for travelers who want a calm trip surrounded
+            by water, mountains and nature.
+        </p>
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 SAPAR — Kazakhstan Travel Agency</p>
+    <p>
+        Kenzhibayeva Sabina | Manatova Aruzhan | Kairova Zhanna
+    </p>
+</footer>
+
+</body>
+</html>
