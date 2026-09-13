@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>/* Main styles for the whole website */
+        body{
+            padding: 0 90px;
+            font-size: larger;
+        }
+
+        section {
+            margin-bottom: 100px;
+        }
+
+        footer{
+            margin-top: 300px;
+
+        }
+
+        p{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+  #main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    margin-bottom: 40px;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: black;
+}
+section {
+    text-align: center;
+}
+
+section p {
+    max-width: 850px;
+    margin: 15px auto;
+    line-height: 1.6;
+}
+
+
+/* Main Aktau picture */
+#first img {
+    display: block;
+    width: 700px;
+    height: auto;
+    margin: 30px auto;
+    border-radius: 40px;
+}
+
+
+/* Lists stay neat in the center */
+.attractions-list,
+section ol {
+    display: inline-block;
+    text-align: left;
+    line-height: 1.8;
+}
+
+
+/* Place cards */
+.cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 950px;
+    margin: 30px auto;
+}
+
+.place-card {
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #F0F8FC;
+}
+
+
+/* Place pictures */
+.place-image {
+    display: block;
+    width: 100%;
+    height: 280px;
+    object-fit: contain;
+    border-radius: 30px;
+    margin: 0 auto 15px;
+}
+
+        </style>
+</head>
+<body>
+    <header id="main-header">
+    <div class="logo">SAPAR</div>
+
+    <nav class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="aktau.html">Aktau</a>
+        <a href="almaty.html" >Almaty</a>
+        <a href="balkhash.html">Balkhash</a>
+        <a href="burabay.html" class="active">Burabay</a>
+        <a href="about.html">About Us</a>
+    </nav> 
+    </header>
+    <main>
+        <section id="first">
+            <h1>Aktau City</h1>
+            
+            <p> Welcome to Aktau, a beautiful coastal city on the shores of the Caspian Sea in Kazakhstan. </p>
+            <img src="imagesaktau/city.jpg" alt="Beautiful view of Aktau" width="1150" height="773" >
+        </section>
+        
+        <section>
+            <h2>Welcome to Aktau</h2>
+            <p>Aktau is located in the Mangystau Region of western Kazakhstan.
+            It is famous for its beautiful Caspian Sea coastline, sunny weather, modern architecture and unique landscapes.</p>
+            <p> Aktau is a popular destination for tourists who want to relax by the sea and explore the natural beauty of the Mangystau region.
+            Visitors can enjoy the beaches, watch beautiful sunsets and discover the unusual rocky landscapes around the city.</p>
+        </section>
+        <section> 
+            <h2>Nature and Landscape</h2> 
+            <p> The main attractions of Aktau are its beautiful Caspian Sea coast, unusual landscapes and desert surroundings.  </p>
+            <ul class="attractions-list"> 
+                <li>Beautiful Caspian Sea and beaches</li> 
+                <li>Desert landscapes and wide open spaces</li>  
+                <li>Unique rock formations and canyons</li>  
+                <li>Fresh sea air and beautiful sunsets</li>  
+                <li>Beautiful views and photo opportunities</li>  
+            </ul> 
+        </section>
+        
+        <section>
+            <h2>Things to do</h2>
+            <p>Visitors can enjoy many activities in Aktau:</p>
+            <ol> 
+                 <li>Relax on the beaches of the Caspian Sea.</li> 
+                <li>Take a walk along the seaside promenade.</li>  
+                <li>Visit nearby canyons and unusual rock formations.</li>  
+                <li>Take photographs of beautiful sea and desert landscapes.</li>  
+                <li>Watch the sunset over the Caspian Sea.</li>  
+                <li>Explore the city and visit local attractions.</li> 
+            </ol>
+        </section>
+        <section class="places-section">
+    <p class="section-label">PLACES TO VISIT</p>
+    <h2>Top Places in Aktau\Mangystau region</h2>
+
+    <div class="cards-container">
+
+        <article class="place-card">
+            <img src="imagesaktau/bozhyra.jpg"
+                 alt="Bozhyra"
+                 class="place-image">
+            <h3>Bozhyra</h3>
+            <p>
+                is one of the most famous natural attractions near Aktau. It is known for its impressive white cliffs, unusual rock formations and beautiful desert landscapes. Visitors can explore the area, enjoy amazing views and take many memorable photographs. Bozhyra is especially popular with people who love nature and outdoor adventures.
+            </p>
+        </article>
+
+        <article class="place-card">
+            <img src="imagesaktau/trail.jpg"
+                 alt="Rocky Trail"
+                 class="place-image">
+            <h3>Rocky Trail</h3>
+            <p>
+                is a beautiful place for walking and exploring the natural landscape around Aktau. The area is famous for its rocky paths and unusual geological formations. Visitors can enjoy a peaceful walk, admire the scenery and take photos of the surrounding nature. It is a good place for people who enjoy outdoor activities and discovering new places.
+            </p>
+        </article>
+
+        <article class="place-card">
+            <img src="imagesaktau/tetysblu.jpg"
+                 alt="Tetysblu Theme Park"
+                 class="place-image">
+            <h3>Tetysblu Theme Park</h3>
+            <p>
+                is a popular entertainment park near Aktau where visitors can have an exciting and fun day. The park offers different attractions, water slides and activities for both children and adults. It is a great place to visit with friends or family, especially during the warm summer months.
+            </p>
+        </article>
+
+        <article class="place-card">
+            <img src="imagesaktau/laguna.jpg"
+                 alt="Laguna Aquapark"
+                 class="place-image">
+            <h3>Laguna Aquapark</h3>
+            <p>
+                is another popular place for relaxation and entertainment in Aktau. Visitors can enjoy swimming pools, water slides and different water activities. It is a perfect place to escape the summer heat, relax with friends or family and spend an enjoyable day near the water.
+            </p>
+        </article>
+
+    </div>
+</section>
+ <footer>
+        <p>©️ 2026 SAPAR — Kazakhstan Guides</p>
+        <p>
+            Kenzhibayeva Sabina | Manatova Aruzhan | Kairova Zhanna 
+
+        </p>
+        
+    </footer>
+</body>
+</html>
