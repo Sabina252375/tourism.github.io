@@ -44,7 +44,22 @@
 
 
         .lake {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
             margin-bottom: 60px; }
+
+        .lake-text {
+            flex: 1;
+        }
+        
+        .lake img {
+            width: 500px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 30px;
+        }
 
         .hero-content {
             padding: 30px; }
@@ -63,6 +78,19 @@
             background-size: cover;
             background-position: center;
             margin-bottom: 100px;
+        }
+
+        .burabay-gallery {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .burabay-gallery img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 20px;
         }
 
         
@@ -123,14 +151,29 @@
         <section>
             <h2>Things to do</h2>
             <p>Visitors can enjoy many activities in Burabay:</p>
-            <ol> 
-                <li>Explore the lakes and surrounding nature.</li>
-                <li>Go hiking in the mountains and forests.</li> 
-                <li>Take photographs of beautiful landscapes.</li> 
-                <li>Have a picnic with friends or family.</li> 
-                <li>Visit local attractions and viewpoints.</li> 
-                <li>Enjoy a peaceful weekend away from the city.</li>
+            <ol>
+                <li>Explore the lakes and surrounding nature, including Lake Burabay and Bolshoye Chebachye.</li>
+                <li>Go hiking in the mountains and forests and visit the Bolektau viewpoint.</li>
+                <li>Visit famous natural attractions such as Zhumbaktas Rock, Okzhetpes Rock and Kenesary Cave.</li>
+                <li>Explore the Imanov Waterfall and visit the Maral Farm.</li>
+                <li>Learn about the history and legends of Burabay at Abylai Khan Glade.</li>
+                <li>Enjoy beautiful views from the Ferris wheel and take photographs of the landscape.</li>
+                <li>Visit the Multimedia Complex and enjoy modern entertainment.</li>
+                <li>Have a picnic with friends or family and enjoy a peaceful weekend away from the city.</li>
             </ol>
+
+            <div class="burabay-gallery">
+                <img src="imagesburabay/IMG_726.jpg" alt="bolsjoe chebachye">
+                <img src="imagesburabay/IMG_0724.jpg" alt="view">
+                <img src="imagesburabay/IMG_0721.jpg" alt="Oqzhetpes">
+                <img src="imagesburabay/IMG_0708.jpg" alt="Kenesary Cave">
+                <img src="imagesburabay/IMG_0707.jpg" alt="Imanov Waterfall">
+                <img src="imagesburabay/IMG_0722.jpg" alt="Maral Farm">
+                <img src="imagesburabay/IMG_8983 (2).jpg" alt="Abylai Khan Glade">
+                <img src="imagesburabay/IMG_727.jpg" alt="Ferris Wheel">
+                <img src="imagesburabay/IMG_0723.jpg" alt="Multimedia Complex">
+                <img src="imagesburabay/IMG_8978.jpg" alt="forest">
+            </div>
         </section>
         
         
@@ -138,31 +181,49 @@
             <h2> The Four Lakes of Burabay </h2>
             <img src="imagesburabay/lakes.jpg" alt="Lakes of Burabay" width="700" height="400">
             <div class="lake">
-                <h3>1. Lake Borovoe</h3>
-                <p>
+                <div class = "lake-text">
+                    <h3>1. Lake Borovoe</h3>
+                    <p>
                     Lake Borovoe is the most iconic and recognizable lake in Burabay.
                     It is surrounded by pine forests, mountains, and rocky landscapes,
                     with the famous Zhumbaktas Rock rising from the water. The lake
                     covers about 10 km² and reaches a depth of around 7–8 meters.
                     Its clear water and beautiful scenery make it one of the most
                     photogenic places in the resort. In summer, visitors can rent 
-                    boats and catamarans and sail directly to Zhumbaktas Rock.</p>
+                    boats and catamarans and sail directly to Zhumbaktas Rock. </p>
+
+                </div>
+                <div class = "lake img">
+                    <img src = "imagesburabay/blake.jpg" alt="burabay lake">
+
+                </div>
+                
             </div>
             
             <div class="lake">
-                <h3>2. Big Chebachye Lake</h3>
-                <p> Big Chebachye is the largest lake in the Burabay area and one of
+                <div class = "lake-text">
+                    <h3>2. Big Chebachye Lake</h3>
+                    <p> Big Chebachye is the largest lake in the Burabay area and one of
                     the most popular places for swimming and recreation. Its area is
                     about 21–24 km², while its maximum depth reaches around 33–34 meters.
                     The lake is known for its clean, clear water, sandy and pebbly
                     shores, and beautiful mountain views. Swimming on the lake with
                     the mountains in the background creates an unforgettable experience.
                     Many recreation centers and beach facilities are located nearby.</p>
+
+                </div>
+                 <div class = "lake img">
+                    <img src = "imagesburabay/IMG_0706.JPG.jpg" alt="big chebachye">
+
+                </div>
+
+                
             </div>
             
             <div class="lake">
-                <h3>3. Small Chebachye Lake</h3>
-                <p>Small Chebachye is a quieter and more natural lake compared with
+                <div class = "lake-text">
+                    <h3>3. Small Chebachye Lake</h3>
+                    <p>Small Chebachye is a quieter and more natural lake compared with
                     the main resort areas. It covers about 18.45 km² and has sandy,
                     pebbly, and rocky sections along its shores. The water is relatively
                     shallow near the shore, so visitors need to swim some distance
@@ -170,17 +231,37 @@
                     for families with children in safe and supervised areas. Small bays
                     and reed-covered areas attract birds, while Mount Kokshetau can be
                     seen from the southeastern side. </p>
+
+                    
+
+                </div>
+                
+
+
+
+                <div class = "lake img">
+                    <img src = "imagesburabay/IMG_0719.jpg" alt="small chebachye">
+                </div>
             </div>
             
             <div class="lake">
-                <h3>4. Lake Shchuchye</h3>
-                <p>
+                <div class = "lake-text">
+                    <h3>4. Lake Shchuchye</h3>
+                    <p>
                     Lake Shchuchye is one of the deepest and cleanest lakes in Burabay,
                     reaching a depth of around 30 meters. Because of its depth, the water
                     remains cooler even in summer, making it one of the coldest lakes in
                     the resort. Surrounded by forests, the lake is known for its clear
                     water, peaceful atmosphere, and rich fish life. It is especially
                     attractive for fishing and for visitors who enjoy nature and quiet surroundings.</p>
+
+                </div>
+                
+
+                <div class = "lake img">
+                    <img src = "imagesburabay/IMG_0717.jpg" alt="shchuchy lake">
+
+                </div>
             </div> 
 
 
