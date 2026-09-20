@@ -7,24 +7,37 @@
     <style>
         /* Main styles for the whole website */
         body{
-            padding: 0 90px;
+           max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            
             font-size: larger;
+            display: grid;
+            
+            grid-template-columns: 220px 1fr;
+            grid-template-rows: auto 1fr auto;
+            
+            grid-template-areas:
+            
+            "header header"
+            "sidebar main"
+            "footer footer";
+            
+            gap: 30px;
         }
 
         section {
             margin-bottom: 100px;
         }
 
-        footer{
-            margin-top: 300px;
-
-        }
 
         p{
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
 
         #main-header {
+    grid-area: header;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -32,6 +45,28 @@
     margin-bottom: 40px;
 }
 
+.sidebar {
+    grid-area: sidebar;
+
+    padding: 20px;
+
+    background-color: #F0F8FC;
+    border-radius: 20px;
+
+    height: fit-content;
+}
+
+.sidebar a {
+    display: block;
+    margin-bottom: 15px;
+
+    text-decoration: none;
+    color: #2c6e49;
+}
+
+.sidebar a:hover {
+    color: #e76f51;
+}
 .logo {
     font-size: 30px;
     font-weight: bold;
@@ -45,6 +80,9 @@
 .nav-menu a {
     text-decoration: none;
     color: black;
+}
+main {
+    grid-area: main;
 }
 
 .hero {
@@ -68,7 +106,7 @@
     margin: 0 auto 20px;
 }
 
-..hero-content p {
+.hero-content p {
     margin: 0 auto;
     max-width: 800px;
 }
@@ -127,7 +165,10 @@
 
 
 footer {
-    margin-top: 300px;
+    grid-area: footer;
+
+    margin-top: 100px;
+    padding: 20px 0;
 }
 </style>
 </head>
@@ -144,6 +185,16 @@ footer {
         <a href="about.html">About Us</a>
     </nav>
 </header>
+<aside class="sidebar">
+    <h3>Home Guide</h3>
+
+    <a href="#welcome">Welcome</a>
+    <a href="#destinations">Destinations</a>
+    <a href="#aktau">Aktau</a>
+    <a href="#burabay">Burabay</a>
+    <a href="#balkhash">Balkhash</a>
+    <a href="#almaty">Almaty</a>
+</aside>
     <!-- Hero Section -->
      <main>
         <section class="hero">
@@ -153,7 +204,7 @@ footer {
             </div>
         </section>
         <!-- Introduction --> 
-        <section class="section">
+        <section class="section" id="welcome">
              <div class="container">
                  <h2>Welcome to Kazakhstan</h2> 
                  <p> Kazakhstan is a country of incredible diversity. From the shores of the Caspian Sea to the majestic mountains of Almaty, every destination offers a unique experience. </p> 
@@ -161,12 +212,12 @@ footer {
             </div> 
         </section>
         <!-- Popular Destinations --> 
-         <section class="section destinations"> 
+         <section class="section destinations" id="destinations"> 
             <div class="container">
                  <h2>Explore Our Destinations</h2>
                  <div class="card-container">
                      <!-- Aktau Card -->
-                     <article class="card">
+                     <article class="card" id="aktau">
                          <img src="imagesaktau/city.jpg" alt="Beautiful coastline and landscape of Aktau">
                          <div class="card-content"> 
                             <h3>Aktau</h3>
@@ -175,7 +226,7 @@ footer {
                          </div> 
                       </article>
                       <!-- Burabay Card -->
-                      <article class="card">
+                      <article class="card" id="burabay">
                          <img src="imagesburabay/147.jpg" alt="Lakes and forests in Burabay">
                          <div class="card-content"> 
                             <h3>Burabay</h3>
@@ -184,7 +235,7 @@ footer {
                          </div> 
                       </article>
                        <!-- Balkhash Card -->
-                      <article class="card">
+                      <article class="card" id="balkhash">
                          <img src="images/balkhash.jpg" alt="Lake Balkhash surrounded by natural landscapes">
                          <div class="card-content"> 
                             <h3>Balkhash</h3>
@@ -193,7 +244,7 @@ footer {
                          </div> 
                       </article>
                       <!-- Almaty Card -->
-                      <article class="card">
+                      <article class="card" id="almaty">
                          <img src="images/almaty.jpg" alt="Mountain landscape near Almaty">
                          <div class="card-content"> 
                             <h3>Almaty</h3>

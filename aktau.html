@@ -6,8 +6,23 @@
     <title>Document</title>
     <style>/* Main styles for the whole website */
         body{
-            padding: 0 90px;
+             max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            
             font-size: larger;
+            display: grid;
+            
+            grid-template-columns: 220px 1fr;
+            grid-template-rows: auto 1fr auto;
+            
+            grid-template-areas:
+            
+            "header header"
+            "sidebar main"
+            "footer footer";
+            
+            gap: 30px;
         }
 
         section {
@@ -15,14 +30,18 @@
         }
 
         footer{
-            margin-top: 300px;
+    grid-area: footer;
 
-        }
+    margin-top: 100px;
+    padding: 20px 0;
+}
 
         p{
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
   #main-header {
+     grid-area: header;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -44,23 +63,36 @@
     text-decoration: none;
     color: black;
 }
-section {
-    text-align: center;
+.sidebar {
+    grid-area: sidebar;
+
+    padding: 20px;
+    background-color: #F0F8FC;
+    border-radius: 20px;
+    height: fit-content;
 }
 
-section p {
-    max-width: 850px;
-    margin: 15px auto;
-    line-height: 1.6;
+.sidebar a {
+    display: block;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: #2c6e49;
 }
+
+.sidebar a:hover {
+    color: #e76f51;
+}
+main {
+    grid-area: main;
+}
+
 
 
 /* Main Aktau picture */
-#first img {
+.main-image {
     display: block;
-    width: 700px;
+    width: 100%;
     height: auto;
-    margin: 30px auto;
     border-radius: 40px;
 }
 
@@ -128,13 +160,21 @@ section ol {
 
     <nav class="nav-menu">
         <a href="index.html">Home</a>
-        <a href="aktau.html">Aktau</a>
+        <a href="aktau.html" class="active">Aktau</a>
         <a href="almaty.html" >Almaty</a>
         <a href="balkhash.html">Balkhash</a>
-        <a href="burabay.html" class="active">Burabay</a>
+        <a href="burabay.html">Burabay</a>
         <a href="about.html">About Us</a>
     </nav> 
     </header>
+    <aside class="sidebar">
+    <h3>Aktau Guide</h3>
+
+    <a href="#welcome">Welcome</a>
+    <a href="#nature">Nature</a>
+    <a href="#things">Things to do</a>
+    <a href="#places">Places to visit</a>
+</aside>
     <main>
         <section id="first">
             <div class = "hero-content">
@@ -148,18 +188,18 @@ section ol {
 
         <section>
 
-            <img src="imagesaktau/city.jpg" alt="Beautiful view of Aktau" width="1150" height="773" >
+            <img src="imagesaktau/city.jpg" alt="Beautiful view of Aktau" class="main-image">
 
         </section>
         
-        <section>
+        <section id="welcome">
             <h2>Welcome to Aktau</h2>
             <p>Aktau is located in the Mangystau Region of western Kazakhstan.
             It is famous for its beautiful Caspian Sea coastline, sunny weather, modern architecture and unique landscapes.</p>
             <p> Aktau is a popular destination for tourists who want to relax by the sea and explore the natural beauty of the Mangystau region.
             Visitors can enjoy the beaches, watch beautiful sunsets and discover the unusual rocky landscapes around the city.</p>
         </section>
-        <section> 
+        <section id="nature"> 
             <h2>Nature and Landscape</h2> 
             <p> The main attractions of Aktau are its beautiful Caspian Sea coast, unusual landscapes and desert surroundings.  </p>
             <ul class="attractions-list"> 
@@ -171,7 +211,7 @@ section ol {
             </ul> 
         </section>
         
-        <section>
+        <section id="things">
             <h2>Things to do</h2>
             <p>Visitors can enjoy many activities in Aktau:</p>
             <ol> 
@@ -183,7 +223,7 @@ section ol {
                 <li>Explore the city and visit local attractions.</li> 
             </ol>
         </section>
-        <section class="places-section">
+        <section class="places-section" id="places">
     <p class="section-label">PLACES TO VISIT</p>
     <h2>Top Places in Aktau\Mangystau region</h2>
 
@@ -231,13 +271,13 @@ section ol {
 
     </div>
 </section>
- <footer>
+   <footer>
         <p>©️ 2026 SAPAR — Kazakhstan Guides</p>
         <p>
             Kenzhibayeva Sabina | Manatova Aruzhan | Kairova Zhanna 
 
         </p>
-        
-    </footer>
+   </footer>
+
 </body>
 </html>
