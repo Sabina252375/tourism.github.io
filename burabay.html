@@ -10,16 +10,35 @@
 
 /* Main styles for the whole website */
         body{
-            padding: 0 90px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            
             font-size: larger;
+            display: grid;
+            
+            grid-template-columns: 220px 1fr;
+            grid-template-rows: auto 1fr auto;
+            
+            grid-template-areas:
+            
+            "header header"
+            "sidebar main"
+            "footer footer";
+            
+            gap: 30px;
         }
 
         section {
             margin-bottom: 100px;
         }
 
+        main {
+            grid-area: main;
+        }
+
         footer{
-            margin-top: 300px;
+            grid-area: footer;
 
         }
 
@@ -32,6 +51,8 @@
           justify-content: space-between;
           padding: 20px 0;
           margin-bottom: 40px;
+
+          grid-area: header;
         }
         
         .logo {
@@ -48,6 +69,44 @@
             text-decoration: none;
             color: black;
         }
+
+
+
+        .page-layout {
+    display: grid;
+
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: 1fr;
+
+    grid-template-areas:
+        "sidebar main";
+
+    gap: 40px;
+}
+
+.sidebar {
+    grid-area: sidebar;
+
+    padding: 20px;
+    background-color: #F0F8FC;
+    border-radius: 20px;
+    height: fit-content;
+}
+
+.sidebar a {
+    display: block;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: #2c6e49;
+}
+
+.sidebar a:hover {
+    color: #e76f51;
+}
+
+.page-layout main {
+    grid-area: main;
+}
 
 
 
@@ -110,12 +169,36 @@
             gap: 20px;
             margin-top: 30px;
         }
-        .burabay-gallery img {
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+
+        .gallery-item img {
             width: 100%;
             height: 180px;
             object-fit: cover;
-            border-radius: 20px;
+            display: block;
         }
+        
+        .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 15px;
+            background-color: rgba(44, 168, 213, 0.671);
+            color: white;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .caption {
+            opacity: 1;
+        } 
 
         
     </style>
@@ -137,6 +220,20 @@
         <a href="about.html">About Us</a>
     </nav> </header>
 
+
+
+    <div class="page-layout">
+
+    <aside class="sidebar">
+        <h3>Burabay Guide</h3>
+
+        <a href="#welcome">Welcome</a>
+        <a href="#nature">Nature</a>
+        <a href="#things">Things to do</a>
+        <a href="#lakes">Four Lakes</a>
+        <a href="#accommodation">Accommodation</a>
+    </aside>
+
     <main>
         <section id="first">
             <div class="hero-content">
@@ -152,7 +249,7 @@
             <img src="imagesburabay/147.jpg" alt="Beautiful view of Burabay National Park" width="1150" height="773" >
         </section>
         
-        <section>
+        <section id="welcome">
             <h2>Welcome to Burabay</h2>
             <p>Burabay National Park is located in the Akmola Region of Kazakhstan.
                 It is famous for its beautiful lakes, green forests, mountains and fresh air. </p>
@@ -160,7 +257,7 @@
                 It is a popular destination for tourists and local people who want to relax and enjoy nature.</p>
         </section>
         
-        <section> 
+        <section id="nature"> 
             <h2>Nature and Landscape</h2> 
             <p> The main attractions of Burabay are its beautiful lakes, pine forests and impressive rock formations. </p>
             <ul class="attractions-list"> 
@@ -172,7 +269,7 @@
             </ul> 
         </section>
         
-        <section>
+        <section id="things">
             <h2>Things to do</h2>
             <p>Visitors can enjoy many activities in Burabay:</p>
             <ol>
@@ -187,21 +284,61 @@
             </ol>
 
             <div class="burabay-gallery">
-                <img src="imagesburabay/IMG_726.jpg" alt="bolsjoe chebachye">
-                <img src="imagesburabay/IMG_0724.jpg" alt="view">
-                <img src="imagesburabay/IMG_0721.jpg" alt="Oqzhetpes">
-                <img src="imagesburabay/IMG_0708.jpg" alt="Kenesary Cave">
-                <img src="imagesburabay/IMG_0707.jpg" alt="Imanov Waterfall">
-                <img src="imagesburabay/IMG_0722.jpg" alt="Maral Farm">
-                <img src="imagesburabay/IMG_8983 (2).jpg" alt="Abylai Khan Glade">
-                <img src="imagesburabay/IMG_727.jpg" alt="Ferris Wheel">
-                <img src="imagesburabay/IMG_0723.jpg" alt="Multimedia Complex">
-                <img src="imagesburabay/IMG_8978.jpg" alt="forest">
-            </div>
+                <div class="gallery-item">
+                    <img src="imagesburabay/IMG_726.jpg" alt="Big Chebachye Lake">
+                    <div class="caption">Big Chebachye Lake</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="imagesburabay/IMG_0724.jpg" alt="Burabay View">
+                    <div class="caption">Beautiful Burabay View</div>
+                 </div>
+                 
+                 <div class="gallery-item">
+                    <img src="imagesburabay/IMG_0721.jpg" alt="Okzhetpes Rock">
+                    <div class="caption">Okzhetpes Rock</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="imagesburabay/IMG_0708.jpg" alt="Kenesary Cave">
+                    <div class="caption">Kenesary Cave</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="imagesburabay/IMG_0707.jpg" alt="Imanov Waterfall">
+                    <div class="caption">Imanov Waterfall</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="imagesburabay/IMG_0722.jpg" alt="Maral Farm">
+                    <div class="caption">Maral Farm</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="imagesburabay/IMG_8983 (2).jpg" alt="Abylai Khan Glade">
+                    <div class="caption">Abylai Khan Glade</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="imagesburabay/IMG_727.jpg" alt="Ferris Wheel">
+                    <div class="caption">Ferris Wheel</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="imagesburabay/IMG_0723.jpg" alt="Multimedia Complex">
+                    <div class="caption">Multimedia Complex</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="imagesburabay/IMG_8978.jpg" alt="Burabay Forest">
+                    <div class="caption">Burabay Forest</div>
+                </div>
+
+</div>
         </section>
         
         
-        <section class="lakes-section">
+        <section id="lakes" class="lakes-section">
             <h2> The Four Lakes of Burabay </h2>
             <img src="imagesburabay/lakes.jpg" alt="Lakes of Burabay" width="700" height="400">
             <div class="lake">
@@ -298,7 +435,7 @@
             <p> Whether you want to hike, take photographs, explore nature or simply relax, Burabay has something for everyone. </p>
         </section> 
         
-        <section class="tourism-section">
+        <section id="accommodation" class="tourism-section">
             <h2>Accommodation, Food & Tourist Facilities</h2> 
             <p> Burabay is a well-developed resort destination with a wide range of accommodation, dining, and tourist services. 
                 Visitors can choose from hotels, resorts, guest houses, cottages, and glamping sites depending on their budget and travel style.</p>
@@ -326,6 +463,8 @@
 
         
     </main>
+
+    </div>
 
 
     <footer>
