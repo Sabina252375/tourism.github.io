@@ -73,40 +73,39 @@
 
 
         .page-layout {
-    display: grid;
-
-    grid-template-columns: 220px 1fr;
-    grid-template-rows: 1fr;
-
-    grid-template-areas:
-        "sidebar main";
-
-    gap: 40px;
-}
-
-.sidebar {
-    grid-area: sidebar;
-
-    padding: 20px;
-    background-color: #F0F8FC;
-    border-radius: 20px;
-    height: fit-content;
-}
-
-.sidebar a {
-    display: block;
-    margin-bottom: 15px;
-    text-decoration: none;
-    color: #2c6e49;
-}
-
-.sidebar a:hover {
-    color: #e76f51;
-}
-
-.page-layout main {
-    grid-area: main;
-}
+            display: grid;
+            
+            grid-template-columns: 220px 1fr;
+            grid-template-rows: 1fr;
+            
+            grid-template-areas:
+            "sidebar main";
+            
+            gap: 40px;
+        }
+        
+        .sidebar {
+            grid-area: sidebar;
+            padding: 20px;
+            background-color: #F0F8FC;
+            border-radius: 20px;
+            height: fit-content;
+        }
+        
+        .sidebar a {
+            display: block;
+            margin-bottom: 15px;
+            text-decoration: none;
+            color: #2c6e49;
+        }
+        
+        .sidebar a:hover {
+            color: #e76f51;
+        }
+        
+        .page-layout main {
+            grid-area: main;
+        }
 
 
 

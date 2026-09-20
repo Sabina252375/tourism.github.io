@@ -11,16 +11,34 @@
 /* Main styles for the whole website */
 
         body{
-            padding: 0 90px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
             font-size: larger;
+
+            display: grid;
+            
+            grid-template-columns: 220px 1fr;
+            grid-template-rows: auto 1fr auto;
+            
+            grid-template-areas:
+            "header header"
+            "sidebar main"
+            "footer footer";
+            
+            gap: 30px;
         }
 
         section{
             margin-bottom: 100px;
         }
 
+        main{
+            grid-area: main;
+            }
+
         footer{
-            margin-top: 300px;
+            grid-area: footer;
 
         }
 
@@ -36,28 +54,52 @@
             color: #e76f51;}
         a:active {
             color: darkblue;}
- #main-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 0;
-    margin-bottom: 40px;
-}
+            
+            #main-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 20px 0;
+                margin-bottom: 40px;
+                
+                grid-area: header;
+            }
+            
+            
+            .logo {
+                font-size: 30px;
+                font-weight: bold;
+            }
+            
+            
+            .nav-menu {
+                display: flex;
+                gap: 20px;
+            }
+            
+            .nav-menu a {
+                text-decoration: none;
+                color: black;
+            }
 
-.logo {
-    font-size: 30px;
-    font-weight: bold;
-}
-
-.nav-menu {
-    display: flex;
-    gap: 20px;
-}
-
-.nav-menu a {
-    text-decoration: none;
-    color: black;
-}
+            .sidebar {
+                grid-area: sidebar;
+                padding: 20px;
+                background-color: #F0F8FC;
+                border-radius: 20px;
+                height: fit-content;
+            }
+            
+            .sidebar a {
+                display: block;
+                margin-bottom: 15px;
+                text-decoration: none;
+                color: #2c6e49;
+            }
+            
+            .sidebar a:hover {
+                color: #e76f51;
+            }
 
 
     
@@ -109,7 +151,7 @@
         #contact-form button {
             padding: 12px;font-size: 16px;
         }
-    }
+    
 
         .contacts h2{
             color: crimson;
@@ -159,9 +201,16 @@
         <a href="about.html" class="active">About Us</a>
     </nav> </header>
 
+    <aside class="sidebar">
+        <h3>About Us</h3>
+        <a href="#guides">Our Guides</a>
+        <a href="#team">Our Team</a>
+        <a href="#contact">Contact Us</a>
+    </aside>
+
 
     <main>
-        <section class="hero">
+        <section class="hero" id="guides">
            <h2>About Our Guides</h2>
            <p> We are a team of local guides who love Kazakhstan and enjoy sharing its beauty with visitors. </p>
            <p> Our goal is to make your trip interesting, comfortable and memorable.
@@ -182,7 +231,7 @@
         </section>
         
 
-        <section >
+        <section id="team" >
             <h2> About our team</h2>
             <p> We are a team of students who created this website as part of our 
                 Front-End Development assignment. We worked together to create a 
@@ -213,7 +262,7 @@
             </table>
         </section>
 
-        <section class="contacts">
+        <section class="contacts" id="contact">
             <h2>Interested in Kazakhstan?</h2>
             <p>Tell us which place you would like to visit, and we will contact you!</p>
             <form id="contact-form">
