@@ -5,11 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sapar - Balkhash</title>
 <link rel="stylesheet" href="css/style.css">
-
 <style>
 body{
-    padding: 0 90px;
+     max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+
     font-size: larger;
+
+    display: grid;
+
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: auto 1fr auto;
+
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+
+    gap: 30px;
 }
 
 section {
@@ -30,6 +44,7 @@ p{
     justify-content: space-between;
     padding: 20px 0;
     margin-bottom: 40px;
+    grid-area: header;
 }
 
 .logo {
@@ -166,6 +181,34 @@ p{
     border-radius: 15px;
     background-color: #F0F8FC;
 }
+.sidebar {
+    grid-area: sidebar;
+
+    padding: 20px;
+    background-color: #F0F8FC;
+    border-radius: 20px;
+
+    height: fit-content;
+}
+
+.sidebar a {
+    display: block;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: #2c6e49;
+}
+
+.sidebar a:hover {
+    color: #e76f51;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+}
 </style>
 
 </head>
@@ -184,7 +227,15 @@ p{
         <a href="about.html">About Us</a>
     </nav>
 </header>
+<aside class="sidebar">
+    <h3>Balkhash Guide</h3>
 
+    <a href="#welcome">Welcome</a>
+    <a href="#places">Places to Visit</a>
+    <a href="#things">Things to Do</a>
+    <a href="#activities">Activities</a>
+    <a href="#visit">Why Visit</a>
+</aside>
 <main>
 
 <section class="city-hero balkhash-hero">
@@ -197,7 +248,7 @@ p{
     </div>
 </section>
 
-<section class="city-intro">
+<section class="city-intro" id="welcome">
     <div>
         <p class="section-label">WELCOME TO BALKHASH</p>
         <h2>Where the Steppe Meets the Lake</h2>
@@ -215,7 +266,7 @@ p{
          class="city-image">
 </section>
 
-<section class="places-section">
+<section class="places-section " id="places">
     <p class="section-label">PLACES TO VISIT</p>
     <h2>Top Places in Balkhash</h2>
 
@@ -275,7 +326,7 @@ p{
     </div>
 </section>
 
-<section class="places-section">
+<section class="places-section " id="things">
     <p class="section-label">EXPERIENCES</p>
     <h2>Things to Do in Balkhash</h2>
 
@@ -312,7 +363,7 @@ p{
     </div>
 </section>
 
-<section class="table-section">
+<section class="table-section" id="activities">
     <p class="section-label">PLAN YOUR TRIP</p>
     <h2>Popular Activities</h2>
 
@@ -353,7 +404,7 @@ p{
     </table>
 </section>
 
-<section class="activities-section">
+<section class="activities-section" id="visit">
 
     <div class="activity-box">
         <p class="section-label">TRAVEL IDEA</p>
