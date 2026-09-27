@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sapar - Balkhash</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <style>
 body{
@@ -46,23 +47,15 @@ p{
     margin-bottom: 40px;
     grid-area: header;
 }
+#main-header .navbar {
+    padding: 0;
+}
 
 
 .logo {
     font-size: 30px;
     font-weight: bold;
 }
-
-.nav-menu {
-    display: flex;
-    gap: 20px;
-}
-
-.nav-menu a {
-    text-decoration: none;
-    color: black;
-}
-
 
 
 #first h1{
@@ -120,9 +113,21 @@ p{
 }
 
 .cards-container {
-   display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    align-items: stretch;
+    min-width: 0;
+}
+@media (max-width: 900px) {
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
 }
 
 .place-card {
@@ -138,15 +143,6 @@ p{
 .place-card:hover {
     transform: translateY(-7px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-.card-button {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: #2E7D8A;
-    color: white;
-    text-decoration: none;
-    border-radius: 20px;
 }
 .place-image {
     width: 100%;
@@ -169,12 +165,15 @@ p{
 .table-section th {
     background-color: #F0F8FC;
 }
-
 .activities-section {
     display: flex;
     gap: 30px;
+    flex-wrap: wrap;
 }
 
+.activities-section .btn-group {
+    width: 100%;
+}
 .activity-box,
 .info-box {
     flex: 1;
@@ -205,6 +204,7 @@ p{
 
 main {
     grid-area: main;
+    min-width: 0;
 }
 
 footer {
@@ -219,15 +219,51 @@ footer {
 <header id="main-header">
     <div class="logo">SAPAR</div>
 
-    <nav class="nav-menu">
-        <a href="index.html">Home</a>
-        <a href="aktau.html">Aktau</a>
-        <a href="almaty.html">Almaty</a>
-        <a href="balkhash.html" class="active">Balkhash</a>
-        <a href="burabay.html">Burabay</a>
-        <a href="about.html">About Us</a>
-    </nav>
+   <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="aktau.html">Aktau</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="almaty.html">Almaty</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="balkhash.html">Balkhash</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="burabay.html">Burabay</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About Us</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
 </header>
+
 <aside class="sidebar">
     <h3>Balkhash Guide</h3>
 
@@ -271,99 +307,135 @@ footer {
     <p class="section-label">PLACES TO VISIT</p>
     <h2>Top Places in Balkhash</h2>
 
-    <div class="cards-container">
+<div class="row g-4">
 
-        <article class="place-card">
+    <div class="col-lg-6 col-md-6">
+        <div class="card h-100">
             <img src="images/lake-balkhash.jpg"
-                 alt="Lake Balkhash"
-                 class="place-image">
-            <h3>Lake Balkhash</h3>
-            <p>
-                Relax on the beautiful shores of Lake Balkhash, enjoy the warm sun,
-                swim in the clear water, and watch stunning sunsets. It is a perfect
-                place for a peaceful getaway with friends or family.
-            </p>
-            <a href="https://oq.gov.kz/en/abai/balqash-koli" class="card-button">Learn More</a>
-        </article>
+                 class="card-img-top"
+                 alt="Lake Balkhash">
 
-        <article class="place-card">
-            <img src="images/bektau-ata.jpg"
-                 alt="Bektau-Ata rocky landscape"
-                 class="place-image">
-            <h3>Bektau-Ata</h3>
-            <p>
-                Explore the unique rocky landscapes of Bektau-Ata, located near Lake Balkhash.
-                Enjoy breathtaking views, unusual rock formations and a peaceful atmosphere
-                surrounded by nature. It is a great place for hiking, photography and adventure.
-            </p>
-            <a href="https://caravanistan.com/kazakhstan/center/balkhash/bektau-ata/" class="card-button">Learn More</a>
-        </article>
-
-        <article class="place-card">
-            <img src="images/palace-balkhash.jpg"
-                 alt="Palace of Culture of Metallurgists in Balkhash"
-                 class="place-image">
-            <h3>Palace of Culture of Metallurgists</h3>
-            <p>
-                Visit the Palace of Culture of Metallurgists, one of the recognizable
-                historical buildings in Balkhash. Its architecture reflects the industrial
-                history and cultural heritage of the city.
-            </p>
-            <a href="https://www.wikidata.org/wiki/Q12553833" class="card-button">Learn More</a>
-        </article>
-
-        <article class="place-card">
-            <img src="images/balkhash-museum.jpg"
-                 alt="Balkhash Museum of Local Lore"
-                 class="place-image">
-            <h3>Balkhash Museum of Local Lore</h3>
-            <p>
-                Discover the history and culture of Balkhash at the local history museum.
-                Learn about the region, its nature, traditions and the development of the city.
-            </p>
-            <a href="https://www.instagram.com/museybalqash/" class="card-button">Learn More</a>
-        </article>
-
+            <div class="card-body">
+                <h3 class="card-title">Lake Balkhash</h3>
+                <p class="card-text">
+                    Lake Balkhash is one of the largest lakes in Kazakhstan.
+                    It is famous for its beautiful landscapes and peaceful atmosphere.
+                </p>
+                <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.advantour.com/rus/kazakhstan/nature/lake-balkhash.htm&ved=2ahUKEwi_sbXv6o-XAxXhHRAIHT8XLcAQFnoECCoQAQ&usg=AOvVaw33mlk33PGkZeuBQWq6STj9" 
+   class="btn btn-primary" 
+   target="_blank">
+    Learn More
+</a>
+            </div>
+        </div>
     </div>
+
+    <div class="col-lg-6 col-md-6">
+        <div class="card h-100">
+            <img src="images/bektau-ata.jpg"
+                 class="card-img-top"
+                 alt="Bektau-Ata">
+
+            <div class="card-body">
+                <h3 class="card-title">Bektau-Ata</h3>
+                <p class="card-text">
+                    Bektau-Ata is a unique mountain area near Balkhash.
+                    It is a great place for hiking and enjoying nature.
+                </p>
+           <a href="https://www.nur.kz/leisure/tourist-routes/1965419-kakie-tayny-hranit-urochische-bektau-ata/"
+   class="btn btn-outline-primary"
+   target="_blank">
+    Explore
+</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6 col-md-6">
+        <div class="card h-100">
+            <img src="images/balkhash-museum.jpg"
+                 class="card-img-top"
+                 alt="Balkhash Museum">
+
+            <div class="card-body">
+                <h3 class="card-title">Balkhash Museum</h3>
+                <p class="card-text">
+                    The museum introduces visitors to the history,
+                    culture and development of the Balkhash region.
+                </p>
+                <a href="https://muzey-balkhash.ful.kz/ru/"
+   class="btn btn-secondary btn-sm"
+   target="_blank">
+    View Place
+</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6 col-md-6">
+        <div class="card h-100">
+            <img src="images/palace-balkhash.jpg"
+                 class="card-img-top"
+                 alt="Palace of Culture">
+
+            <div class="card-body">
+                <h3 class="card-title">Palace of Culture</h3>
+                <p class="card-text">
+                    The Palace of Culture is an important cultural place
+                    where local events and activities take place.
+                </p>
+            <a href="https://m.vk.ru/wall-57478050_493640?ysclid=mukefb5qim617704360"
+   class="btn btn-outline-success"
+   target="_blank">
+    Discover
+</a>
+            </div>
+        </div>
+    </div>
+
+</div>
 </section>
+<section class="places-section mb-5" id="things">
 
-<section class="places-section " id="things">
-    <p class="section-label">EXPERIENCES</p>
-    <h2>Things to Do in Balkhash</h2>
-
-    <div class="cards-container">
-
-        <article class="place-card">
-            <h3>Lake Relaxation</h3>
-            <p>
-                Spend a relaxing day near the lake and enjoy the peaceful atmosphere.
-            </p>
-        </article>
+    <p class="section-label mb-3">THINGS TO DO</p>
+    <h2 class="mb-4">Things to Do in Balkhash</h2>
+    <div class="cards-container p-3">
 
         <article class="place-card">
             <h3>Swimming</h3>
             <p>
-                During warm weather, visitors can enjoy swimming and relaxing near the water.
+                Enjoy swimming in the warm waters of Lake Balkhash
+                during the summer season.
             </p>
         </article>
 
         <article class="place-card">
             <h3>Fishing</h3>
             <p>
-                Fishing is one of the activities visitors can enjoy while spending time near Lake Balkhash.
+                Try fishing in Lake Balkhash and enjoy a peaceful
+                day surrounded by nature.
             </p>
         </article>
 
         <article class="place-card">
-            <h3>Sunset</h3>
+            <h3>Beach Walk</h3>
             <p>
-                Enjoy the beautiful colors of the sunset and take memorable photos near the lake.
+                Take a relaxing walk along the lake and enjoy
+                beautiful views and sunsets.
+            </p>
+        </article>
+
+        <article class="place-card">
+            <h3>Photography</h3>
+            <p>
+                Take photos of the lake, mountains and beautiful
+                natural landscapes of Balkhash.
             </p>
         </article>
 
     </div>
-</section>
 
+</section>
 <section class="table-section" id="activities">
     <p class="section-label">PLAN YOUR TRIP</p>
     <h2>Popular Activities</h2>
@@ -405,7 +477,7 @@ footer {
     </table>
 </section>
 
-<section class="activities-section" id="visit">
+<section class="activities-section mt-5" id="visit">
 
     <div class="activity-box">
         <p class="section-label">TRAVEL IDEA</p>
@@ -418,7 +490,6 @@ footer {
             <li>Take beautiful photos.</li>
         </ol>
     </div>
-
     <div class="info-box">
         <h3>A Peaceful Escape</h3>
         <p>
@@ -426,21 +497,21 @@ footer {
             by water, mountains and nature.
         </p>
     </div>
-
+<div class="btn-group mt-4" role="group" aria-label="Balkhash navigation">
+    <a href="#welcome" class="btn btn-primary">Welcome</a>
+    <a href="#places" class="btn btn-secondary">Places</a>
+    <a href="#activities" class="btn btn-outline-primary">Activities</a>
+</div>
 </section>
 
 </main>
 
 <footer>
-<<<<<<< HEAD:Balkhash.html
     <p>© 2026 SAPAR — Kazakhstan Guides</p>
-=======
-    <p>© ©️ 2026 SAPAR — Kazakhstan Guides/p>
->>>>>>> 9c1709b (Fix page file names):balkhash.html
     <p>
         Kenzhibayeva Sabina | Manatova Aruzhan | Kairova Zhanna
     </p>
 </footer>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

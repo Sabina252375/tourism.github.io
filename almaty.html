@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sapar - Almaty</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-
     <style>
         body{
             max-width: 1200px;
@@ -45,27 +45,15 @@
     justify-content: space-between;
     padding: 20px 0;
     margin-bottom: 40px;
-    grid-area: header
+    grid-area: header;
 }
-
+#main-header .navbar {
+    padding: 0;
+}
 .logo {
     font-size: 30px;
     font-weight: bold;
 }
-
-.nav-menu {
-    display: flex;
-    gap: 20px;
-}
-
-.nav-menu a {
-    text-decoration: none;
-    color: black;
-}
-
-
-
-
 
         .city-hero {
             border-radius: 40px;
@@ -101,12 +89,24 @@
             width: 45%;
             border-radius: 40px;
         }
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    min-width: 0;
+}
 
-        .cards-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
+@media (max-width: 900px) {
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+}
 
         .place-card {
             padding: 20px;
@@ -121,12 +121,14 @@
             object-fit: cover;
             border-radius: 40px;
         }
-
-        .activities-section {
-            display: flex;
-            gap: 30px;
-        }
-
+.activities-section {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.activities-section .btn-group {
+    width: 100%;
+}
         .activity-box,
         .info-box {
             flex: 1;
@@ -166,25 +168,60 @@ footer {
 </head>
 
 <body>
-
 <header id="main-header">
     <div class="logo">SAPAR</div>
 
-    <nav class="nav-menu">
-        <a href="index.html">Home</a>
-        <a href="aktau.html">Aktau</a>
-        <a href="almaty.html" class="active">Almaty</a>
-        <a href="balkhash.html">Balkhash</a>
-        <a href="burabay.html">Burabay</a>
-        <a href="about.html">About Us</a>
-    </nav>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="aktau.html">Aktau</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="almaty.html">Almaty</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="balkhash.html">Balkhash</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="burabay.html">Burabay</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About Us</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
 </header>
 <aside class="sidebar">
     <h3>Almaty Guide</h3>
 
     <a href="#welcome">Welcome</a>
-    <a href="#places">Places to Visit</a>
-    <a href="#activities">Things to Do</a>
+<a href="#places">Places to Visit</a>
+<a href="#things">Things to Do</a>
+<a href="#activities">Activities</a>
 </aside>
 <main>
 
@@ -223,84 +260,151 @@ footer {
         >
     </section>
 
-    <section class="places-section" id="places">
-        <p class="section-label">PLACES TO VISIT</p>
-        <h2>Top Places in Almaty</h2>
+   <section class="places-section mb-5" id="places">
+    <p class="section-label mb-3">PLACES TO VISIT</p>
+    <h2 class="mb-4">Top Places in Almaty</h2>
+       <div class="row g-4">
 
-        <div class="cards-container">
+    <div class="col-lg-6 col-md-6">
+        <div class="card h-100">
+            <img src="images/medeu.jpg"
+                 class="card-img-top"
+                 alt="Medeu skating rink near Almaty">
 
-            <article class="place-card">
-                <img
-                    src="images/medeu.jpg"
-                    alt="Medeu skating rink near Almaty"
-                    class="place-image"
-                >
+            <div class="card-body">
+                <h3 class="card-title">Medeu</h3>
 
-                <h3>Medeu</h3>
-
-                <p>
+                <p class="card-text">
                     Medeu is a famous mountain skating rink located near Almaty.
                     It is surrounded by beautiful mountains and fresh air.
-                    Visitors can enjoy the scenery, take photos and spend time in nature.
+                    Visitors can enjoy the scenery and spend time in nature.
                 </p>
-            </article>
 
-            <article class="place-card">
-                <img
-                    src="images/shymbulak.jpg"
-                    alt="Shymbulak mountain resort"
-                    class="place-image"
-                >
-
-                <h3>Shymbulak</h3>
-
-                <p>
-                    Shymbulak is a popular mountain resort near Almaty.
-                    Visitors can enjoy beautiful mountain views, fresh air and
-                    outdoor activities. It is a great place for hiking and relaxing.
-                </p>
-            </article>
-
-            <article class="place-card">
-                <img
-                    src="images/kok-tobe.jpg"
-                    alt="Kok-Tobe viewpoint in Almaty"
-                    class="place-image"
-                >
-
-                <h3>Kok-Tobe</h3>
-
-                <p>
-                    Kok-Tobe is one of the most popular viewpoints in Almaty.
-                    From the top, visitors can enjoy a panoramic view of the city.
-                    It is also a nice place for walking and taking photos.
-                </p>
-            </article>
-
-            <article class="place-card">
-                <img
-                    src="images/big-almaty-lake.jpg"
-                    alt="Big Almaty Lake"
-                    class="place-image"
-                >
-
-                <h3>Big Almaty Lake</h3>
-
-                <p>
-                    Big Almaty Lake is a beautiful mountain lake surrounded by
-                    the Trans-Ili Alatau mountains. It is known for its amazing
-                    natural scenery and peaceful atmosphere.
-                </p>
-            </article>
-
+                <a href="https://travel.yandex.ru/journal/medeo-katok-i-gornolyzhnyy-kurort/" class="btn btn-primary">
+                    Learn More
+                </a>
+            </div>
         </div>
-    </section>
+    </div>
 
+
+    <div class="col-lg-6 col-md-6">
+        <div class="card h-100">
+            <img src="images/shymbulak.jpg"
+                 class="card-img-top"
+                 alt="Shymbulak mountain resort">
+
+            <div class="card-body">
+                <h3 class="card-title">Shymbulak</h3>
+
+                <p class="card-text">
+                    Shymbulak is a popular mountain resort near Almaty.
+                    Visitors can enjoy beautiful mountain views, fresh air
+                    and outdoor activities.
+                </p>
+
+                <a href="https://travel.yandex.ru/journal/shymbulak-vsyo-o-gornolyzhnom-kurorte/" class="btn btn-outline-primary">
+                    Explore
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-lg-6 col-md-6">
+        <div class="card h-100">
+            <img src="images/kok-tobe.jpg"
+                 class="card-img-top"
+                 alt="Kok-Tobe viewpoint in Almaty">
+
+            <div class="card-body">
+                <h3 class="card-title">Kok-Tobe</h3>
+
+                <p class="card-text">
+                    Kok-Tobe is one of the most popular viewpoints in Almaty.
+                    Visitors can enjoy a panoramic view of the city and
+                    take beautiful photos.
+                </p>
+
+                <a href="https://experience.tripster.ru/sights/49484-kok-tobe/" class="btn btn-secondary btn-sm">
+                    View Place
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-lg-6 col-md-6">
+        <div class="card h-100">
+            <img src="images/big-almaty-lake.jpg"
+                 class="card-img-top"
+                 alt="Big Almaty Lake">
+
+            <div class="card-body">
+                <h3 class="card-title">Big Almaty Lake</h3>
+
+                <p class="card-text">
+                    Big Almaty Lake is a beautiful mountain lake surrounded
+                    by the Trans-Ili Alatau mountains. It is known for its
+                    amazing natural scenery.
+                </p>
+
+                <a href="https://www.sputnik8.com/ru/almaty/sights/bolshoe-almatinskoe-ozero/info?utm_referrer=https%3A%2F%2Fwww.google.com%2F" class="btn btn-outline-success">
+                    Discover
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+    </section>
+<section class="places-section mb-5" id="things">
+
+    <p class="section-label mb-3">THINGS TO DO</p>
+    <h2 class="mb-4">Things to Do in Almaty</h2>
+
+    <div class="cards-container p-3">
+
+        <article class="place-card">
+            <h3>Mountain Hiking</h3>
+            <p>
+                Explore the beautiful mountains around Almaty
+                and enjoy fresh air and amazing views.
+            </p>
+        </article>
+
+        <article class="place-card">
+            <h3>City Walk</h3>
+            <p>
+                Walk around the city center, visit parks and
+                discover the modern side of Almaty.
+            </p>
+        </article>
+
+        <article class="place-card">
+            <h3>Local Food</h3>
+            <p>
+                Try traditional Kazakh dishes and discover
+                local food culture in Almaty.
+            </p>
+        </article>
+
+        <article class="place-card">
+            <h3>Photography</h3>
+            <p>
+                Take beautiful photos of the city, mountains
+                and natural landscapes.
+            </p>
+        </article>
+
+    </div>
+
+</section>
     <section class="activities-section" id="activities">
 
         <div class="activity-box">
             <p class="section-label">WHAT TO DO</p>
-            <h2>Things to Do in Almaty</h2>
+            <h2>Why Choose Almaty?</h2>
 
             <ul>
                 <li>Visit mountain resorts</li>
@@ -320,12 +424,14 @@ footer {
                 the day and enjoy the mountains later.
             </p>
         </div>
-
+<div class="btn-group mt-4" role="group" aria-label="Almaty navigation">
+    <a href="#welcome" class="btn btn-primary">Welcome</a>
+    <a href="#places" class="btn btn-secondary">Places</a>
+    <a href="#activities" class="btn btn-outline-primary">Activities</a>
+</div>
     </section>
 
 </main>
-
-<<<<<<< HEAD:Almaty.html
  <footer>
         <p>©️ 2026 SAPAR — Kazakhstan Guides</p>
         <p>
@@ -334,16 +440,6 @@ footer {
         </p>
         
     </footer>
-=======
-<footer>
-    <p>©️ 2026 SAPAR — Kazakhstan Guides</p>
-    <p>
-        Kenzhibayeva Sabina | 
-        Manatova Aruzhan | 
-        Kairova Zhanna
-    </p>
-</footer>
->>>>>>> 9c1709b (Fix page file names):almaty.html
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
