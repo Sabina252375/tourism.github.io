@@ -61,16 +61,7 @@
             font-weight: bold;
         }
         
-        .nav-menu {
-            display: flex;
-            gap: 20px;
-        }
         
-        .nav-menu a {
-            text-decoration: none;
-            color: black;
-        }
-
        
 
 
@@ -202,6 +193,40 @@
         .gallery-item:hover .caption {
             opacity: 1;
         } 
+        
+        
+        #burabayCarousel {
+            max-width: 900px;
+            margin: 30px auto;
+            border-radius: 20px;
+            overflow: hidden;
+            background-color: #f0f8fc;
+        }
+        
+        #burabayCarousel .carousel-item {
+             height: 500px;
+             text-align: center;
+             background-color: #f0f8fc;
+            }
+            
+            
+        #burabayCarousel .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 20px;
+        }
+
+        #burabayCarousel .carousel-control-prev-icon {
+            filter: invert(37%) sepia(20%) saturate(900%) hue-rotate(90deg);
+        }
+        
+        
+        #burabayCarousel .carousel-control-next-icon {
+            filter: invert(37%) sepia(20%) saturate(900%) hue-rotate(90deg);
+        }
+
+
 
         
     </style>
@@ -209,20 +234,56 @@
 
 </head>
 <body>
-    
-
 
     <header id="main-header">
     <div class="logo">SAPAR</div>
 
-    <nav class="nav-menu">
-        <a href="index.html">Home</a>
-        <a href="aktau.html">Aktau</a>
-        <a href="almaty.html" >Almaty</a>
-        <a href="balkhash.html">Balkhash</a>
-        <a href="burabay.html" class="active">Burabay</a>
-        <a href="about.html">About Us</a>
-    </nav> </header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="aktau.html">Aktau</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="almaty.html">Almaty</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="balkhash.html">Balkhash</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="burabay.html">Burabay</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
 
 
 
@@ -286,59 +347,136 @@
                 <li>Visit the Multimedia Complex and enjoy modern entertainment.</li>
                 <li>Have a picnic with friends or family and enjoy a peaceful weekend away from the city.</li>
             </ol>
+            
+            
+            <div id="burabayCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#burabayCarousel"
+                    data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                    
+                    
+                    <button type="button" data-bs-target="#burabayCarousel"
+                    data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    
+                    
+                    <button type="button" data-bs-target="#burabayCarousel"
+                    data-bs-slide-to="2" aria-label="Slide 3"></button>
 
-            <div class="burabay-gallery">
-                <div class="gallery-item">
-                    <img src="imagesburabay/IMG_726.jpg" alt="Big Chebachye Lake">
-                    <div class="caption">Big Chebachye Lake</div>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="imagesburabay/IMG_0724.jpg" alt="Burabay View">
-                    <div class="caption">Beautiful Burabay View</div>
-                 </div>
-                 
-                 <div class="gallery-item">
-                    <img src="imagesburabay/IMG_0721.jpg" alt="Okzhetpes Rock">
-                    <div class="caption">Okzhetpes Rock</div>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="imagesburabay/IMG_0708.jpg" alt="Kenesary Cave">
-                    <div class="caption">Kenesary Cave</div>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="imagesburabay/IMG_0707.jpg" alt="Imanov Waterfall">
-                    <div class="caption">Imanov Waterfall</div>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="imagesburabay/IMG_0722.jpg" alt="Maral Farm">
-                    <div class="caption">Maral Farm</div>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="imagesburabay/IMG_8983 (2).jpg" alt="Abylai Khan Glade">
-                    <div class="caption">Abylai Khan Glade</div>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="imagesburabay/IMG_727.jpg" alt="Ferris Wheel">
-                    <div class="caption">Ferris Wheel</div>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="imagesburabay/IMG_0723.jpg" alt="Multimedia Complex">
-                    <div class="caption">Multimedia Complex</div>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="imagesburabay/IMG_8978.jpg" alt="Burabay Forest">
-                    <div class="caption">Burabay Forest</div>
-                </div>
+        <button type="button" data-bs-target="#burabayCarousel"
+                data-bs-slide-to="3" aria-label="Slide 4"></button>
+
+        <button type="button" data-bs-target="#burabayCarousel"
+                data-bs-slide-to="4" aria-label="Slide 5"></button>
+
+        <button type="button" data-bs-target="#burabayCarousel"
+                data-bs-slide-to="5" aria-label="Slide 6"></button>
+
+        <button type="button" data-bs-target="#burabayCarousel"
+                data-bs-slide-to="6" aria-label="Slide 7"></button>
+
+        <button type="button" data-bs-target="#burabayCarousel"
+                data-bs-slide-to="7" aria-label="Slide 8"></button>
+
+        <button type="button" data-bs-target="#burabayCarousel"
+                data-bs-slide-to="8" aria-label="Slide 9"></button>
+
+        <button type="button" data-bs-target="#burabayCarousel"
+                data-bs-slide-to="9" aria-label="Slide 10"></button>
+    </div>
+
+    
+    <div class="carousel-inner">
+
+        <div class="carousel-item active">
+            <img src="imagesburabay/IMG_726.jpg"
+                 class="d-block w-100"
+                 alt="Big Chebachye Lake">
+        </div>
+
+        <div class="carousel-item">
+            <img src="imagesburabay/IMG_0724.jpg"
+                 class="d-block w-100"
+                 alt="Burabay View">
+        </div>
+
+        <div class="carousel-item">
+            <img src="imagesburabay/IMG_0721.jpg"
+                 class="d-block w-100"
+                 alt="Okzhetpes Rock">
+        </div>
+
+        <div class="carousel-item">
+            <img src="imagesburabay/IMG_0708.jpg"
+                 class="d-block w-100"
+                 alt="Kenesary Cave">
+        </div>
+
+        <div class="carousel-item">
+            <img src="imagesburabay/IMG_0707.jpg"
+                 class="d-block w-100"
+                 alt="Imanov Waterfall">
+        </div>
+
+        <div class="carousel-item">
+            <img src="imagesburabay/IMG_0722.jpg"
+                 class="d-block w-100"
+                 alt="Maral Farm">
+        </div>
+
+        <div class="carousel-item">
+            <img src="imagesburabay/IMG_8983 (2).jpg"
+                 class="d-block w-100"
+                 alt="Abylai Khan Glade">
+        </div>
+
+        <div class="carousel-item">
+            <img src="imagesburabay/IMG_727.jpg"
+                 class="d-block w-100"
+                 alt="Ferris Wheel">
+        </div>
+
+        <div class="carousel-item">
+            <img src="imagesburabay/IMG_0723.jpg"
+                 class="d-block w-100"
+                 alt="Multimedia Complex">
+        </div>
+
+        <div class="carousel-item">
+            <img src="imagesburabay/IMG_8978.jpg"
+                 class="d-block w-100"
+                 alt="Burabay Forest">
+        </div>
+
+    </div>
+
+    
+    <button class="carousel-control-prev"
+            type="button"
+            data-bs-target="#burabayCarousel"
+            data-bs-slide="prev">
+
+        <span class="carousel-control-prev-icon"
+              aria-hidden="true"></span>
+
+        <span class="visually-hidden">Previous</span>
+    </button>
+
+    
+    <button class="carousel-control-next"
+            type="button"
+            data-bs-target="#burabayCarousel"
+            data-bs-slide="next">
+
+        <span class="carousel-control-next-icon"
+              aria-hidden="true"></span>
+
+        <span class="visually-hidden">Next</span>
+    </button>
 
 </div>
+
+
         </section>
         
         
