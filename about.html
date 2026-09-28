@@ -16,7 +16,7 @@
         body{
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 40px;
+            
             font-size: larger;
 
             display: grid;
@@ -32,9 +32,7 @@
             gap: 30px;
         }
 
-        section{
-            margin-bottom: 100px;
-        }
+        
 
         main{
             grid-area: main;
@@ -62,8 +60,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                padding: 20px 0;
-                margin-bottom: 40px;
+                
                 
                 grid-area: header;
             }
@@ -78,7 +75,7 @@
 
             .sidebar {
                 grid-area: sidebar;
-                padding: 20px;
+                
                 background-color: #F0F8FC;
                 border-radius: 20px;
                 height: fit-content;
@@ -154,7 +151,7 @@
 
         .contacts {
             background-color: #EDF7FB;
-            padding: 40px;
+            
             border-radius: 25px;}
 
         
@@ -167,7 +164,7 @@
              display: block;
              max-width: 100%;
              height: auto;
-             margin: 30px auto;
+             
              border-radius: 50px; }
 
         table {
@@ -182,10 +179,10 @@
     </style>
 </head>
 
-<body>
+<body class="px-2 px-md-4">
 
     
-<header id="main-header">
+<header id="main-header" class="py-3 mb-4">
     <div class="logo">SAPAR</div>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light"
@@ -236,7 +233,7 @@
 
 
 
-    <aside class="sidebar">
+    <aside class="sidebar p-3">
         <h3>About Us</h3>
         <a href="#guides">Our Guides</a>
         <a href="#team">Our Team</a>
@@ -245,13 +242,13 @@
 
 
     <main>
-        <section class="hero" id="guides">
+        <section class="hero mb-5" id="guides">
            <h2>About Our Guides</h2>
            <p> We are a team of local guides who love Kazakhstan and enjoy sharing its beauty with visitors. </p>
            <p> Our goal is to make your trip interesting, comfortable and memorable.
             We can help you explore beautiful places, discover local culture and learn interesting facts about Kazakhstan. </p>
 
-            <img src="imagesaboutus/weare.jpg" alt="SAPAR team and Kazakhstan travel guides" width="1000" height="600">
+            <img src="imagesaboutus/weare.jpg" alt="SAPAR team and Kazakhstan travel guides" width="1000" height="600" class="my-4">
 
             <h3>Our Services</h3>
             <div class="container">
@@ -275,7 +272,7 @@
         </section>
         
 
-        <section id="team">
+        <section id="team" class="mb-5">
             <h2>About our team</h2>
             <div class="container">
                 <div class="row">
@@ -288,7 +285,7 @@
                         </p>
                     </div>
                     <div class="col-lg-6 col-md-12">
-                        <table border="1" class="w-100">
+                        <table border="1" class="w-100 my-3">
 
                             <caption>Team members</caption>
 
@@ -322,7 +319,7 @@
             </div>
         </section>
 
-        <section class="contacts" id="contact">
+        <section class="contacts p-4 mb-5" id="contact">
             <h2>Interested in Kazakhstan?</h2>
             <p>Tell us which place you would like to visit, and we will contact you!</p>
             

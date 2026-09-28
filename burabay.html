@@ -30,9 +30,7 @@
             gap: 30px;
         }
 
-        section {
-            margin-bottom: 100px;
-        }
+        
 
         main {
             grid-area: main;
@@ -51,8 +49,7 @@
           display: flex;
           align-items: center;
           justify-content: space-between;
-          padding: 20px 0;
-          margin-bottom: 40px;
+          
 
           grid-area: header;
         }
@@ -67,21 +64,11 @@
 
 
 
-        .page-layout {
-            display: grid;
-            
-            grid-template-columns: 220px 1fr;
-            grid-template-rows: 1fr;
-            
-            grid-template-areas:
-            "sidebar main";
-            
-            gap: 40px;
-        }
+        
         
         .sidebar {
             grid-area: sidebar;
-            padding: 20px;
+            
             background-color: #F0F8FC;
             border-radius: 20px;
             height: fit-content;
@@ -114,8 +101,7 @@
     
 
         .tourism-card {
-            padding: 20px;
-            margin: 20px 0;
+        
             border-radius: 15px;
             background-color: #F0F8FC; }
 
@@ -138,8 +124,7 @@
             border-radius: 30px;
         }
 
-        .hero-content {
-            padding: 30px; }
+        
             
         .hero-content h1 { 
             font-size: 55px; }
@@ -154,7 +139,7 @@
             text-align: center;
             background-size: cover;
             background-position: center;
-            margin-bottom: 100px;
+            
         }
 
         .burabay-gallery {
@@ -236,7 +221,7 @@
 </head>
 <body>
 
-    <header id="main-header">
+    <header id="main-header" class="py-3 mb-4">
     <div class="logo">SAPAR</div>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -288,9 +273,9 @@
 
 
 
-    <div class="page-layout">
+    
 
-    <aside class="sidebar">
+    <aside class="sidebar p-3">
         <h3>Burabay Guide</h3>
 
         <a href="#welcome">Welcome</a>
@@ -301,8 +286,8 @@
     </aside>
 
     <main>
-        <section id="first">
-            <div class="hero-content">
+        <section id="first" class="mb-5">
+            <div class="hero-content p-4">
                 <p class="small-title">DISCOVER KAZAKHSTAN</p>
                 <h1>Burabay</h1>
                 <p> Explore the beautiful lakes of Borovoe and enjoy peaceful nature, fresh air, green forests, and stunning mountain views. </p>
@@ -311,11 +296,11 @@
         </section>
 
         
-        <section>
-            <img src="imagesburabay/147.jpg" alt="Beautiful view of Burabay National Park" width="1150" height="773" >
+        <section class="mb-5">
+            <img src="imagesburabay/147.jpg" alt="Beautiful view of Burabay National Park" class="img-fluid rounded" >
         </section>
         
-        <section id="welcome">
+        <section id="welcome" class="mb-5 mt-lg-4 px-sm-2">
             <h2>Welcome to Burabay</h2>
             <p>Burabay National Park is located in the Akmola Region of Kazakhstan.
                 It is famous for its beautiful lakes, green forests, mountains and fresh air. </p>
@@ -323,7 +308,7 @@
                 It is a popular destination for tourists and local people who want to relax and enjoy nature.</p>
         </section>
         
-        <section id="nature"> 
+        <section id="nature" class="mb-5"> 
             <h2>Nature and Landscape</h2> 
             <p> The main attractions of Burabay are its beautiful lakes, pine forests and impressive rock formations. </p>
             <ul class="attractions-list"> 
@@ -335,7 +320,7 @@
             </ul> 
         </section>
         
-        <section id="things">
+        <section id="things" class="mb-5">
             <h2>Things to do</h2>
             <p>Visitors can enjoy many activities in Burabay:</p>
             <ol>
@@ -477,7 +462,7 @@
         </section>
         
         
-        <section id="lakes" class="lakes-section">
+        <section id="lakes" class="lakes-section mb-5 ">
             <h2> The Four Lakes of Burabay </h2>
             <img src="imagesburabay/lakes.jpg" alt="Lakes of Burabay" width="700" height="400">
             <div class="lake">
@@ -567,32 +552,32 @@
 
         </section>
         
-        <section> 
+        <section class="mb-5"> 
             <h2>Why Visit Burabay?</h2>
             <p> Burabay is a great destination for people who love nature and outdoor activities.
                 It offers beautiful scenery and many opportunities to spend time with friends and family.</p>
             <p> Whether you want to hike, take photographs, explore nature or simply relax, Burabay has something for everyone. </p>
         </section> 
         
-        <section id="accommodation" class="tourism-section">
+        <section id="accommodation" class="tourism-section mb-5">
             <h2>Accommodation, Food & Tourist Facilities</h2> 
             <p> Burabay is a well-developed resort destination with a wide range of accommodation, dining, and tourist services. 
                 Visitors can choose from hotels, resorts, guest houses, cottages, and glamping sites depending on their budget and travel style.</p>
             
-            <div class="tourism-card">
+            <div class="tourism-card p-3 my-3">
                 <h3>Where to Stay</h3> 
                  <p> Tourists can find comfortable hotels and resort complexes, as well as guest houses and cottages for a more private stay.
                      Many accommodations are located close to the lakes and main tourist attractions, making it easy to explore the area. </p>
             </div> 
             
-            <div class="tourism-card">
+            <div class="tourism-card p-3 my-3">
                 <h3>Where to Eat</h3>
                 <p> Burabay has many cafes and restaurants where visitors can enjoy both popular international dishes
                     and traditional Kazakh cuisine. Restaurants can be found in hotels, near the lakes, and in the main 
                     resort areas, making dining convenient during a busy day of sightseeing. </p>
              </div> 
              
-             <div class="tourism-card">
+             <div class="tourism-card p-3 my-3">
                 <h3>Tourist Facilities</h3>
                 <p> The resort also offers a variety of activities and services,including boat and catamaran rentals, guided excursions, walking and cycling routes, 
                     viewpoints, and other outdoor activities. This makes Burabay convenient for both relaxing holidays and active trips. </p>
@@ -603,7 +588,7 @@
         
     </main>
 
-    </div>
+    
 
 
     <footer>
