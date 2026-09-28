@@ -7,31 +7,22 @@
     <title>Sapar</title>
     <style>
         /* Main styles for the whole website */
-        body{
-           max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 40px;
-            
-            font-size: larger;
-            display: grid;
-            
-            grid-template-columns: 220px 1fr;
-            grid-template-rows: auto 1fr auto;
-            
-            grid-template-areas:
-            
-            "header header"
-            "sidebar main"
-            "footer footer";
-            
-            gap: 30px;
-        }
+        body {
+    max-width: 1200px;
 
-        section {
-            margin-bottom: 100px;
-        }
+    font-size: larger;
+    display: grid;
 
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: auto 1fr auto;
 
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+
+    gap: 30px;
+}
         p{
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
@@ -42,17 +33,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 0;
-    margin-bottom: 40px;
-}
-#main-header .navbar {
-    padding: 0;
 }
 
 .sidebar {
     grid-area: sidebar;
-
-    padding: 20px;
 
     background-color: #F0F8FC;
     border-radius: 20px;
@@ -62,7 +46,6 @@
 
 .sidebar a {
     display: block;
-    margin-bottom: 15px;
 
     text-decoration: none;
     color: #2c6e49;
@@ -86,29 +69,23 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-bottom: 100px;
 }
 
 .hero-content {
     width: 100%;
     max-width: 900px;
-    padding: 0;
-    margin: 0 auto;
 }
 
 .hero-content h2 {
     font-size: 50px;
-    margin: 0 auto 20px;
 }
 
 .hero-content p {
-    margin: 0 auto;
     max-width: 800px;
 }
 
 .section p {
     text-align: center;
-    margin-bottom: 20px;
 }
 
 .section {
@@ -117,7 +94,6 @@ main {
 
 .section .container {
     max-width: 900px;
-    margin: 0 auto;
 }
 
 
@@ -128,8 +104,6 @@ main {
 }
 
 .card {
-    padding: 20px;
-    margin: 20px 0;
     border-radius: 15px;
     background-color: #F0F8FC;
 }
@@ -141,13 +115,6 @@ main {
     border-radius: 40px;
 }
 
-.card-content {
-    padding-top: 10px;
-}
-
-.card h3 {
-    margin-bottom: 10px;
-}
 
 .card a {
     color: black;
@@ -161,17 +128,59 @@ main {
 
 footer {
     grid-area: footer;
+}
+@media (max-width: 600px) {
+    body {
+        display: block;
+        padding: 0 20px;
+    }
 
-    margin-top: 100px;
-    padding: 20px 0;
+    #main-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .sidebar {
+        margin-bottom: 30px;
+    }
+
+    .hero {
+        height: auto;
+        min-height: 300px;
+    }
+
+    .hero-content h2 {
+        font-size: 40px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .section .container {
+        max-width: 100%;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .card img {
+        height: 220px;
+    }
+
+    footer {
+        margin-top: 50px;
+    }
 }
 </style>
 </head>
-<body>
-    <header id="main-header">
+<body class="mx-auto px-4">
+    <header id="main-header" class="py-3 mb-lg-4">
     <div class="logo">SAPAR</div>
 
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light p-0">
         <div class="container-fluid">
 
             <button class="navbar-toggler" type="button"
@@ -215,68 +224,67 @@ footer {
         </div>
     </nav>
 </header>
-<aside class="sidebar">
+<aside class="sidebar p-3 p-sm-4">
     <h3>Home Guide</h3>
-
-    <a href="#welcome">Welcome</a>
-    <a href="#destinations">Destinations</a>
-    <a href="#aktau">Aktau</a>
-    <a href="#burabay">Burabay</a>
-    <a href="#balkhash">Balkhash</a>
-    <a href="#almaty">Almaty</a>
+<a href="#welcome" class="mb-3">Welcome</a>
+<a href="#destinations" class="mb-3">Destinations</a>
+<a href="#aktau" class="mb-3">Aktau</a>
+<a href="#burabay" class="mb-3">Burabay</a>
+<a href="#balkhash" class="mb-3">Balkhash</a>
+<a href="#almaty" class="mb-3">Almaty</a>
 </aside>
     <!-- Hero Section -->
      <main>
-        <section class="hero">
+       <section class="hero mb-5 mb-lg-5">
             <div class="hero-content">
-                <h2>Discover the Wonders of Kazakhstan</h2>
+                <h2 class="mb-3">Discover the Wonders of Kazakhstan</h2>
                 <p> Explore breathtaking landscapes, ancient traditions, modern cities, and unforgettable adventures across the heart of Central Asia. </p>
             </div>
         </section>
         <!-- Introduction --> 
-        <section class="section" id="welcome">
+        <section class="section mb-5 mb-lg-5" id="welcome">
              <div class="container">
                  <h2>Welcome to Kazakhstan</h2> 
-                 <p> Kazakhstan is a country of incredible diversity. From the shores of the Caspian Sea to the majestic mountains of Almaty, every destination offers a unique experience. </p> 
+                 <p class="mb-3"> Kazakhstan is a country of incredible diversity. From the shores of the Caspian Sea to the majestic mountains of Almaty, every destination offers a unique experience. </p> 
                  <p> At Sapar agency, we help travelers discover the natural beauty, culture, history, and hospitality of our country. </p> 
             </div> 
         </section>
         <!-- Popular Destinations --> 
-         <section class="section destinations" id="destinations"> 
+        <section class="section destinations mb-5" id="destinations">
             <div class="container">
                  <h2>Explore Our Destinations</h2>
                  <div class="card-container">
                      <!-- Aktau Card -->
-                     <article class="card" id="aktau">
+                     <article class="card p-3 my-3" id="aktau">
                          <img src="imagesaktau/city.jpg" alt="Beautiful coastline and landscape of Aktau">
-                         <div class="card-content"> 
-                            <h3>Aktau</h3>
+                         <div class="card-content pt-2">
+                            <h3 class="mb-2">Aktau</h3>
                              <p> Discover the Caspian Sea, dramatic cliffs, desert landscapes, and the unique beauty of the Mangystau region. </p> 
                              <a href="aktau.html">Explore Aktau →</a>
                          </div> 
                       </article>
                       <!-- Burabay Card -->
-                      <article class="card" id="burabay">
+                      <article class="card p-3 my-3" id="burabay">
                          <img src="imagesburabay/147.jpg" alt="Lakes and forests in Burabay">
-                         <div class="card-content"> 
+                         <div class="card-content pt-2">
                             <h3>Burabay</h3>
                              <p> Enjoy peaceful lakes, green forests, beautiful mountains, and fresh air in one of Kazakhstan's most popular resorts. </p> 
                              <a href="burabay.html">Explore Burabay →</a>
                          </div> 
                       </article>
                        <!-- Balkhash Card -->
-                      <article class="card" id="balkhash">
+                      <article class="card p-3 my-3" id="balkhash">
                          <img src="images/balkhash.jpg" alt="Lake Balkhash surrounded by natural landscapes">
-                         <div class="card-content"> 
+                         <div class="card-content pt-2">
                             <h3>Balkhash</h3>
                              <p> Relax beside one of Kazakhstan's largest lakes and enjoy swimming, fishing, camping, and outdoor adventures. </p> 
                              <a href="balkhash.html">Explore Balkhash →</a>
                          </div> 
                       </article>
                       <!-- Almaty Card -->
-                      <article class="card" id="almaty">
+                      <article class="card p-3 my-3" id="almaty">
                          <img src="images/almaty.jpg" alt="Mountain landscape near Almaty">
-                         <div class="card-content"> 
+                         <div class="card-content pt-2"> 
                             <h3>Almaty</h3>
                              <p> Experience Kazakhstan's vibrant city life, delicious cuisine, cultural attractions, and spectacular mountain scenery. </p> 
                              <a href="almaty.html">Explore Almaty →</a>
@@ -286,7 +294,7 @@ footer {
             </div>
         </section>
      </main>
-     <footer>
+     <footer class="mt-5 py-3">
         <p>©️ 2026 SAPAR — Kazakhstan Guides</p>
         <p>
             Kenzhibayeva Sabina | Manatova Aruzhan | Kairova Zhanna 
