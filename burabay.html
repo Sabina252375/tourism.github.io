@@ -42,6 +42,8 @@
 
         }
 
+       
+
         p{
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
@@ -107,23 +109,22 @@
 
 
         .lake {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 50px;
-            margin-bottom: 60px; }
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 0;
+}
 
-        .lake-text {
-            flex: 1;
-        }
-        
-        .lake img {
-            width: 500px;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 30px;
-        }
+.lake-text {
+    width: 100%;
+}
 
+.lake img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 30px;
+}
         
             
         .hero-content h1 { 
@@ -212,8 +213,38 @@
             filter: invert(37%) sepia(20%) saturate(900%) hue-rotate(90deg);
         }
 
+        @media (max-width: 600px) {
+    body {
+        display: block;
+        padding: 0 20px;
+    }
 
+    #main-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
+    .sidebar {
+        margin-bottom: 30px;
+    }
+
+    #contact-form {
+        width: 100%;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    .hero img {
+        width: 100%;
+        height: auto;
+    }
+
+    footer {
+        margin-top: 50px;
+    }
+}
         
     </style>
 
@@ -462,95 +493,127 @@
         </section>
         
         
-        <section id="lakes" class="lakes-section mb-5 ">
-            <h2> The Four Lakes of Burabay </h2>
-            <img src="imagesburabay/lakes.jpg" alt="Lakes of Burabay" width="700" height="400">
-            <div class="lake">
-                <div class = "lake-text">
-                    <h3>1. Lake Borovoe</h3>
-                    <p>
-                    Lake Borovoe is the most iconic and recognizable lake in Burabay.
-                    It is surrounded by pine forests, mountains, and rocky landscapes,
-                    with the famous Zhumbaktas Rock rising from the water. The lake
-                    covers about 10 km² and reaches a depth of around 7–8 meters.
-                    Its clear water and beautiful scenery make it one of the most
-                    photogenic places in the resort. In summer, visitors can rent 
-                    boats and catamarans and sail directly to Zhumbaktas Rock. </p>
+        <section id="lakes" class="lakes-section">
 
-                </div>
-                <div class = "lake img">
-                    <img src = "imagesburabay/blake.jpg" alt="burabay lake">
+    <h2>The Four Lakes of Burabay</h2>
 
-                </div>
-                
-            </div>
+    <img src="imagesburabay/lakes.jpg"
+         alt="Lakes of Burabay"
+         width="700"
+         height="400">
+
+    <div class="container">
+        <div class="row g-4">
+
             
-            <div class="lake">
-                <div class = "lake-text">
-                    <h3>2. Big Chebachye Lake</h3>
-                    <p> Big Chebachye is the largest lake in the Burabay area and one of
-                    the most popular places for swimming and recreation. Its area is
-                    about 21–24 km², while its maximum depth reaches around 33–34 meters.
-                    The lake is known for its clean, clear water, sandy and pebbly
-                    shores, and beautiful mountain views. Swimming on the lake with
-                    the mountains in the background creates an unforgettable experience.
-                    Many recreation centers and beach facilities are located nearby.</p>
+            <div class="col-lg-6 col-md-6">
+                <div class="lake">
 
-                </div>
-                 <div class = "lake img">
-                    <img src = "imagesburabay/IMG_0706.JPG.jpg" alt="big chebachye">
+                    <div class="lake-text">
+                        <h3>1. Lake Borovoe</h3>
 
-                </div>
+                        <p>
+                            Lake Borovoe is the most iconic and recognizable lake
+                            in Burabay. It is surrounded by pine forests, mountains,
+                            and rocky landscapes, with the famous Zhumbaktas Rock
+                            rising from the water. The lake covers about 10 km²
+                            and reaches a depth of around 7–8 meters.
+                            Its clear water and beautiful scenery make it one of
+                            the most photogenic places in the resort. In summer,
+                            visitors can rent boats and catamarans and sail
+                            directly to Zhumbaktas Rock.
+                        </p>
+                    </div>
 
-                
-            </div>
-            
-            <div class="lake">
-                <div class = "lake-text">
-                    <h3>3. Small Chebachye Lake</h3>
-                    <p>Small Chebachye is a quieter and more natural lake compared with
-                    the main resort areas. It covers about 18.45 km² and has sandy,
-                    pebbly, and rocky sections along its shores. The water is relatively
-                    shallow near the shore, so visitors need to swim some distance
-                    before reaching deeper water. This makes it a comfortable option
-                    for families with children in safe and supervised areas. Small bays
-                    and reed-covered areas attract birds, while Mount Kokshetau can be
-                    seen from the southeastern side. </p>
+                    <div class="lake img">
+                        <img src="imagesburabay/blake.jpg"
+                             alt="Burabay lake">
+                    </div>
 
-                    
-
-                </div>
-                
-
-
-
-                <div class = "lake img">
-                    <img src = "imagesburabay/IMG_0719.jpg" alt="small chebachye">
                 </div>
             </div>
+
+
             
-            <div class="lake">
-                <div class = "lake-text">
-                    <h3>4. Lake Shchuchye</h3>
-                    <p>
-                    Lake Shchuchye is one of the deepest and cleanest lakes in Burabay,
-                    reaching a depth of around 30 meters. Because of its depth, the water
-                    remains cooler even in summer, making it one of the coldest lakes in
-                    the resort. Surrounded by forests, the lake is known for its clear
-                    water, peaceful atmosphere, and rich fish life. It is especially
-                    attractive for fishing and for visitors who enjoy nature and quiet surroundings.</p>
+            <div class="col-lg-6 col-md-6">
+                <div class="lake">
+
+                    <div class="lake-text">
+                        <h3>2. Big Chebachye Lake</h3>
+
+                        <p>
+                            Big Chebachye is the largest lake in the Burabay area
+                            and one of the most popular places for swimming and
+                            recreation. Its area is about 21–24 km², while its
+                            maximum depth reaches around 33–34 meters.
+                            The lake is known for its clean, clear water,
+                            sandy and pebbly shores, and beautiful mountain views.
+                            Many recreation centers and beach facilities
+                            are located nearby.
+                        </p>
+                    </div>
+
+                    <div class="lake img">
+                        <img src="imagesburabay/IMG_0706.JPG.jpg"
+                             alt="Big Chebachye Lake">
+                    </div>
 
                 </div>
-                
+            </div>
 
-                <div class = "lake img">
-                    <img src = "imagesburabay/IMG_0717.jpg" alt="shchuchy lake">
+
+            
+            <div class="col-lg-6 col-md-6">
+                <div class="lake">
+
+                    <div class="lake-text">
+                        <h3>3. Small Chebachye Lake</h3>
+
+                        <p>
+                            Small Chebachye is a peaceful lake surrounded by
+                            forests and beautiful natural landscapes.
+                            It is quieter than the larger lakes and is a good
+                            place for visitors who want to enjoy nature and
+                            relax away from crowded tourist areas.
+                        </p>
+                    </div>
+
+                    <div class="lake img">
+                        <img src="imagesburabay/IMG_0717.jpg"
+                             alt="Small Chebachye Lake">
+                    </div>
 
                 </div>
-            </div> 
+            </div>
 
 
-        </section>
+            <div class="col-lg-6 col-md-6">
+                <div class="lake">
+
+                    <div class="lake-text">
+                        <h3>4. Lake Maybalyk</h3>
+
+                        <p>
+                            Lake Maybalyk is a smaller natural lake located
+                            in the Burabay area. It is surrounded by beautiful
+                            landscapes and is known for its peaceful atmosphere.
+                            The lake is suitable for visitors who enjoy quiet
+                            places, nature walks, and scenic views.
+                        </p>
+                    </div>
+
+                    <div class="lake img">
+                        <img src="imagesburabay/IMG_0717.jpg"
+                             alt="Lake Maybalyk">
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
         
         <section class="mb-5"> 
             <h2>Why Visit Burabay?</h2>
