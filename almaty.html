@@ -10,7 +10,6 @@
         body{
             max-width: 1200px;
     margin: 0 auto;
-    padding: 0 40px;
     font-size: larger;
 
     display: grid;
@@ -22,16 +21,7 @@
         "header header"
         "sidebar main"
         "footer footer";
-
-    gap: 30px;
-        }
-
-        section {
-            margin-bottom: 100px;
-        }
-
-        footer{
-            margin-top: 300px;
+     gap: 30px;
         }
 
         p{
@@ -43,12 +33,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 0;
-    margin-bottom: 40px;
     grid-area: header;
-}
-#main-header .navbar {
-    padding: 0;
 }
 .logo {
     font-size: 30px;
@@ -64,13 +49,7 @@
             text-align: center;
             background-size: cover;
             background-position: center;
-            margin-bottom: 100px;
         }
-
-        .hero-content {
-            padding: 30px;
-        }
-
         .hero-content h1 {
             font-size: 55px;
         }
@@ -95,7 +74,26 @@
     gap: 30px;
     min-width: 0;
 }
+.card-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
 
+.card-group .card {
+    min-width: 0;
+}
+
+.card-group .card-img-top {
+    height: 250px;
+    object-fit: cover;
+}
+
+@media (max-width: 600px) {
+    .card-group {
+        grid-template-columns: 1fr;
+    }
+}
 @media (max-width: 900px) {
     .cards-container {
         grid-template-columns: repeat(2, 1fr);
@@ -109,8 +107,6 @@
 }
 
         .place-card {
-            padding: 20px;
-            margin: 20px 0;
             border-radius: 15px;
             background-color: #F0F8FC;
         }
@@ -132,14 +128,11 @@
         .activity-box,
         .info-box {
             flex: 1;
-            padding: 20px;
             border-radius: 15px;
             background-color: #F0F8FC;
         }
         .sidebar {
     grid-area: sidebar;
-
-    padding: 20px;
     background-color: #F0F8FC;
     border-radius: 20px;
 
@@ -148,7 +141,6 @@
 
 .sidebar a {
     display: block;
-    margin-bottom: 15px;
     text-decoration: none;
     color: #2c6e49;
 }
@@ -168,18 +160,12 @@ footer {
 
     body {
         display: block;
-        padding: 0 20px;
     }
 
     #main-header {
         flex-direction: column;
         align-items: flex-start;
     }
-
-    .sidebar {
-        margin-bottom: 30px;
-    }
-
     .city-hero {
         min-height: 300px;
     }
@@ -202,7 +188,7 @@ footer {
     }
 
     .activity-box,
-    .info-box {
+    .info-box {   
         width: 100%;
     }
 
@@ -215,8 +201,8 @@ footer {
     </style>
 </head>
 
-<body>
-<header id="main-header">
+<body class="px-4">
+<header id="main-header" class="py-3 mb-4">
     <div class="logo">SAPAR</div>
 
   <nav class="navbar navbar-expand-lg navbar-light">
@@ -263,18 +249,18 @@ footer {
     </div>
 </nav>
 </header>
-<aside class="sidebar">
+<aside class="sidebar p-3 mb-4">
     <h3>Almaty Guide</h3>
 
-    <a href="#welcome">Welcome</a>
-<a href="#places">Places to Visit</a>
-<a href="#things">Things to Do</a>
-<a href="#activities">Activities</a>
+    <a href="#welcome" class="mb-3">Welcome</a>
+    <a href="#places" class="mb-3">Places to Visit</a>
+    <a href="#things" class="mb-3">Things to Do</a>
+    <a href="#activities" class="mb-3">Activities</a>
 </aside>
 <main>
 
-    <section class="city-hero almaty-hero">
-        <div class="hero-content">
+    <section class="city-hero almaty-hero mt-lg-4 mb-5">
+    <div class="hero-content p-4">
             <p class="small-title">DISCOVER KAZAKHSTAN</p>
             <h1>Almaty</h1>
             <p>
@@ -284,7 +270,7 @@ footer {
         </div>
     </section>
 
-    <section class="city-intro" id="welcome">
+  <section class="city-intro mt-lg-4 mb-5" id="welcome">
         <div>
             <p class="section-label">WELCOME TO ALMATY</p>
             <h2>The City of Mountains</h2>
@@ -311,96 +297,92 @@ footer {
    <section class="places-section mb-5" id="places">
     <p class="section-label mb-3">PLACES TO VISIT</p>
     <h2 class="mb-4">Top Places in Almaty</h2>
-       <div class="row g-4">
+<div class="card-group">
 
-    <div class="col-lg-6 col-md-6">
-        <div class="card h-100">
-            <img src="images/medeu.jpg"
-                 class="card-img-top"
-                 alt="Medeu skating rink near Almaty">
+    <div class="card">
+        <img src="images/medeu.jpg"
+             class="card-img-top"
+             alt="Medeu skating rink near Almaty">
 
-            <div class="card-body">
-                <h3 class="card-title">Medeu</h3>
+        <div class="card-body">
+            <h3 class="card-title">Medeu</h3>
 
-                <p class="card-text">
-                    Medeu is a famous mountain skating rink located near Almaty.
-                    It is surrounded by beautiful mountains and fresh air.
-                    Visitors can enjoy the scenery and spend time in nature.
-                </p>
+            <p class="card-text">
+                Medeu is a famous mountain skating rink located near Almaty.
+                It is surrounded by beautiful mountains and fresh air.
+                Visitors can enjoy the scenery and spend time in nature.
+            </p>
 
-                <a href="https://travel.yandex.ru/journal/medeo-katok-i-gornolyzhnyy-kurort/" class="btn btn-primary">
-                    Learn More
-                </a>
-            </div>
+            <a href="https://travel.yandex.ru/journal/medeo-katok-i-gornolyzhnyy-kurort/"
+               class="btn btn-primary">
+                Learn More
+            </a>
         </div>
     </div>
 
 
-    <div class="col-lg-6 col-md-6">
-        <div class="card h-100">
-            <img src="images/shymbulak.jpg"
-                 class="card-img-top"
-                 alt="Shymbulak mountain resort">
+    <div class="card">
+        <img src="images/shymbulak.jpg"
+             class="card-img-top"
+             alt="Shymbulak mountain resort">
 
-            <div class="card-body">
-                <h3 class="card-title">Shymbulak</h3>
+        <div class="card-body">
+            <h3 class="card-title">Shymbulak</h3>
 
-                <p class="card-text">
-                    Shymbulak is a popular mountain resort near Almaty.
-                    Visitors can enjoy beautiful mountain views, fresh air
-                    and outdoor activities.
-                </p>
+            <p class="card-text">
+                Shymbulak is a popular mountain resort near Almaty.
+                Visitors can enjoy beautiful mountain views, fresh air
+                and outdoor activities.
+            </p>
 
-                <a href="https://travel.yandex.ru/journal/shymbulak-vsyo-o-gornolyzhnom-kurorte/" class="btn btn-outline-primary">
-                    Explore
-                </a>
-            </div>
+            <a href="https://travel.yandex.ru/journal/shymbulak-vsyo-o-gornolyzhnom-kurorte/"
+               class="btn btn-outline-primary">
+                Explore
+            </a>
         </div>
     </div>
 
 
-    <div class="col-lg-6 col-md-6">
-        <div class="card h-100">
-            <img src="images/kok-tobe.jpg"
-                 class="card-img-top"
-                 alt="Kok-Tobe viewpoint in Almaty">
+    <div class="card">
+        <img src="images/kok-tobe.jpg"
+             class="card-img-top"
+             alt="Kok-Tobe viewpoint in Almaty">
 
-            <div class="card-body">
-                <h3 class="card-title">Kok-Tobe</h3>
+        <div class="card-body">
+            <h3 class="card-title">Kok-Tobe</h3>
 
-                <p class="card-text">
-                    Kok-Tobe is one of the most popular viewpoints in Almaty.
-                    Visitors can enjoy a panoramic view of the city and
-                    take beautiful photos.
-                </p>
+            <p class="card-text">
+                Kok-Tobe is one of the most popular viewpoints in Almaty.
+                Visitors can enjoy a panoramic view of the city and
+                take beautiful photos.
+            </p>
 
-                <a href="https://experience.tripster.ru/sights/49484-kok-tobe/" class="btn btn-secondary btn-sm">
-                    View Place
-                </a>
-            </div>
+            <a href="https://experience.tripster.ru/sights/49484-kok-tobe/"
+               class="btn btn-secondary btn-sm">
+                View Place
+            </a>
         </div>
     </div>
 
 
-    <div class="col-lg-6 col-md-6">
-        <div class="card h-100">
-            <img src="images/big-almaty-lake.jpg"
-                 class="card-img-top"
-                 alt="Big Almaty Lake">
+    <div class="card">
+        <img src="images/big-almaty-lake.jpg"
+             class="card-img-top"
+             alt="Big Almaty Lake">
 
-            <div class="card-body">
-                <h3 class="card-title">Big Almaty Lake</h3>
+        <div class="card-body">
+            <h3 class="card-title">Big Almaty Lake</h3>
 
-                <p class="card-text">
-                    Big Almaty Lake is a beautiful mountain lake surrounded
-                    by the Trans-Ili Alatau mountains. It is known for its
-                    amazing natural scenery.
-                </p>
+            <p class="card-text">
+                Big Almaty Lake is a beautiful mountain lake surrounded
+                by the Trans-Ili Alatau mountains. It is known for its
+                amazing natural scenery.
+            </p>
 
-                <a href="https://www.sputnik8.com/ru/almaty/sights/bolshoe-almatinskoe-ozero/info?utm_referrer=https%3A%2F%2Fwww.google.com%2F" class="btn btn-outline-success">
-                    Discover
-                </a>
-            </div>
+            <a href="https://www.sputnik8.com/ru/almaty/sights/bolshoe-almatinskoe-ozero/info?utm_referrer=https%3A%2F%2Fwww.google.com%2F"
+               class="btn btn-outline-success">
+                Discover
+            </a>
         </div>
     </div>
 
@@ -413,15 +395,14 @@ footer {
 
     <div class="cards-container p-3">
 
-        <article class="place-card">
+        <article class="place-card p-3 mb-4">
             <h3>Mountain Hiking</h3>
             <p>
                 Explore the beautiful mountains around Almaty
                 and enjoy fresh air and amazing views.
             </p>
         </article>
-
-        <article class="place-card">
+<article class="place-card p-3 mb-4">
             <h3>City Walk</h3>
             <p>
                 Walk around the city center, visit parks and
@@ -429,7 +410,7 @@ footer {
             </p>
         </article>
 
-        <article class="place-card">
+        <article class="place-card p-3 mb-4">
             <h3>Local Food</h3>
             <p>
                 Try traditional Kazakh dishes and discover
@@ -437,7 +418,7 @@ footer {
             </p>
         </article>
 
-        <article class="place-card">
+        <article class="place-card p-3 mb-4">
             <h3>Photography</h3>
             <p>
                 Take beautiful photos of the city, mountains
@@ -448,9 +429,9 @@ footer {
     </div>
 
 </section>
-    <section class="activities-section" id="activities">
+  <section class="activities-section mt-5 mb-5" id="activities">
 
-        <div class="activity-box">
+       <div class="activity-box p-3">
             <p class="section-label">WHAT TO DO</p>
             <h2>Why Choose Almaty?</h2>
 
@@ -463,7 +444,7 @@ footer {
             </ul>
         </div>
 
-        <div class="info-box">
+        <div class="info-box p-3">
             <h3>Why choose Almaty?</h3>
 
             <p>
@@ -473,14 +454,14 @@ footer {
             </p>
         </div>
 <div class="btn-group mt-4" role="group" aria-label="Almaty navigation">
-    <a href="#welcome" class="btn btn-primary">Welcome</a>
+    <a href="#welcome" class="btn btn-primary btn-lg">Welcome</a>
     <a href="#places" class="btn btn-secondary">Places</a>
-    <a href="#activities" class="btn btn-outline-primary">Activities</a>
+    <a href="#activities" class="btn btn-outline-primary btn-sm">Activities</a>
 </div>
     </section>
 
 </main>
- <footer>
+<footer class="mt-5">
         <p>©️ 2026 SAPAR — Kazakhstan Guides</p>
         <p>
             Kenzhibayeva Sabina | Manatova Aruzhan | Kairova Zhanna 

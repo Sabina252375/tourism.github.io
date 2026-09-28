@@ -10,7 +10,7 @@
 body{
      max-width: 1200px;
     margin: 0 auto;
-    padding: 0 40px;
+   
 
     font-size: larger;
 
@@ -25,15 +25,7 @@ body{
         "footer footer";
 
     gap: 30px;
-}
-
-section {
-    margin-bottom: 100px;
-}
-
-footer{
-    margin-top: 300px;
-}
+} 
 
 p{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
@@ -43,14 +35,8 @@ p{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 0;
-    margin-bottom: 40px;
     grid-area: header;
 }
-#main-header .navbar {
-    padding: 0;
-}
-
 
 .logo {
     font-size: 30px;
@@ -66,16 +52,6 @@ p{
     border-radius: 40px;
 }
 
-.tourism-card {
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 15px;
-    background-color: #F0F8FC;
-}
-
-.lake {
-    margin-bottom: 60px;
-}
 
 .city-hero {
     border-radius: 40px;
@@ -86,11 +62,6 @@ p{
     text-align: center;
     background-size: cover;
     background-position: center;
-    margin-bottom: 100px;
-}
-
-.hero-content {
-    padding: 30px;
 }
 
 .hero-content h1 {
@@ -118,6 +89,26 @@ p{
     gap: 30px;
     min-width: 0;
 }
+.card-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.card-group .card {
+    min-width: 0;
+}
+
+.card-group .card-img-top {
+    height: 250px;
+    object-fit: cover;
+}
+
+@media (max-width: 600px) {
+    .card-group {
+        grid-template-columns: 1fr;
+    }
+}
 @media (max-width: 900px) {
     .cards-container {
         grid-template-columns: repeat(2, 1fr);
@@ -134,8 +125,6 @@ p{
      flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    margin: 0;
     border-radius: 15px;
     background-color: #F0F8FC;
     transition: 0.3s;
@@ -158,7 +147,6 @@ p{
 
 .table-section th,
 .table-section td {
-    padding: 15px;
     text-align: left;
 }
 
@@ -177,23 +165,18 @@ p{
 .activity-box,
 .info-box {
     flex: 1;
-    padding: 20px;
     border-radius: 15px;
     background-color: #F0F8FC;
 }
 .sidebar {
     grid-area: sidebar;
-
-    padding: 20px;
     background-color: #F0F8FC;
     border-radius: 20px;
-
     height: fit-content;
 }
 
 .sidebar a {
     display: block;
-    margin-bottom: 15px;
     text-decoration: none;
     color: #2c6e49;
 }
@@ -214,7 +197,6 @@ footer {
 
     body {
         display: block;
-        padding: 0 20px;
     }
 
     #main-header {
@@ -222,9 +204,7 @@ footer {
         align-items: flex-start;
     }
 
-    .sidebar {
-        margin-bottom: 30px;
-    }
+    
 
     .city-hero {
         min-height: 300px;
@@ -262,9 +242,9 @@ footer {
 
 </head>
 
-<body>
+<body class="px-4">
 
-<header id="main-header">
+<header id="main-header" class="py-3 mb-4">
     <div class="logo">SAPAR</div>
 
    <nav class="navbar navbar-expand-lg navbar-light">
@@ -312,19 +292,19 @@ footer {
 </nav>
 </header>
 
-<aside class="sidebar">
+<aside class="sidebar p-3 mb-4">
     <h3>Balkhash Guide</h3>
 
-    <a href="#welcome">Welcome</a>
-    <a href="#places">Places to Visit</a>
-    <a href="#things">Things to Do</a>
-    <a href="#activities">Activities</a>
-    <a href="#visit">Why Visit</a>
+    <a href="#welcome" class="mb-3">Welcome</a>
+    <a href="#places" class="mb-3">Places to Visit</a>
+    <a href="#things" class="mb-3">Things to Do</a>
+    <a href="#activities" class="mb-3">Activities</a>
+    <a href="#visit" class="mb-3">Why Visit</a>
 </aside>
 <main>
 
-<section class="city-hero balkhash-hero">
-    <div class="hero-content">
+<section class="city-hero balkhash-hero mb-5 mt-lg-4">
+    <div class="hero-content p-4">
         <p class="small-title">DISCOVER KAZAKHSTAN</p>
         <h1>Balkhash</h1>
         <p>
@@ -333,7 +313,7 @@ footer {
     </div>
 </section>
 
-<section class="city-intro" id="welcome">
+<section class="city-intro mb-5" id="welcome">
     <div>
         <p class="section-label">WELCOME TO BALKHASH</p>
         <h2>Where the Steppe Meets the Lake</h2>
@@ -351,93 +331,92 @@ footer {
          class="city-image">
 </section>
 
-<section class="places-section " id="places">
+<section class="places-section mb-5" id="places">
     <p class="section-label">PLACES TO VISIT</p>
     <h2>Top Places in Balkhash</h2>
 
-<div class="row g-4">
+<div class="card-group">
 
-    <div class="col-lg-6 col-md-6">
-        <div class="card h-100">
-            <img src="images/lake-balkhash.jpg"
-                 class="card-img-top"
-                 alt="Lake Balkhash">
+    <div class="card">
+        <img src="images/lake-balkhash.jpg"
+             class="card-img-top"
+             alt="Lake Balkhash">
 
-            <div class="card-body">
-                <h3 class="card-title">Lake Balkhash</h3>
-                <p class="card-text">
-                    Lake Balkhash is one of the largest lakes in Kazakhstan.
-                    It is famous for its beautiful landscapes and peaceful atmosphere.
-                </p>
-                <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.advantour.com/rus/kazakhstan/nature/lake-balkhash.htm&ved=2ahUKEwi_sbXv6o-XAxXhHRAIHT8XLcAQFnoECCoQAQ&usg=AOvVaw33mlk33PGkZeuBQWq6STj9" 
-   class="btn btn-primary" 
-   target="_blank">
-    Learn More
-</a>
-            </div>
+        <div class="card-body">
+            <h3 class="card-title">Lake Balkhash</h3>
+            <p class="card-text">
+                Lake Balkhash is one of the largest lakes in Kazakhstan.
+                It is famous for its beautiful landscapes and peaceful atmosphere.
+            </p>
+
+            <a href="https://www.advantour.com/rus/kazakhstan/nature/lake-balkhash.htm"
+               class="btn btn-primary"
+               target="_blank">
+                Learn More
+            </a>
         </div>
     </div>
 
-    <div class="col-lg-6 col-md-6">
-        <div class="card h-100">
-            <img src="images/bektau-ata.jpg"
-                 class="card-img-top"
-                 alt="Bektau-Ata">
 
-            <div class="card-body">
-                <h3 class="card-title">Bektau-Ata</h3>
-                <p class="card-text">
-                    Bektau-Ata is a unique mountain area near Balkhash.
-                    It is a great place for hiking and enjoying nature.
-                </p>
-           <a href="https://www.nur.kz/leisure/tourist-routes/1965419-kakie-tayny-hranit-urochische-bektau-ata/"
-   class="btn btn-outline-primary"
-   target="_blank">
-    Explore
-</a>
-            </div>
+    <div class="card">
+        <img src="images/bektau-ata.jpg"
+             class="card-img-top"
+             alt="Bektau-Ata">
+
+        <div class="card-body">
+            <h3 class="card-title">Bektau-Ata</h3>
+            <p class="card-text">
+                Bektau-Ata is a unique mountain area near Balkhash.
+                It is a great place for hiking and enjoying nature.
+            </p>
+
+            <a href="https://www.nur.kz/leisure/tourist-routes/1965419-kakie-tayny-hranit-urochische-bektau-ata/"
+               class="btn btn-outline-primary"
+               target="_blank">
+                Explore
+            </a>
         </div>
     </div>
 
-    <div class="col-lg-6 col-md-6">
-        <div class="card h-100">
-            <img src="images/balkhash-museum.jpg"
-                 class="card-img-top"
-                 alt="Balkhash Museum">
 
-            <div class="card-body">
-                <h3 class="card-title">Balkhash Museum</h3>
-                <p class="card-text">
-                    The museum introduces visitors to the history,
-                    culture and development of the Balkhash region.
-                </p>
-                <a href="https://muzey-balkhash.ful.kz/ru/"
-   class="btn btn-secondary btn-sm"
-   target="_blank">
-    View Place
-</a>
-            </div>
+    <div class="card">
+        <img src="images/balkhash-museum.jpg"
+             class="card-img-top"
+             alt="Balkhash Museum">
+
+        <div class="card-body">
+            <h3 class="card-title">Balkhash Museum</h3>
+            <p class="card-text">
+                The museum introduces visitors to the history,
+                culture and development of the Balkhash region.
+            </p>
+
+            <a href="https://muzey-balkhash.ful.kz/ru/"
+               class="btn btn-secondary btn-sm"
+               target="_blank">
+                View Place
+            </a>
         </div>
     </div>
 
-    <div class="col-lg-6 col-md-6">
-        <div class="card h-100">
-            <img src="images/palace-balkhash.jpg"
-                 class="card-img-top"
-                 alt="Palace of Culture">
 
-            <div class="card-body">
-                <h3 class="card-title">Palace of Culture</h3>
-                <p class="card-text">
-                    The Palace of Culture is an important cultural place
-                    where local events and activities take place.
-                </p>
-            <a href="https://m.vk.ru/wall-57478050_493640?ysclid=mukefb5qim617704360"
-   class="btn btn-outline-success"
-   target="_blank">
-    Discover
-</a>
-            </div>
+    <div class="card">
+        <img src="images/palace-balkhash.jpg"
+             class="card-img-top"
+             alt="Palace of Culture">
+
+        <div class="card-body">
+            <h3 class="card-title">Palace of Culture</h3>
+            <p class="card-text">
+                The Palace of Culture is an important cultural place
+                where local events and activities take place.
+            </p>
+
+            <a href="https://m.vk.ru/wall-57478050_493640"
+               class="btn btn-outline-success"
+               target="_blank">
+                Discover
+            </a>
         </div>
     </div>
 
@@ -449,7 +428,7 @@ footer {
     <h2 class="mb-4">Things to Do in Balkhash</h2>
     <div class="cards-container p-3">
 
-        <article class="place-card">
+        <article class="place-card p-3">
             <h3>Swimming</h3>
             <p>
                 Enjoy swimming in the warm waters of Lake Balkhash
@@ -457,7 +436,7 @@ footer {
             </p>
         </article>
 
-        <article class="place-card">
+        <article class="place-card p-3">
             <h3>Fishing</h3>
             <p>
                 Try fishing in Lake Balkhash and enjoy a peaceful
@@ -465,7 +444,7 @@ footer {
             </p>
         </article>
 
-        <article class="place-card">
+        <article class="place-card p-3">
             <h3>Beach Walk</h3>
             <p>
                 Take a relaxing walk along the lake and enjoy
@@ -473,7 +452,7 @@ footer {
             </p>
         </article>
 
-        <article class="place-card">
+        <article class="place-card p-3">
             <h3>Photography</h3>
             <p>
                 Take photos of the lake, mountains and beautiful
@@ -491,35 +470,35 @@ footer {
     <table>
         <thead>
             <tr>
-                <th>Activity</th>
-                <th>Best Time</th>
-                <th>Duration</th>
+             <th class="p-3">Activity</th>
+             <th class="p-3">Best Time</th>
+             <th class="p-3">Duration</th>
             </tr>
         </thead>
 
         <tbody>
             <tr>
-                <td>Swimming</td>
-                <td>Summer</td>
-                <td>2–3 hours</td>
+                <td class="p-3">Swimming</td>
+                <td class="p-3">Summer</td>
+                <td class="p-3">2–3 hours</td>
             </tr>
 
             <tr>
-                <td>Fishing</td>
-                <td>Summer</td>
-                <td>3–5 hours</td>
+                <td class="p-3">Fishing</td>
+                <td class="p-3">Summer</td>
+                <td class="p-3">3–5 hours</td>
             </tr>
 
             <tr>
-                <td>Beach Walk</td>
-                <td>Evening</td>
-                <td>1–2 hours</td>
+                <td class="p-3">Beach Walk</td>
+                <td class="p-3">Evening</td>
+                <td class="p-3">1–2 hours</td>
             </tr>
 
             <tr>
-                <td>Photography</td>
-                <td>All year</td>
-                <td>1–2 hours</td>
+                <td class="p-3">Photography</td>
+                <td class="p-3">All year</td>
+                <td class="p-3">1–2 hours</td>
             </tr>
         </tbody>
     </table>
@@ -527,7 +506,7 @@ footer {
 
 <section class="activities-section mt-5" id="visit">
 
-    <div class="activity-box">
+    <div class="activity-box p-3">
         <p class="section-label">TRAVEL IDEA</p>
         <h2>Why Visit Balkhash?</h2>
 
@@ -538,7 +517,7 @@ footer {
             <li>Take beautiful photos.</li>
         </ol>
     </div>
-    <div class="info-box">
+  <div class="info-box p-3">
         <h3>A Peaceful Escape</h3>
         <p>
             Balkhash is a good choice for travelers who want a calm trip surrounded
@@ -546,15 +525,15 @@ footer {
         </p>
     </div>
 <div class="btn-group mt-4" role="group" aria-label="Balkhash navigation">
-    <a href="#welcome" class="btn btn-primary">Welcome</a>
+    <a href="#welcome" class="btn btn-primary btn-lg">Welcome</a>
     <a href="#places" class="btn btn-secondary">Places</a>
-    <a href="#activities" class="btn btn-outline-primary">Activities</a>
+    <a href="#activities" class="btn btn-outline-primary btn-sm">Activities</a>
 </div>
 </section>
 
 </main>
 
-<footer>
+<footer class="mt-5">
     <p>© 2026 SAPAR — Kazakhstan Guides</p>
     <p>
         Kenzhibayeva Sabina | Manatova Aruzhan | Kairova Zhanna
