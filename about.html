@@ -93,6 +93,7 @@
             }
 
 
+
     
 
 
@@ -105,54 +106,101 @@
         }
 
         #contact-form{
-             display: flex;
-             flex-direction: column;
-             gap: 20px;
-             width: 400px;
+             width: 100%;
+             max-width: 620px;
              margin: 0 auto;
+             gap: 22px;
+        }
+
+        #contact-form label {
+            display: block;
+            color: #294b60;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 9px;
         }
         
         
         #contact-form input,
         #contact-form select,
         #contact-form textarea {
-            padding: 10px;
-            font-size: 16px;
-            box-sizing: border-box;}
+             width: 100%;
+             padding: 14px 16px;
+             font-size: 16px;
+             color: #233f50;
+             background: rgba(255, 255, 255, 0.65);
+             border: 1px solid rgba(82, 140, 170, 0.3);
+             border-radius: 13px;
+             transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+            }
 
+        #contact-form input:focus,
+        #contact-form select:focus,
+        #contact-form textarea:focus {
+            background: rgba(255, 255, 255, 0.95);
+            border-color: #3987b5;
+            box-shadow: 0 0 0 4px rgba(57, 135, 181, 0.13);
+            outline: none;
+        }
+
+
+            
         #contact-form textarea {
-            height: 150px;
-            resize: vertical;}
+             min-height: 140px;
+             resize: vertical;}
             
         #contact-form button {
-            padding: 12px;
-            font-size: 16px;}
+            padding: 14px 20px;
+            font-size: 17px;
+            font-weight: 600;
+            background-color: #2479ad;
+            border: 1px solid #2479ad;
+            color: white;
+            border-radius: 13px;
+            transition: 0.3s;}
+
+        #contact-form button:hover {
+    
+            background-color: #185d88;
+    
+            border-color: #185d88;
+    
+            color: white;
+        }
             
-        #contact-form input,
-        #contact-form select,
-        #contact-form textarea {
-            padding: 10px;
-            font-size: 16px; }
+       
             
         #contact-form textarea {
             height: 150px;
             resize: vertical; }
             
             
-        #contact-form button {
-            padding: 12px;font-size: 16px;
-        }
+        
+
+        
     
 
         .contacts h2{
-            color: crimson;
+            color: #174d70;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
 
+        }
+        .contacts > p {
+            font-size: 17px;
+            color: #526b7b;
+            margin-bottom: 28px;
         }
 
         .contacts {
-            background-color: #EDF7FB;
+            background: rgba(219, 241, 250, 0.45);
+            border: 1px solid rgba(95, 160, 190, 0.25);
+            border-radius: 28px;
+            padding: 35px;
+        }
+        
             
-            border-radius: 25px;}
 
         
 
@@ -178,37 +226,159 @@
 
 
         @media (max-width: 600px) {
-    body {
-        display: block;
-        padding: 0 20px;
+            body {
+                display: block;
+                padding: 0 20px;
+            }
+            
+            #main-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .sidebar {
+                margin-bottom: 30px;
+            }
+            
+            #contact-form {
+                width: 100%;
+            }
+            
+            table {
+                width: 100%;
+            }
+
+            .hero img {
+                width: 100%;
+                height: auto;
+            }
+            
+            footer {
+                margin-top: 50px;
+            }}
+            
+            #contact-form-message:empty {
+                display: none;
+            }
+            
+            #contact-form-message:not(:empty) {
+                padding: 18px 20px;
+                margin-bottom: 18px;
+                border-radius: 14px;
+                font-size: 18px;
+                line-height: 1.6;
+                font-weight: 600;
+                overflow-wrap: anywhere;
+                animation: messageAppear 0.3s ease;
+            }
+           
+            @keyframes messageAppear {
+    
+                from {
+                    opacity: 0;
+                    transform: translateY(-8px);
+                }
+    
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            
+.registration-section {
+    padding: 35px;
+    border-radius: 28px;
+    background: rgba(219, 241, 250, 0.45);
+    border: 1px solid rgba(95, 160, 190, 0.3);
+    
+}
+
+.registration-section h2 {
+    color: #174d70;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.registration-section > p {
+    color: #526b7b;
+    font-size: 17px;
+    margin-bottom: 28px;
+}
+
+#registration-form {
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+#registration-form label {
+    display: block;
+    color: #294b60;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 9px;
+}
+
+#registration-form input {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 16px;
+    color: #233f50;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(82, 140, 170, 0.3);
+    border-radius: 13px;
+    box-sizing: border-box;
+}
+
+#registration-form input:focus {
+    outline: none;
+    border-color: #3987b5;
+    box-shadow: 0 0 0 4px rgba(57, 135, 181, 0.13);
+}
+
+#registration-form button {
+    width: 100%;
+    padding: 14px;
+    background: #2479ad;
+    color: white;
+    border: none;
+    border-radius: 13px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.25s;
+}
+
+#registration-form button:hover {
+    background: #185d88;
+    transform: translateY(-2px);
+}
+
+#registration-message:empty {
+    display: none;
+}
+
+#registration-message:not(:empty) {
+    padding: 16px 18px;
+    margin: 0 0 18px;
+    border-radius: 13px;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+    .registration-section {
+        padding: 22px 16px;
+        border-radius: 20px;
     }
 
-    #main-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .sidebar {
-        margin-bottom: 30px;
-    }
-
-    #contact-form {
-        width: 100%;
-    }
-
-    table {
-        width: 100%;
-    }
-
-    .hero img {
-        width: 100%;
-        height: auto;
-    }
-
-    footer {
-        margin-top: 50px;
+    .registration-section h2 {
+        font-size: 27px;
     }
 }
+
     </style>
 
 </head>
@@ -357,68 +527,81 @@
             <h2>Interested in Kazakhstan?</h2>
             <p>Tell us which place you would like to visit, and we will contact you!</p>
             
-            <form id="contact-form">
-                
+            <form id="contact-form" novalidate>
                 <div class="mb-3">
                     <label for="name" class="form-label">Name:</label>
-                    <input type="text"
-                    class="form-control"
-                    id="name"
-                    placeholder="Your name">
+                    <input type="text" class="form-control" id="name"
+                    placeholder="Your name" required minlength="2">
                 </div>
                 
                 <div class="mb-3">
                     <label for="email" class="form-label">Email:</label>
-                    <input type="email"
-                    class="form-control"
-                    id="email"
-                    placeholder="Your email">
+                    <input type="email" class="form-control" id="email"
+                    placeholder="Your email" required>
                 </div>
                 
                 <div class="mb-3">
-                    <label for="place" class="form-label">
-                        Place you would like to visit:
-                    </label>
-                    
-                    
-                    <select class="form-select" id="place">
-                        <option selected>Choose a place</option>
-                        <option>Aktau</option>
-                        <option>Balkhash</option>
-                        <option>Almaty</option>
-                        <option>Burabay</option>
+                    <label for="place" class="form-label">Place you would like to visit:</label>
+                    <select class="form-select" id="place" required>
+                        <option value="" selected disabled>Choose a place</option>
+                        <option value="Aktau">Aktau</option>
+                        <option value="Balkhash">Balkhash</option>
+                        <option value="Almaty">Almaty</option>
+                        <option value="Burabay">Burabay</option>
                     </select>
-                
                 </div>
                 
                 <div class="mb-3">
                     <label for="message" class="form-label">Message:</label>
-                    
-                    <textarea class="form-control"
-                    id="message"
-                    rows="5"
-                    placeholder="Tell us what interests you..."></textarea>
+                    <textarea class="form-control" id="message" rows="5"
+                    placeholder="Tell us what interests you..." required minlength="10"></textarea>
                 </div>
                 
-                <div class="form-check mb-3">
-                    <input class="form-check-input"
-                    type="checkbox"
-                    id="updates">
-                    
-                    
-                    <label class="form-check-label" for="updates">
-                        I want to receive travel updates
-                    </label>
-                </div>
-                
-                <button type="submit" class="btn btn-success">
-                    Send
-                </button>
-            
+                <div id="contact-form-message" class="mb-3" role="status" aria-live="polite"></div>
+                <button type="submit" class="btn btn-success">Send</button>
             </form>
 
 
+
         </section>
+
+        
+
+        <section class="registration-section mb-5" id="registration">
+    <h2>Create an Account</h2>
+    <p>Join Sapar and get ready for your next adventure!</p>
+
+    <form id="registration-form" novalidate>
+        <div class="mb-3">
+            <label for="reg-name">Full Name</label>
+            <input type="text" id="reg-name"
+                   placeholder="Enter your full name">
+        </div>
+
+        <div class="mb-3">
+            <label for="reg-email">Email Address</label>
+            <input type="text" id="reg-email"
+                   placeholder="you@example.com">
+        </div>
+
+        <div class="mb-3">
+            <label for="reg-password">Password</label>
+            <input type="password" id="reg-password"
+                   placeholder="At least 8 characters">
+        </div>
+
+        <div class="mb-3">
+            <label for="reg-confirm-password">Confirm Password</label>
+            <input type="password" id="reg-confirm-password"
+                   placeholder="Repeat your password">
+        </div>
+
+        <div id="registration-message" role="status"
+             aria-live="polite"></div>
+
+        <button type="submit">Create Account</button>
+    </form>
+</section>
 
     </main>
 
@@ -444,6 +627,133 @@
   
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script> 
-</body>
+
+
+
+
+
+<script>
+const contactForm = document.getElementById("contact-form");
+const formMessage = document.getElementById("contact-form-message");
+
+contactForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const place = document.getElementById("place").value;
+    const message = document.getElementById("message").value.trim();
+
+    function showMessage(text, success = false) {
+        formMessage.textContent = (success ? "✓ " : "⚠ ") + text;
+        formMessage.style.color = success ? "#176b45" : "#a52b3a";
+        formMessage.style.background = success
+            ? "rgba(220, 250, 233, 0.8)"
+            : "rgba(255, 232, 235, 0.85)";
+        formMessage.style.border = success
+            ? "1px solid #8bd5aa"
+            : "1px solid #f0a5af";
+    }
+
+    if (!name || !email || !place || !message) {
+        showMessage("Please fill in all fields.");
+        return;
+    }
+
+    if (name.length < 2) {
+        showMessage("Name must contain at least 2 characters.");
+        return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        showMessage("Please enter a valid email address.");
+        return;
+    }
+
+    if (message.length < 10) {
+        showMessage("Message must contain at least 10 characters.");
+        return;
+    }
+
+    showMessage("Your message has been validated successfully!", true);
+    contactForm.reset();
+});
+</script>
+
+<script>
+const registrationForm = document.getElementById("registration-form");
+const registrationMessage = document.getElementById("registration-message");
+
+registrationForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const name = document.getElementById("reg-name").value.trim();
+    const email = document.getElementById("reg-email").value.trim();
+    const password = document.getElementById("reg-password").value;
+    const confirmPassword = document.getElementById("reg-confirm-password").value;
+
+    function showRegistrationMessage(text, success = false) {
+        registrationMessage.textContent =
+            (success ? "✓ " : "⚠ ") + text;
+
+        registrationMessage.style.color =
+            success ? "#176b45" : "#a52b3a";
+
+        registrationMessage.style.background = success
+            ? "rgba(220, 250, 233, 0.8)"
+            : "rgba(255, 232, 235, 0.85)";
+
+        registrationMessage.style.border = success
+            ? "1px solid #8bd5aa"
+            : "1px solid #f0a5af";
+    }
+
+    if (!name || !email || !password || !confirmPassword) {
+        showRegistrationMessage("Please fill in all fields.");
+        return;
+    }
+
+    if (name.length < 2) {
+        showRegistrationMessage("Name must contain at least 2 characters.");
+        return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        showRegistrationMessage("Please enter a valid email address.");
+        return;
+    }
+
+    if (password.length < 8) {
+        showRegistrationMessage("Password must contain at least 8 characters.");
+        return;
+    }
+    
+
+
+    if (!/\d/.test(password)) {
+        showRegistrationMessage("Password must contain at least one number.");
+        return;
+    }
+    if (!/[!@#$%^&*(),.?":{}|<>_\-+=]/.test(password)) {
+        showRegistrationMessage("Password must contain at least one special character (!@#$%).");
+        return;
+    }
+
+    if (password !== confirmPassword) {
+        showRegistrationMessage("Passwords do not match.");
+        return;
+    }
+
+    showRegistrationMessage(
+        "All fields are valid! Your registration form is complete.",
+        true
+    );
+
+    registrationForm.reset();
+});
+</script>
+
+
+
 </body>
 </html>
