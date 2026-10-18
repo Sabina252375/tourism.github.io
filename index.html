@@ -7,22 +7,21 @@
     <title>Sapar</title>
     <style>
         /* Main styles for the whole website */
-        body {
+     
+body {
     max-width: 1200px;
-
     font-size: larger;
     display: grid;
-
-    grid-template-columns: 220px 1fr;
-    grid-template-rows: auto 1fr auto;
-
+    grid-template-columns: 220px minmax(0, 1fr);
+    grid-template-rows: auto 1fr auto auto;
     grid-template-areas:
         "header header"
         "sidebar main"
+        "faq faq"
         "footer footer";
-
     gap: 30px;
 }
+
         p{
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
@@ -126,9 +125,179 @@ main {
 }
 
 
+.color-switcher {
+    text-align: center;
+    padding: 25px 20px;
+    margin: 20px 0;
+    background: #eef6fc;
+    border-radius: 15px;
+}
+
+.color-switcher h2 {
+    color: #234b68;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.color-switcher p {
+    font-size: 16px;
+    margin-bottom: 18px;
+}
+
+#changeColorBtn {
+    background: #2c6e9f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 22px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+#changeColorBtn:hover {
+    background: #234b68;
+}
+
+
+.faq-section {
+    grid-area: faq;
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    justify-self: center;
+    margin: 30px 0;
+    padding: 40px 24px;
+    box-sizing: border-box;
+}
+
+.faq-section h2 {
+    font-size: 34px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.faq-section > p {
+    text-align: center;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+.faq-item {
+    width: 100%;
+    margin-bottom: 14px;
+    border: 1px solid #d6e4f0;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 20px 22px;
+    border: none;
+    background: #eef6fc;
+    color: #234b68;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 600;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: background 0.2s ease;
+}
+
+.faq-question:hover,
+.faq-item.active .faq-question {
+    background: #dcecf8;
+}
+
+.faq-icon {
+    flex-shrink: 0;
+    font-size: 24px;
+    font-weight: 400;
+    color: #2c6e9f;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    transition: max-height 0.35s ease;
+}
+
+.faq-answer p {
+    padding: 18px 22px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #505a65;
+    background: #ffffff;
+}
+
+.faq-question:focus-visible {
+    outline: 3px solid #438ac0;
+    outline-offset: -3px;
+}
+
+
 footer {
     grid-area: footer;
+    display: block;
+    width: 100%;
+    padding: 20px 0;
+    margin-top: 30px;
+    box-sizing: border-box;
 }
+
+footer p {
+    margin: 0 0 16px;
+    font-size: 16px;
+    text-align: left;
+}
+
+footer p:last-child {
+    margin-bottom: 0;
+}
+
+
+@media (max-width: 600px) {
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+    .faq-section {
+        padding: 25px 12px;
+    }
+
+    .faq-section h2 {
+        font-size: 27px;
+    }
+
+    .faq-section > p {
+        font-size: 15px;
+    }
+
+    .faq-question {
+        padding: 16px;
+        font-size: 15px;
+    }
+
+    .faq-answer p {
+        padding: 15px 16px;
+    }
+}
+
+
 @media (max-width: 600px) {
     body {
         display: block;
@@ -293,7 +462,103 @@ footer {
                       </div>
             </div>
         </section>
+        <section class="color-switcher">
+    <h2>Customize Your Experience</h2>
+    <p>Choose a background color for the page.</p>
+    <button id="changeColorBtn" type="button">
+        Change Background Color
+    </button>
+</section>
+
      </main>
+
+
+
+
+<section class="faq-section my-5">
+    <h2 class="text-center mb-3">Frequently Asked Questions</h2>
+    <p class="text-center mb-4">
+        Have questions about travelling in Kazakhstan? We are here to help!
+    </p>
+
+    
+<div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+        What destinations can I explore with Sapar?
+        <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+        <p>Sapar helps you discover beautiful destinations in Kazakhstan,
+        including Almaty, Astana, Aktau, Burabay, and Lake Balkhash.
+        Each destination offers unique attractions and experiences.</p>
+    </div>
+</div>
+
+<div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+        When is the best time to travel around Kazakhstan?
+        <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+        <p>The best time depends on your destination and activities.
+        Spring and autumn are great for sightseeing, summer is ideal
+        for lakes and outdoor adventures, and winter is perfect for
+        enjoying snowy mountain resorts.</p>
+    </div>
+</div>
+
+<div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+        How can I choose the right destination for my trip?
+        <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+        <p>Think about the type of experience you want. Choose Almaty
+        for mountain adventures, Aktau for the Caspian Sea and unique
+        landscapes, Burabay for forests and lakes, or Balkhash for
+        a relaxing lakeside getaway.</p>
+    </div>
+</div>
+
+<div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+        What should I pack for a trip in Kazakhstan?
+        <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+        <p>Pack comfortable walking shoes, weather-appropriate clothing,
+        personal essentials, and sun protection. If you plan to visit
+        the mountains, bring extra warm layers.</p>
+    </div>
+</div>
+
+<div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+        Is Kazakhstan a good destination for outdoor activities?
+        <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+        <p>Yes! You can enjoy hiking, skiing, swimming, camping,
+        and sightseeing. Available activities depend on the destination
+        and season.</p>
+    </div>
+</div>
+
+<div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+        How can I plan my trip using the Sapar website?
+        <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+        <p>Explore the destination pages to learn about different places,
+        discover attractions, and choose the locations you want to visit.
+        Then plan your route, transportation, and accommodation
+        according to your preferences.</p>
+    </div>
+</div>
+</section>
+
+
      <footer class="mt-5 py-3">
         <p>©️ 2026 SAPAR — Kazakhstan Guides</p>
         <p>
@@ -303,5 +568,7 @@ footer {
         
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="accordion.js" defer></script>
+<script src="background-color.js" defer></script>
 </body>
 </html>
