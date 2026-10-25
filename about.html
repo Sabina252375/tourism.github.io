@@ -633,51 +633,64 @@
 
 
 <script>
+
 const contactForm = document.getElementById("contact-form");
 const formMessage = document.getElementById("contact-form-message");
 
-contactForm.addEventListener("submit", function (event) {
-    event.preventDefault();
+// Display a success or error message.
+function showMessage(text, success = false) {
+    formMessage.textContent = (success ? "✓ " : "⚠ ") + text;
+    formMessage.style.color = success ? "#176b45" : "#a52b3a";
+    formMessage.style.background = success
+        ? "rgba(220, 250, 233, 0.8)"
+        : "rgba(255, 232, 235, 0.85)";
+    formMessage.style.border = success
+        ? "1px solid #8bd5aa"
+        : "1px solid #f0a5af";
+}
 
+// Validate the form, then execute the callback.
+function validateContactForm(callback) {
     const name = document.getElementById("name").value.trim();
     const email = document.getElementById("email").value.trim();
     const place = document.getElementById("place").value;
     const message = document.getElementById("message").value.trim();
 
-    function showMessage(text, success = false) {
-        formMessage.textContent = (success ? "✓ " : "⚠ ") + text;
-        formMessage.style.color = success ? "#176b45" : "#a52b3a";
-        formMessage.style.background = success
-            ? "rgba(220, 250, 233, 0.8)"
-            : "rgba(255, 232, 235, 0.85)";
-        formMessage.style.border = success
-            ? "1px solid #8bd5aa"
-            : "1px solid #f0a5af";
-    }
-
     if (!name || !email || !place || !message) {
-        showMessage("Please fill in all fields.");
+        callback("Please fill in all fields.", false);
         return;
     }
 
     if (name.length < 2) {
-        showMessage("Name must contain at least 2 characters.");
+        callback("Name must contain at least 2 characters.", false);
         return;
     }
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        showMessage("Please enter a valid email address.");
+        callback("Please enter a valid email address.", false);
         return;
     }
 
     if (message.length < 10) {
-        showMessage("Message must contain at least 10 characters.");
+        callback("Message must contain at least 10 characters.", false);
         return;
     }
 
-    showMessage("Your message has been validated successfully!", true);
-    contactForm.reset();
+    callback("Your message has been validated successfully!", true);
+}
+
+contactForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    validateContactForm(function (message, success) {
+        showMessage(message, success);
+
+        if (success) {
+            contactForm.reset();
+        }
+    });
 });
+
 </script>
 
 <script>
@@ -723,6 +736,8 @@ registrationForm.addEventListener("submit", function (event) {
         return;
     }
 
+    
+  
     if (password.length < 8) {
         showRegistrationMessage("Password must contain at least 8 characters.");
         return;
@@ -750,6 +765,8 @@ registrationForm.addEventListener("submit", function (event) {
     );
 
     registrationForm.reset();
+
+    
 });
 </script>
 

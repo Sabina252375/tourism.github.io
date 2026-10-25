@@ -1,0 +1,3 @@
+const box = document.getElementById("box")
+box.document.style.backgroundColor="red"
+box.textContent="Zhanna"
