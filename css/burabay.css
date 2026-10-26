@@ -218,3 +218,14 @@ footer {
         margin-top: 50px;
     }
 }
+#readMoreBtn {
+    background: #216e9e;
+    color: white;
+    border: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#readMoreBtn:hover {
+    background: #185d88;
+    transform: translateY(-2px);
+}

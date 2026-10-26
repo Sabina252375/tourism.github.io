@@ -36,3 +36,17 @@ if (carousel) {
         burabayGallery.showCurrentPlace(event.to);
     });
 }
+
+
+const readMoreBtn = document.querySelector("#readMoreBtn");
+const moreText = document.querySelector("#moreText");
+
+if (readMoreBtn && moreText) {
+    readMoreBtn.addEventListener("click", function () {
+        moreText.hidden = !moreText.hidden;
+
+        readMoreBtn.textContent = moreText.hidden
+            ? "Read More"
+            : "Read Less";
+    });
+}
