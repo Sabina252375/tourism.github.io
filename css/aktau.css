@@ -1,0 +1,233 @@
+body{
+             max-width: 1200px;
+            
+            font-size: larger;
+            display: grid;
+            
+            grid-template-columns: 220px 1fr;
+            grid-template-rows: auto 1fr auto;
+            
+            grid-template-areas:
+            
+            "header header"
+            "sidebar main"
+            "footer footer";
+            
+            gap: 30px;
+        }
+
+        footer{
+    grid-area: footer;
+}
+
+        p{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+  #main-header {
+     grid-area: header;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+}
+.nav-menu { 
+    display: flex; 
+    gap: 20px; 
+} 
+ 
+.nav-menu a { 
+    text-decoration: none; 
+    color: black; 
+}
+.sidebar {
+    grid-area: sidebar;
+    background-color: #F0F8FC;
+    border-radius: 20px;
+    height: fit-content;
+}
+
+.sidebar a {
+    display: block;
+    text-decoration: none;
+    color: #2c6e49;
+}
+
+.sidebar a:hover {
+    color: #e76f51;
+}
+main {
+    grid-area: main;
+}
+
+
+
+/* Main Aktau picture */
+.main-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 40px;
+}
+
+
+/* Lists stay neat in the center */
+.attractions-list,
+section ol {
+    display: inline-block;
+    text-align: left;
+    line-height: 1.8;
+}
+
+
+
+
+.place-card {
+    border-radius: 15px;
+    background-color: #F0F8FC;
+}
+
+
+/* Place pictures */
+.place-image {
+    display: block;
+    width: 100%;
+    height: 280px;
+    object-fit: contain;
+    border-radius: 30px;
+}
+
+    
+#first {
+    border-radius: 40px;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+}@media (max-width: 600px) {
+    body {
+    display: block;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+    #main-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .sidebar {
+        margin-bottom: 30px;
+    }
+
+    #first {
+        min-height: 300px;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .main-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .cards-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .place-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .place-card {
+        width: 100%;
+    }
+
+    footer {
+        margin-top: 50px;
+    }
+}
+/* Task 1 - Responsive Typography */
+
+/* Desktop */
+h1 {
+    font-size: 55px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 26px;
+}
+
+p {
+    font-size: 18px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    h1 {
+        font-size: 45px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 17px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+.navbar-nav .nav-link:focus-visible,
+.nav-menu a:focus-visible {
+    outline: 3px solid #2c6e9f;
+    outline-offset: 3px;
+}
+
+
+.place-card {
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.place-card.card-animated {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.22);
+}
