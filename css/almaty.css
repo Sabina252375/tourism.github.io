@@ -255,3 +255,47 @@ footer {
     display: none;
     color: #2c6e49;
 }
+
+.music-player {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px auto 35px;
+    padding: 14px 20px;
+    max-width: 720px;
+    background: #f8f3ed;
+    border-radius: 18px;
+}
+
+.music-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.music-button {
+    border: none;
+    border-radius: 20px;
+    padding: 9px 16px;
+    background: #795548;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.music-button:hover {
+    background: #5d4037;
+}
+
+@media (max-width: 600px) {
+    .music-player {
+        margin: 16px 12px 28px;
+        padding: 12px;
+    }
+
+    .music-title {
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -16,3 +16,50 @@ function updateDateTime() {
 
 updateDateTime();
 setInterval(updateDateTime, 1000);
+
+const soundButtons = document.querySelectorAll(".sound-button");
+const seaWavesSound = document.getElementById("seaWavesSound");
+
+soundButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+        if (!seaWavesSound) return;
+
+        seaWavesSound.currentTime = 0;
+        seaWavesSound.play();
+    });
+});
+
+const activitySelect = document.getElementById("activitySelect");
+const activityInfo = document.getElementById("activityInfo");
+
+if (activitySelect && activityInfo) {
+    activitySelect.addEventListener("change", function () {
+        let message = "";
+
+        switch (activitySelect.value) {
+            case "swimming":
+                message = "Best time: Summer.";
+                break;
+
+            
+
+            case "fishing":
+                 message = "Fishing restriction: April 15 – June 1 in the western part of Lake Balkhash and the Ili River delta; April 25 – June 10 in the eastern part of the lake.";
+                 break;
+
+                 
+            case "beach":
+                message = "Best time: Evening.";
+                break;
+
+            case "photography":
+                message = "Best time: All year.";
+                break;
+
+            default:
+                message = "";
+        }
+
+        activityInfo.textContent = message;
+    });
+}
