@@ -78,7 +78,7 @@ $(document).ready(function () {
                 $(window).scrollTop() + $(window).height();
 
             // Load the image when it is close to the screen
-            if (scrollBottom > imageTop - 100) {
+            if (scrollBottom > imageTop - 500) {
 
                 // Restore the image source
                 image.attr("src", image.attr("data-src"));
