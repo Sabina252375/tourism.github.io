@@ -1,3 +1,5 @@
-const box = document.getElementById("box")
-box.document.style.backgroundColor="red"
-box.textContent="Zhanna"
+document.addEventListener("keydown",function(event){
+    if(event.key.toLowerCase() === "a"){
+        alert("A");
+    }
+})

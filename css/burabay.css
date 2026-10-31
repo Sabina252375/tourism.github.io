@@ -229,3 +229,18 @@ footer {
     background: #185d88;
     transform: translateY(-2px);
 }
+
+/* Task 9: Image Lazy Loading */
+
+/* Hide images before they are loaded */
+.lazy-image {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Show loaded images with a smooth animation */
+.image-loaded {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}

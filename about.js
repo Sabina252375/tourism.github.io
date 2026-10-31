@@ -44,63 +44,109 @@ function validateContactForm(callback) {
     callback("All fields are valid!", true);
 }
 
-// Handle contact form submission asynchronously.
-if (contactForm && formMessage) {
-    contactForm.addEventListener("submit", function (event) {
+// Task 6 and Task 7
+$(document).ready(function () {
+
+    $("#contact-form").on("submit", async function (event) {
+
         event.preventDefault();
 
-        validateContactForm(async function (message, success) {
+        const button = $(this).find("button[type='submit']");
+        const originalText = button.html();
+
+        // Validate form
+        validateContactForm(function (message, success) {
+
             if (!success) {
-                showMessage(formMessage, message, false);
-                return;
-            }
-
-            const formData = {
-                name: document.getElementById("name").value.trim(),
-                email: document.getElementById("email").value.trim(),
-                place: document.getElementById("place").value,
-                message: document.getElementById("message").value.trim()
-            };
-
-            try {
-                const response = await fetch(
-                    "https://jsonplaceholder.typicode.com/posts",
-                    {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify(formData)
-                    }
-                );
-
-                if (!response.ok) {
-                    throw new Error("Request failed");
-                }
-
-                const result = await response.json();
-
                 showMessage(
-                    formMessage,
-                    "Your message was sent successfully!",
-                    true
-                );
-
-                console.log("Server response:", result);
-                contactForm.reset();
-
-            } catch (error) {
-                showMessage(
-                    formMessage,
-                    "Failed to send the message. Please try again.",
+                    document.getElementById("contact-form-message"),
+                    message,
                     false
                 );
-
-                console.error("Error sending message:", error);
             }
+
         });
+
+        // Check if all fields are valid
+        const name = $("#name").val().trim();
+        const email = $("#email").val().trim();
+        const place = $("#place").val();
+        const message = $("#message").val().trim();
+
+        if (
+            !name ||
+            !email ||
+            !place ||
+            !message ||
+            name.length < 2 ||
+            !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ||
+            message.length < 10
+        ) {
+            return;
+        }
+
+        // Task 6: Show loading spinner
+        button.prop("disabled", true);
+
+        button.html(
+            '<span class="spinner"></span>Please wait...'
+        );
+
+        try {
+
+            const response = await fetch(
+                "https://jsonplaceholder.typicode.com/posts",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        place: place,
+                        message: message
+                    })
+                }
+            );
+
+            if (!response.ok) {
+                throw new Error("Request failed");
+            }
+
+            // Task 7: Show notification
+            $("#success-toast")
+                .addClass("show");
+
+            setTimeout(function () {
+                $("#success-toast")
+                    .removeClass("show");
+            }, 3000);
+
+            // Clear form
+            this.reset();
+
+        } catch (error) {
+
+            showMessage(
+                document.getElementById("contact-form-message"),
+                "Failed to send the message.",
+                false
+            );
+
+        } finally {
+
+            // Restore button
+            button.prop("disabled", false);
+            button.html(originalText);
+
+        }
+
     });
-}
+
+});
 
 
 // Registration form.
@@ -182,3 +228,6 @@ if (registrationForm && registrationMessage) {
         registrationForm.reset();
     });
 }
+
+
+
