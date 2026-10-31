@@ -74,3 +74,64 @@ if (almatySong && musicToggle && muteToggle) {
             musicToggle.textContent = "▶ Play";
         });
 }
+$(document).ready(function () {
+
+    $("#placeSearch").on("keyup", function () {
+
+        let value = $(this).val().toLowerCase();
+
+        $(".card").filter(function () {
+
+            let text = $(this).text().toLowerCase();
+
+            $(this).toggle(text.includes(value));
+
+        });
+
+    });
+
+});
+// Task 2: Autocomplete Search
+
+let places = [
+    "Medeu",
+    "Shymbulak",
+    "Kok Tobe",
+    "Kaskelen",
+    "Big Almaty Lake"
+];
+
+$("#placeSearch").on("input", function () {
+
+    let value = $(this).val().toLowerCase();
+
+    $("#suggestions").empty();
+
+    if (value === "") {
+        return;
+    }
+
+    let matches = places.filter(function (place) {
+        return place.toLowerCase().startsWith(value);
+    });
+
+    matches.forEach(function (place) {
+
+        $("#suggestions").append(
+            `<div class="suggestion">${place}</div>`
+        );
+
+    });
+
+});
+$("#suggestions").on("click", ".suggestion", function () {
+
+    let place = $(this).text();
+
+    $("#placeSearch").val(place);
+
+    $("#suggestions").empty();
+
+    $("#placeSearch").trigger("keyup");
+
+});

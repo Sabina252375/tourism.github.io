@@ -63,3 +63,36 @@ if (activitySelect && activityInfo) {
         activityInfo.textContent = message;
     });
 }
+
+$(document).ready(function () {
+
+    // Task 5: Animated Number Counter
+
+    $(".counter").each(function () {
+
+        let counter = $(this);
+
+        let target = Number(
+            counter.attr("data-target")
+        );
+
+        $({ number: 0 }).animate(
+            { number: target },
+            {
+                duration: 2000,
+
+                step: function () {
+                    counter.text(
+                        Math.floor(this.number)
+                    );
+                },
+
+                complete: function () {
+                    counter.text(target);
+                }
+            }
+        );
+
+    });
+
+});

@@ -222,3 +222,76 @@ footer {
     font-weight: bold;
     color: #2c6e49;
 }
+
+/* Task 5: Animated Number Counter */
+
+.tourism-stats {
+    text-align: center;
+    padding: 40px 20px;
+    margin: 40px 0;
+    background: linear-gradient(135deg, #e0f2fe, #caf0f8);
+    border-radius: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.tourism-stats h2 {
+    color: #005f8f;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.tourism-stats > p {
+    color: #52758a;
+    margin-bottom: 30px;
+}
+
+.stats-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    width: 100%;
+}
+
+.stat-card {
+    flex: 1;
+    min-width: 0;
+    background: white;
+    padding: 25px 15px;
+    border-radius: 18px;
+    box-shadow: 0 5px 15px rgba(0, 119, 182, 0.15);
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card h3 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #0077b6;
+}
+
+.stat-card p {
+    color: #52758a;
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+/* Responsive design */
+
+@media (max-width: 600px) {
+    .stats-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stat-card {
+        width: 100%;
+        max-width: 300px;
+    }
+}
