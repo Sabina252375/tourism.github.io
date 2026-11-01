@@ -169,6 +169,58 @@ main {
     margin-bottom: 30px;
 }
 
+.faq-search-box {
+    width: 90%;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+.faq-search-input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 18px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    background: #fff;
+}
+
+#faq-search {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 18px;
+}
+
+.search-icon {
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+#clear-search {
+    border: none;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#search-result-count {
+    margin-top: 10px;
+    color: #777;
+}
+
+.search-highlight {
+    background-color: #dcecf8;
+    color: #234b68;
+    font-weight: 600;
+    border-radius: 4px;
+    padding: 2px 3px;
+}
+
 .faq-item {
     width: 100%;
     margin-bottom: 14px;
@@ -251,32 +303,6 @@ footer p:last-child {
 }
 
 @media (max-width: 600px) {
-    footer {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .faq-section {
-        padding: 25px 12px;
-    }
-
-    .faq-section h2 {
-        font-size: 27px;
-    }
-
-    .faq-section > p {
-        font-size: 15px;
-    }
-
-    .faq-question {
-        padding: 16px;
-        font-size: 15px;
-    }
-
-    .faq-answer p {
-        padding: 15px 16px;
-    }
-
     body {
         display: block;
         padding: 0 20px;
@@ -317,7 +343,43 @@ footer p:last-child {
         height: 220px;
     }
 
+    .faq-section {
+        padding: 25px 12px;
+    }
+
+    .faq-section h2 {
+        font-size: 27px;
+    }
+
+    .faq-section > p {
+        font-size: 15px;
+    }
+
+    .faq-search-box {
+        width: 100%;
+    }
+
+    .faq-question {
+        padding: 16px;
+        font-size: 15px;
+    }
+
+    .faq-answer p {
+        padding: 15px 16px;
+    }
+
+
     footer {
         margin-top: 50px;
     }
+}
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 6px;
+    background: #2c6e9f;
+    z-index: 9999999;
+    transition: width 0.1s ease;
 }
