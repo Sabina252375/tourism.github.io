@@ -1,3 +1,8 @@
+
+/* ==============================
+   GENERAL LAYOUT
+============================== */
+
 body {
     width: 100%;
     max-width: 1200px;
@@ -14,6 +19,7 @@ body {
         "footer footer";
     gap: 30px;
 }
+
 p {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
         'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -42,11 +48,11 @@ p {
     display: block;
     margin-bottom: 15px;
     text-decoration: none;
-    color: #2c6e49;
+    color: #216e9e;
 }
 
 .sidebar a:hover {
-    color: #e76f51;
+    color: #398fc5;
 }
 
 main {
@@ -54,40 +60,97 @@ main {
     min-width: 0;
 }
 
-footer {
-    grid-area: footer;
-}
-
 .page-layout main {
     grid-area: main;
 }
 
-.lakes-section img {
-    border-radius: 40px;
+footer {
+    grid-area: footer;
 }
+
+/* ==============================
+   TOURISM CARDS
+============================== */
 
 .tourism-card {
     border-radius: 15px;
     background-color: #F0F8FC;
 }
 
+/* ==============================
+   LAKES SECTION
+============================== */
+
+.lakes-section img {
+    border-radius: 40px;
+}
+
 .lake {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    height: 100%;
     margin-bottom: 0;
+    padding: 15px;
+    background-color: #F0F8FC;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lake:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .lake-text {
     width: 100%;
 }
 
-.lake img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 30px;
+.lake-text h3 {
+    font-size: 20px;
+    color: #216e9e;
+    margin-bottom: 10px;
 }
+
+.lake img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.lake-description {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Copy Description Button */
+
+.lakes-section .copy-button {
+    background-color: #2c6e9f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.lakes-section .copy-button:hover {
+    background-color: #1d4f75;
+}
+
+.lakes-section .copy-message {
+    display: block;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* ==============================
+   HERO SECTION
+============================== */
 
 .hero-content h1 {
     font-size: 55px;
@@ -103,6 +166,10 @@ footer {
     background-size: cover;
     background-position: center;
 }
+
+/* ==============================
+   GALLERY
+============================== */
 
 .burabay-gallery {
     display: grid;
@@ -142,6 +209,10 @@ footer {
     opacity: 1;
 }
 
+/* ==============================
+   CAROUSEL
+============================== */
+
 #burabayCarousel {
     width: 100%;
     max-width: 900px;
@@ -164,17 +235,89 @@ footer {
     border-radius: 20px;
 }
 
-#burabayCarousel .carousel-control-prev-icon {
-    filter: invert(37%) sepia(20%) saturate(900%) hue-rotate(90deg);
-}
-
+#burabayCarousel .carousel-control-prev-icon,
 #burabayCarousel .carousel-control-next-icon {
     filter: invert(37%) sepia(20%) saturate(900%) hue-rotate(90deg);
 }
 
+/* ==============================
+   READ MORE BUTTON
+============================== */
+
+#readMoreBtn {
+    background: #216e9e;
+    color: white;
+    border: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#readMoreBtn:hover {
+    background: #185d88;
+    transform: translateY(-2px);
+}
+
+/* ==============================
+   TASK 9: IMAGE LAZY LOADING
+============================== */
+
+.lazy-image {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.image-loaded {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* ==============================
+   THINGS TO DO CARDS
+============================== */
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    min-width: 0;
+}
+
+.place-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    background-color: #F0F8FC;
+    padding: 20px;
+    transition: 0.3s;
+    min-width: 0;
+}
+
+.place-card h3 {
+    color: #216e9e;
+    font-weight: bold;
+}
+
+.place-card p {
+    color: #52758a;
+    margin-bottom: 0;
+}
+
+.place-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+============================== */
+
 @media (max-width: 900px) {
     .burabay-gallery {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -210,8 +353,16 @@ footer {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+
     #burabayCarousel .carousel-item {
         height: 300px;
+    }
+
+    .lake img {
+        height: 190px;
     }
 
     footer {
@@ -219,28 +370,16 @@ footer {
     }
 }
 #readMoreBtn {
-    background: #216e9e;
+    background-color: #2c6e9f;
     color: white;
     border: none;
-    transition: background 0.3s ease, transform 0.3s ease;
+    border-radius: 5px;
+    padding: 7px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 #readMoreBtn:hover {
-    background: #185d88;
-    transform: translateY(-2px);
-}
-
-/* Task 9: Image Lazy Loading */
-
-/* Hide images before they are loaded */
-.lazy-image {
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-/* Show loaded images with a smooth animation */
-.image-loaded {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    background-color: #1d4f75;
 }

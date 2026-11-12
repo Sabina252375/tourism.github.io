@@ -76,209 +76,327 @@
             <img src="imagesburabay/147.jpg" alt="Beautiful view of Burabay National Park" class="img-fluid rounded">
         </section>
         
-        <section id="welcome" class="mb-5 mt-lg-4 px-sm-2">
+        <section>
             <h2>Welcome to Burabay</h2>
             <p>
-                Burabay National Park is located in the Akmola Region
-                of Kazakhstan. It is famous for its beautiful lakes,
-                green forests, mountains and fresh air.
+                Burabay National Park is located in the Akmola Region of Kazakhstan.
+                It is famous for its beautiful lakes, green forests, mountains and fresh air.
             </p>
-            
-            <p id="moreText" hidden>
-                Burabay is often called the "Pearl of Kazakhstan"
-                because of its unique landscapes and peaceful atmosphere.
-                It is a popular destination for tourists and local people
-                who want to relax and enjoy nature.
-            </p>
-            <button id="readMoreBtn" type="button" class="btn btn-primary mt-2">
-                Read More
-            </button>
+        </section>
 
 
         </section>
-        
-        <section id="nature" class="mb-5"> 
-            <h2>Nature and Landscape</h2> 
-            <p>The main attractions of Burabay are its beautiful lakes, pine forests and impressive rock formations.</p>
-            <ul class="attractions-list"> 
-                <li>Beautiful lakes and clear water</li>
-                <li>Pine forests and fresh air</li> 
-                <li>Mountains and unusual rock formations</li> 
-                <li>Hiking and walking trails</li> 
-                <li>Beautiful views and photo opportunities</li> 
-            </ul> 
-        </section>
-        
-        <section id="things" class="mb-5">
-            <h2>Things to do</h2>
-            <p>Visitors can enjoy many activities in Burabay:</p>
-            <ol>
-                <li>Explore the lakes and surrounding nature, including Lake Burabay and Bolshoye Chebachye.</li>
-                <li>Go hiking in the mountains and forests and visit the Bolektau viewpoint.</li>
-                <li>Visit famous natural attractions such as Zhumbaktas Rock, Okzhetpes Rock and Kenesary Cave.</li>
-                <li>Explore the Imanov Waterfall and visit the Maral Farm.</li>
-                <li>Learn about the history and legends of Burabay at Abylai Khan Glade.</li>
-                <li>Enjoy beautiful views from the Ferris wheel and take photographs of the landscape.</li>
-                <li>Visit the Multimedia Complex and enjoy modern entertainment.</li>
-                <li>Have a picnic with friends or family and enjoy a peaceful weekend away from the city.</li>
-            </ol>
 
-            <!-- Carousel -->
-            <div id="burabayCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#burabayCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#burabayCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#burabayCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    <button type="button" data-bs-target="#burabayCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                    <button type="button" data-bs-target="#burabayCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                    <button type="button" data-bs-target="#burabayCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
-                    <button type="button" data-bs-target="#burabayCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
-                    <button type="button" data-bs-target="#burabayCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
-                    <button type="button" data-bs-target="#burabayCarousel" data-bs-slide-to="8" aria-label="Slide 9"></button>
-                    <button type="button" data-bs-target="#burabayCarousel" data-bs-slide-to="9" aria-label="Slide 10"></button>
+
+<section class="nature-section">
+    <h2>Why Visit Burabay?</h2>
+
+    <!-- Always visible text -->
+    <p>
+        Burabay is one of the most beautiful and popular tourist destinations
+        in Kazakhstan. Located in the Akmola Region, it is famous for its
+        stunning natural landscapes, crystal-clear lakes, green pine forests,
+        fresh air, mountains and impressive rock formations. The unique
+        combination of forests, lakes and mountains creates a peaceful
+        atmosphere and makes Burabay a perfect place to escape from the noise
+        and stress of city life.
+    </p>
+
+    <!-- Hidden text -->
+    <div class="collapse" id="burabayMore">
+
+        <p>
+            Burabay offers many opportunities for outdoor activities and
+            unforgettable experiences. Visitors can enjoy hiking along scenic
+            trails, walking through pine forests, swimming in the lakes, renting
+            boats and catamarans, or simply relaxing on the shore. Nature lovers
+            can explore unusual rock formations, discover hidden viewpoints
+            and take beautiful photographs of the surrounding landscapes.
+        </p>
+
+        <p>
+            The resort is also a wonderful destination for families and friends.
+            There are many places to enjoy picnics, spend time outdoors and
+            discover local attractions. Every season gives Burabay a different
+            atmosphere: summer is perfect for swimming and outdoor activities,
+            while autumn and winter offer beautiful scenery and peaceful
+            surroundings.
+        </p>
+
+        <p>
+            Whether you are looking for adventure, relaxation, beautiful views
+            or a weekend away from the city, Burabay has something for everyone.
+            Its natural beauty and variety of activities make it a destination
+            worth visiting.
+        </p>
+
+    </div>
+
+    <!-- Read More button -->
+    <button id="readMoreBtn"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#burabayMore"
+        aria-expanded="false"
+        aria-controls="burabayMore"
+        onclick="this.textContent = this.getAttribute('aria-expanded') === 'true' ? 'Read More' : 'Read Less'">
+        Read More
+    </button>
+</section>
+
+        
+        
+<section id="things" class="places-section mb-5">
+
+    <p class="section-label mb-3"></p>
+    <h2 class="mb-4">Things to Do in Burabay</h2>
+
+    <!-- Things to Do Cards -->
+    <div class="cards-container p-3">
+
+        <article class="place-card p-3">
+            <h3>Explore the Lakes</h3>
+            <p>Explore Lake Burabay and Bolshoye Chebachye and enjoy the beautiful surrounding nature.</p>
+        </article>
+
+        <article class="place-card p-3">
+            <h3>Hiking</h3>
+            <p>Go hiking in the mountains and forests and visit the Bolektau viewpoint.</p>
+        </article>
+
+        <article class="place-card p-3">
+            <h3>Visit Rock Formations</h3>
+            <p>Discover famous natural attractions such as Zhumbaktas Rock and Okzhetpes Rock.</p>
+        </article>
+
+        <article class="place-card p-3">
+            <h3>Discover Caves and Waterfalls</h3>
+            <p>Visit Kenesary Cave and explore the beautiful Imanov Waterfall.</p>
+        </article>
+
+        <article class="place-card p-3">
+            <h3>Visit Abylai Khan Glade</h3>
+            <p>Learn about the history and legends of Burabay at this famous place.</p>
+        </article>
+
+        <article class="place-card p-3">
+            <h3>Enjoy the Ferris Wheel</h3>
+            <p>Enjoy panoramic views of Burabay and take beautiful landscape photographs.</p>
+        </article>
+
+        <article class="place-card p-3">
+            <h3>Visit the Multimedia Complex</h3>
+            <p>Explore the multimedia complex and enjoy modern entertainment.</p>
+        </article>
+
+        <article class="place-card p-3">
+            <h3>Have a Picnic</h3>
+            <p>Spend a peaceful day with friends or family surrounded by forests and fresh air.</p>
+        </article>
+
+    </div>
+
+    <!-- Carousel -->
+    <div id="burabayCarousel" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#burabayCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#burabayCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#burabayCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#burabayCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#burabayCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#burabayCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+            <button type="button" data-bs-target="#burabayCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+            <button type="button" data-bs-target="#burabayCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+            <button type="button" data-bs-target="#burabayCarousel" data-bs-slide-to="8" aria-label="Slide 9"></button>
+            <button type="button" data-bs-target="#burabayCarousel" data-bs-slide-to="9" aria-label="Slide 10"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="imagesburabay/IMG_726.jpg" class="d-block w-100" alt="Big Chebachye Lake">
+            </div>
+            <div class="carousel-item">
+                <img src="imagesburabay/IMG_0724.jpg" class="d-block w-100" alt="Burabay View">
+            </div>
+            <div class="carousel-item">
+                <img src="imagesburabay/IMG_0721.jpg" class="d-block w-100" alt="Okzhetpes Rock">
+            </div>
+            <div class="carousel-item">
+                <img src="imagesburabay/IMG_0708.jpg" class="d-block w-100" alt="Kenesary Cave">
+            </div>
+            <div class="carousel-item">
+                <img src="imagesburabay/IMG_0707.jpg" class="d-block w-100" alt="Imanov Waterfall">
+            </div>
+            <div class="carousel-item">
+                <img src="imagesburabay/IMG_0722.jpg" class="d-block w-100" alt="Maral Farm">
+            </div>
+            <div class="carousel-item">
+                <img src="imagesburabay/IMG_8983 (2).jpg" class="d-block w-100" alt="Abylai Khan Glade">
+            </div>
+            <div class="carousel-item">
+                <img src="imagesburabay/IMG_727.jpg" class="d-block w-100" alt="Ferris Wheel">
+            </div>
+            <div class="carousel-item">
+                <img src="imagesburabay/IMG_0723.jpg" class="d-block w-100" alt="Multimedia Complex">
+            </div>
+            <div class="carousel-item">
+                <img src="imagesburabay/IMG_8978.jpg" class="d-block w-100" alt="Burabay Forest">
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#burabayCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#burabayCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+
+    </div>
+
+    <p id="currentPlace" class="text-center"></p>
+
+</section>
+
+        
+       
+<section id="lakes" class="lakes-section">
+
+    <h2>The Four Lakes of Burabay</h2>
+
+    <img src="imagesburabay/lakes.jpg"
+         alt="Lakes of Burabay"
+         class="img-fluid mb-4"
+         width="700"
+         height="400">
+
+    <div class="container">
+        <div class="row g-4">
+
+            <!-- Lake Borovoe -->
+            <div class="col-lg-6 col-md-6">
+                <div class="lake">
+
+                    <div class="lake-img">
+                        <img src="imagesburabay/blake.jpg"
+                             alt="Lake Borovoe"
+                             class="img-fluid">
+                    </div>
+
+                    <div class="lake-text">
+                        <h3>Lake Borovoe</h3>
+                        <p class="lake-description">
+                            Lake Borovoe is the most iconic and recognizable lake
+                            in Burabay. It is surrounded by pine forests, mountains,
+                            and rocky landscapes, with the famous Zhumbaktas Rock
+                            rising from the water. The lake covers about 10 km²
+                            and reaches a depth of around 7–8 meters.
+                            Its clear water and beautiful scenery make it one of
+                            the most photogenic places in the resort. In summer,
+                            visitors can rent boats and catamarans and sail
+                            directly to Zhumbaktas Rock.
+                        </p>
+
+                        <button class="copy-button" type="button">Copy description</button>
+                        <span class="copy-message"></span>
+                    </div>
+
                 </div>
-                
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="imagesburabay/IMG_726.jpg" class="d-block w-100" alt="Big Chebachye Lake">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="imagesburabay/IMG_0724.jpg" class="d-block w-100" alt="Burabay View">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="imagesburabay/IMG_0721.jpg" class="d-block w-100" alt="Okzhetpes Rock">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="imagesburabay/IMG_0708.jpg" class="d-block w-100" alt="Kenesary Cave">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="imagesburabay/IMG_0707.jpg" class="d-block w-100" alt="Imanov Waterfall">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="imagesburabay/IMG_0722.jpg" class="d-block w-100" alt="Maral Farm">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="imagesburabay/IMG_8983 (2).jpg" class="d-block w-100" alt="Abylai Khan Glade">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="imagesburabay/IMG_727.jpg" class="d-block w-100" alt="Ferris Wheel">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="imagesburabay/IMG_0723.jpg" class="d-block w-100" alt="Multimedia Complex">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="imagesburabay/IMG_8978.jpg" class="d-block w-100" alt="Burabay Forest">
-                    </div>
-                </div>
-                
-                <button class="carousel-control-prev" type="button" data-bs-target="#burabayCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                
-                <button class="carousel-control-next" type="button" data-bs-target="#burabayCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
 
-            <p id="currentPlace" class="text-center"></p>
-        </section>
-        
-        <section id="lakes" class="lakes-section">
-            <h2>The Four Lakes of Burabay</h2>
+            <!-- Big Chebachye Lake -->
+            <div class="col-lg-6 col-md-6">
+                <div class="lake">
 
-            <img src="imagesburabay/lakes.jpg" alt="Lakes of Burabay" class="img-fluid mb-4" width="700" height="400">
-
-            <div class="container">
-                <div class="row g-4">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="lake">
-                            <div class="lake-text">
-                                <h3>1. Lake Borovoe</h3>
-                                <p>
-                                    Lake Borovoe is the most iconic and recognizable lake
-                                    in Burabay. It is surrounded by pine forests, mountains,
-                                    and rocky landscapes, with the famous Zhumbaktas Rock
-                                    rising from the water. The lake covers about 10 km²
-                                    and reaches a depth of around 7–8 meters.
-                                    Its clear water and beautiful scenery make it one of
-                                    the most photogenic places in the resort. In summer,
-                                    visitors can rent boats and catamarans and sail
-                                    directly to Zhumbaktas Rock.
-                                </p>
-                            </div>
-                            <div class="lake-img">
-                                <img src="imagesburabay/blake.jpg" alt="Burabay lake" class="img-fluid">
-                            </div>
-                        </div>
+                    <div class="lake-img">
+                        <img src="imagesburabay/IMG_0706.JPG.jpg"
+                             alt="Big Chebachye Lake"
+                             class="img-fluid">
                     </div>
 
-                    <div class="col-lg-6 col-md-6">
-                        <div class="lake">
-                            <div class="lake-text">
-                                <h3>2. Big Chebachye Lake</h3>
-                                <p>
-                                    Big Chebachye is the largest lake in the Burabay area
-                                    and one of the most popular places for swimming and
-                                    recreation. Its area is about 21–24 km², while its
-                                    maximum depth reaches around 33–34 meters.
-                                    The lake is known for its clean, clear water,
-                                    sandy and pebbly shores, and beautiful mountain views.
-                                    Many recreation centers and beach facilities
-                                    are located nearby.
-                                </p>
-                            </div>
-                            <div class="lake-img">
-                                <img src="imagesburabay/IMG_0706.JPG.jpg" alt="Big Chebachye Lake" class="img-fluid">
-                            </div>
-                        </div>
+                    <div class="lake-text">
+                        <h3>Big Chebachye Lake</h3>
+                        <p class="lake-description">
+                            Big Chebachye is the largest lake in the Burabay area
+                            and one of the most popular places for swimming and
+                            recreation. Its area is about 21–24 km², while its
+                            maximum depth reaches around 33–34 meters.
+                            The lake is known for its clean, clear water,
+                            sandy and pebbly shores, and beautiful mountain views.
+                            Many recreation centers and beach facilities
+                            are located nearby.
+                        </p>
+
+                        <button class="copy-button" type="button">Copy description</button>
+                        <span class="copy-message"></span>
                     </div>
 
-                    <div class="col-lg-6 col-md-6">
-                        <div class="lake">
-                            <div class="lake-text">
-                                <h3>3. Small Chebachye Lake</h3>
-                                <p>
-                                    Small Chebachye is a peaceful lake surrounded by
-                                    forests and beautiful natural landscapes.
-                                    It is quieter than the larger lakes and is a good
-                                    place for visitors who want to enjoy nature and
-                                    relax away from crowded tourist areas.
-                                </p>
-                            </div>
-                            <div class="lake-img">
-                                <img src="imagesburabay/IMG_0719.jpg" alt="Lake Maybalyk">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6">
-                        <div class="lake">
-                            <div class="lake-text">
-                                <h3>4. Shchuchye lake</h3>
-                                <p>
-                                    Lake Shchuchye is a smaller natural lake located
-                                    in the Burabay area. It is surrounded by beautiful
-                                    landscapes and is known for its peaceful atmosphere.
-                                    The lake is suitable for visitors who enjoy quiet
-                                    places, nature walks, and scenic views.
-                                </p>
-                            </div>
-                            <div class="lake img">
-                                <img src="imagesburabay/IMG_0717.jpg" alt="Lake Maybalyk">
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
-        </section>
+
+            <!-- Small Chebachye Lake -->
+            <div class="col-lg-6 col-md-6">
+                <div class="lake">
+
+                    <div class="lake-img">
+                        <img src="imagesburabay/IMG_0719.jpg"
+                             alt="Small Chebachye Lake"
+                             class="img-fluid">
+                    </div>
+
+                    <div class="lake-text">
+                        <h3>Small Chebachye Lake</h3>
+                        <p class="lake-description">
+                            Small Chebachye is a peaceful lake surrounded by
+                            forests and beautiful natural landscapes.
+                            It is quieter than the larger lakes and is a good
+                            place for visitors who want to enjoy nature and
+                            relax away from crowded tourist areas.
+                        </p>
+
+                        <button class="copy-button" type="button">Copy description</button>
+                        <span class="copy-message"></span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Shchuchye Lake -->
+            <div class="col-lg-6 col-md-6">
+                <div class="lake">
+
+                    <div class="lake-img">
+                        <img src="imagesburabay/IMG_0717.jpg"
+                             alt="Shchuchye Lake"
+                             class="img-fluid">
+                    </div>
+
+                    <div class="lake-text">
+                        <h3>Shchuchye Lake</h3>
+                        <p class="lake-description">
+                            Lake Shchuchye is a smaller natural lake located
+                            in the Burabay area. It is surrounded by beautiful
+                            landscapes and is known for its peaceful atmosphere.
+                            The lake is suitable for visitors who enjoy quiet
+                            places, nature walks, and scenic views.
+                        </p>
+
+                        <button class="copy-button" type="button">Copy description</button>
+                        <span class="copy-message"></span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
         
-        <section class="mb-5"> 
-            <h2>Why Visit Burabay?</h2>
-            <p>Burabay is a great destination for people who love nature and outdoor activities. It offers beautiful scenery and many opportunities to spend time with friends and family.</p>
-            <p>Whether you want to hike, take photographs, explore nature or simply relax, Burabay has something for everyone.</p>
-        </section> 
+       
         
         <section id="accommodation" class="tourism-section mb-5">
             <h2>Accommodation, Food & Tourist Facilities</h2> 

@@ -1,228 +1,266 @@
-const contactForm = document.getElementById("contact-form");
-const formMessage = document.getElementById("contact-form-message");
+document.addEventListener("DOMContentLoaded", function () {
 
-// Display a success or error message.
-function showMessage(element, text, success = false) {
-    element.textContent = (success ? "✓ " : "⚠ ") + text;
 
-    element.style.color = success ? "#176b45" : "#a52b3a";
-    element.style.background = success
-        ? "rgba(220, 250, 233, 0.8)"
-        : "rgba(255, 232, 235, 0.85)";
-    element.style.border = success
-        ? "1px solid #8bd5aa"
-        : "1px solid #f0a5af";
-}
+    const contactForm = document.getElementById("contact-form");
 
-// Validate the contact form using a callback function.
-function validateContactForm(callback) {
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const place = document.getElementById("place").value;
-    const message = document.getElementById("message").value.trim();
+    if (contactForm) {
+        contactForm.addEventListener("submit", async function (event) {
+            event.preventDefault();
 
-    if (!name || !email || !place || !message) {
-        callback("Please fill in all fields.", false);
-        return;
-    }
+            const button = contactForm.querySelector('button[type="submit"]');
+            const originalText = button.innerHTML;
 
-    if (name.length < 2) {
-        callback("Name must contain at least 2 characters.", false);
-        return;
-    }
+            const name = contactForm.querySelector("#name")?.value.trim() || "";
+            const email = contactForm.querySelector("#email")?.value.trim() || "";
+            const message = contactForm.querySelector("#message")?.value.trim() || "";
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        callback("Please enter a valid email address.", false);
-        return;
-    }
-
-    if (message.length < 10) {
-        callback("Message must contain at least 10 characters.", false);
-        return;
-    }
-
-    callback("All fields are valid!", true);
-}
-
-// Task 6 and Task 7
-$(document).ready(function () {
-
-    $("#contact-form").on("submit", async function (event) {
-
-        event.preventDefault();
-
-        const button = $(this).find("button[type='submit']");
-        const originalText = button.html();
-
-        // Validate form
-        validateContactForm(function (message, success) {
-
-            if (!success) {
-                showMessage(
-                    document.getElementById("contact-form-message"),
-                    message,
-                    false
-                );
+            if (!name || !email || !message) {
+                alert("Please fill in all fields.");
+                return;
             }
 
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            try {
+                button.disabled = true;
+                button.innerHTML =
+                    '<span class="spinner"></span>Please wait...';
+
+                const response = await fetch(
+                    "https://jsonplaceholder.typicode.com/posts",
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            name: name,
+                            email: email,
+                            message: message
+                        })
+                    }
+                );
+
+                if (!response.ok) {
+                    throw new Error("Request failed");
+                }
+
+                contactForm.reset();
+                showToast("Your message has been sent successfully!");
+
+            } catch (error) {
+                alert("Something went wrong. Please try again.");
+            } finally {
+                button.disabled = false;
+                button.innerHTML = originalText;
+            }
         });
+    }
 
-        // Check if all fields are valid
-        const name = $("#name").val().trim();
-        const email = $("#email").val().trim();
-        const place = $("#place").val();
-        const message = $("#message").val().trim();
 
-        if (
-            !name ||
-            !email ||
-            !place ||
-            !message ||
-            name.length < 2 ||
-            !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ||
-            message.length < 10
-        ) {
-            return;
-        }
 
-        // Task 6: Show loading spinner
-        button.prop("disabled", true);
-        
-        button.html(
-            '<span class="spinner"></span>Please wait...'
-        );
+    // PERSONALIZED TRAVEL INQUIRY
+
+
+    const inquiryForm = document.getElementById("inquiry-form");
+    const guestMessage = document.getElementById("inquiry-guest");
+
+    if (inquiryForm && guestMessage) {
+
+        let currentUser = null;
 
         try {
-
-            const response = await fetch(
-                "https://jsonplaceholder.typicode.com/posts",
-                {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        name: name,
-                        email: email,
-                        place: place,
-                        message: message
-                    })
-                }
+            currentUser = JSON.parse(
+                localStorage.getItem("currentUser")
             );
+        } catch (error) {
+            currentUser = null;
+        }
 
-            if (!response.ok) {
-                throw new Error("Request failed");
+        // Show form only for logged-in users
+        if (currentUser) {
+            inquiryForm.hidden = false;
+            guestMessage.hidden = true;
+
+            document.getElementById("inquiry-name").value =
+                currentUser.name || "";
+
+            document.getElementById("inquiry-email").value =
+                currentUser.email || "";
+
+            document.getElementById("inquiry-phone").value =
+                currentUser.phone || "";
+
+        } else {
+            inquiryForm.hidden = true;
+            guestMessage.hidden = false;
+        }
+
+        inquiryForm.addEventListener("submit", async function (event) {
+            event.preventDefault();
+
+            const messageElement =
+                document.getElementById("inquiry-form-message");
+
+            const destination =
+                document.getElementById("inquiry-place").value;
+
+            const message =
+                document.getElementById("inquiry-message").value.trim();
+
+            const interests = Array.from(
+                inquiryForm.querySelectorAll(
+                    'input[type="checkbox"]:checked'
+                )
+            ).map(function (checkbox) {
+                return checkbox.value;
+            });
+
+            // Validation
+            if (!destination) {
+                messageElement.textContent =
+                    "Please choose a destination.";
+                messageElement.className = "text-danger mb-3";
+                return;
             }
 
-            // Task 7: Show notification
-            $("#success-toast")
-                .addClass("show");
+            if (interests.length === 0) {
+                messageElement.textContent =
+                    "Please select at least one interest.";
+                messageElement.className = "text-danger mb-3";
+                return;
+            }
 
-            setTimeout(function () {
-                $("#success-toast")
-                    .removeClass("show");
-            }, 3000);
+            if (message.length < 10) {
+                messageElement.textContent =
+                    "Your message must contain at least 10 characters.";
+                messageElement.className = "text-danger mb-3";
+                return;
+            }
 
-            // Clear form
-            this.reset();
+            // Check authentication again
+            let loggedInUser = null;
 
-        } catch (error) {
+            try {
+                loggedInUser = JSON.parse(
+                    localStorage.getItem("currentUser")
+                );
+            } catch (error) {
+                loggedInUser = null;
+            }
 
-            showMessage(
-                document.getElementById("contact-form-message"),
-                "Failed to send the message.",
-                false
-            );
+            if (!loggedInUser) {
+                inquiryForm.hidden = true;
+                guestMessage.hidden = false;
+                return;
+            }
 
-        } finally {
+            const submitButton =
+                inquiryForm.querySelector('button[type="submit"]');
 
-            // Restore button
-            button.prop("disabled", false);
-            button.html(originalText);
+            const originalButtonText = submitButton.innerHTML;
 
+            try {
+                // Task 6: Loading Spinner
+                submitButton.disabled = true;
+                submitButton.innerHTML =
+                    '<span class="spinner"></span>Sending inquiry...';
+
+                await new Promise(function (resolve) {
+                    setTimeout(resolve, 1000);
+                });
+
+                // Get existing requests
+                const requests = JSON.parse(
+                    localStorage.getItem("saparRequests") || "[]"
+                );
+
+                // Create new inquiry
+                const newRequest = {
+                    id: Date.now(),
+                    name: loggedInUser.name,
+                    email: loggedInUser.email,
+                    phone: loggedInUser.phone,
+                    destination: destination,
+                    interests: interests,
+                    message: message,
+                    date: new Date().toISOString(),
+                    status: "Pending"
+                };
+
+                requests.push(newRequest);
+
+                // Save inquiry
+                localStorage.setItem(
+                    "saparRequests",
+                    JSON.stringify(requests)
+                );
+
+                messageElement.textContent = "";
+                messageElement.className = "mb-3";
+
+                // Task 7: Toast Notification
+                showToast(
+                    "Your travel inquiry was sent successfully!"
+                );
+
+                inquiryForm.reset();
+
+                // Restore account information
+                document.getElementById("inquiry-name").value =
+                    loggedInUser.name || "";
+
+                document.getElementById("inquiry-email").value =
+                    loggedInUser.email || "";
+
+                document.getElementById("inquiry-phone").value =
+                    loggedInUser.phone || "";
+
+            } catch (error) {
+                messageElement.textContent =
+                    "Unable to send inquiry. Please try again.";
+
+                messageElement.className = "text-danger mb-3";
+
+            } finally {
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalButtonText;
+            }
+        });
+    }
+
+
+    // TOAST NOTIFICATION FUNCTION
+
+
+    function showToast(message) {
+
+        let toast = document.getElementById("sapar-toast");
+
+        if (!toast) {
+            toast = document.createElement("div");
+            toast.id = "sapar-toast";
+            toast.className = "success-toast";
+
+            toast.innerHTML = `
+                <span>✓</span>
+                <span id="sapar-toast-message"></span>
+            `;
+
+            document.body.appendChild(toast);
         }
 
-    });
+        document.getElementById("sapar-toast-message").textContent =
+            message;
+
+        toast.classList.add("show");
+
+        setTimeout(function () {
+            toast.classList.remove("show");
+        }, 3000);
+    }
 
 });
-
-
-// Registration form.
-const registrationForm = document.getElementById("registration-form");
-const registrationMessage = document.getElementById("registration-message");
-
-if (registrationForm && registrationMessage) {
-    registrationForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        const name = document.getElementById("reg-name").value.trim();
-        const email = document.getElementById("reg-email").value.trim();
-        const password = document.getElementById("reg-password").value;
-        const confirmPassword =
-            document.getElementById("reg-confirm-password").value;
-
-        if (!name || !email || !password || !confirmPassword) {
-            showMessage(
-                registrationMessage,
-                "Please fill in all fields."
-            );
-            return;
-        }
-
-        if (name.length < 2) {
-            showMessage(
-                registrationMessage,
-                "Name must contain at least 2 characters."
-            );
-            return;
-        }
-
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-            showMessage(
-                registrationMessage,
-                "Please enter a valid email address."
-            );
-            return;
-        }
-
-        if (password.length < 8) {
-            showMessage(
-                registrationMessage,
-                "Password must contain at least 8 characters."
-            );
-            return;
-        }
-
-        if (!/\d/.test(password)) {
-            showMessage(
-                registrationMessage,
-                "Password must contain at least one number."
-            );
-            return;
-        }
-
-        if (!/[!@#$%^&*(),.?":{}|<>_\-+=]/.test(password)) {
-            showMessage(
-                registrationMessage,
-                "Password must contain at least one special character."
-            );
-            return;
-        }
-
-        if (password !== confirmPassword) {
-            showMessage(
-                registrationMessage,
-                "Passwords do not match."
-            );
-            return;
-        }
-
-        showMessage(
-            registrationMessage,
-            "All fields are valid! Your registration form is complete.",
-            true
-        );
-
-        registrationForm.reset();
-    });
-}

@@ -100,3 +100,22 @@ $(document).ready(function () {
     $(window).on("scroll", lazyLoadImages);
 
 });
+
+/* Copy lake descriptions */
+
+document.querySelectorAll("#lakes .copy-button").forEach((button) => {
+    button.addEventListener("click", async function () {
+        const card = this.closest(".lake");
+        const description = card.querySelector(".lake-description");
+        const message = card.querySelector(".copy-message");
+
+        try {
+            await navigator.clipboard.writeText(description.textContent.trim());
+            message.textContent = "Copied to clipboard!";
+            message.style.color = "green";
+        } catch (error) {
+            message.textContent = "Copy failed!";
+            message.style.color = "red";
+        }
+    });
+});

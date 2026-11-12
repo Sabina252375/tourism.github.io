@@ -389,3 +389,271 @@ td {
     opacity: 1;
     visibility: visible;
 }
+
+/* Loading Spinner */
+.spinner {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    margin-right: 9px;
+    vertical-align: middle;
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: inquiry-spin 0.7s linear infinite;
+}
+
+@keyframes inquiry-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Inquiry Toast Notification */
+.success-toast {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 22px;
+    background: #eaf8ef;
+    color: #167344;
+    border: 1px solid #b7e4c7;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-15px);
+    transition: 0.3s ease;
+}
+
+.success-toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+    .success-toast {
+        left: 15px;
+        right: 15px;
+        top: 15px;
+    }
+}
+
+/* ==========================================
+   SAPAR - BLUE PERSONALIZED TRAVEL INQUIRY
+========================================== */
+
+#contact {
+    position: relative;
+    overflow: hidden;
+    max-width: 950px;
+    margin: 60px auto !important;
+    padding: 45px !important;
+    background: linear-gradient(145deg, #ffffff, #eff8ff);
+    border: 1px solid #d5eafa;
+    border-radius: 24px;
+    box-shadow: 0 12px 35px rgba(54, 130, 180, 0.10);
+}
+
+/* Decorative top line */
+#contact::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, #56a9dc, #a8d9f5);
+}
+
+#contact h2 {
+    color: #2878aa;
+    font-size: 30px;
+    font-weight: 750;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+#contact > p {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    color: #6b8293;
+    text-align: center;
+    line-height: 1.7;
+}
+
+/* Form card */
+#inquiry-form {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 28px;
+    background: #ffffff;
+    border: 1px solid #e0edf6;
+    border-radius: 18px;
+}
+
+#inquiry-form h4 {
+    color: #2878aa;
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Labels */
+#inquiry-form .form-label {
+    color: #405e73;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+/* Inputs and select */
+#inquiry-form .form-control,
+#inquiry-form .form-select {
+    min-height: 48px;
+    padding: 12px 15px;
+    border: 1px solid #d7e8f4;
+    border-radius: 10px;
+    background-color: #fafdff;
+    transition: all 0.25s ease;
+}
+
+#inquiry-form textarea.form-control {
+    min-height: 130px;
+    resize: vertical;
+}
+
+#inquiry-form .form-control:focus,
+#inquiry-form .form-select:focus {
+    border-color: #65b3e2;
+    box-shadow: 0 0 0 4px rgba(86, 169, 220, 0.13);
+    background-color: #ffffff;
+}
+
+/* Account information */
+#inquiry-form input[readonly] {
+    background: #edf7fd;
+    color: #54768d;
+    border-color: #dcecf7;
+}
+
+/* Interest options */
+#inquiry-form .form-check {
+    padding: 12px 15px 12px 38px;
+    margin-bottom: 9px;
+    background: #f5faff;
+    border: 1px solid #e0edf6;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+#inquiry-form .form-check:hover {
+    background: #eaf6ff;
+    border-color: #a8d5ef;
+}
+
+#inquiry-form .form-check-input {
+    cursor: pointer;
+}
+
+#inquiry-form .form-check-input:checked {
+    background-color: #56a9dc;
+    border-color: #56a9dc;
+}
+
+#inquiry-form .form-check-label {
+    color: #49677d;
+    cursor: pointer;
+}
+
+/* Main button */
+#inquiry-form button[type="submit"] {
+    display: block;
+    width: 100%;
+    min-height: 52px;
+    margin-top: 25px;
+    padding: 13px 22px;
+    color: #ffffff;
+    background: #56a9dc;
+    border: 1px solid #56a9dc;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 650;
+    letter-spacing: 0.3px;
+    box-shadow: 0 5px 13px rgba(86, 169, 220, 0.20);
+    transition: all 0.25s ease;
+}
+
+#inquiry-form button[type="submit"]:hover {
+    background: #398fc5;
+    border-color: #398fc5;
+    box-shadow: 0 8px 18px rgba(86, 169, 220, 0.28);
+    transform: translateY(-2px);
+}
+
+#inquiry-form button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+#inquiry-form button[type="submit"]:disabled {
+    opacity: 0.75;
+    cursor: wait;
+    transform: none;
+}
+
+/* Guest message */
+#inquiry-guest {
+    padding: 30px;
+    background: #f5faff;
+    border: 1px solid #dcecf7;
+    border-radius: 16px;
+    text-align: center;
+}
+
+#inquiry-guest p {
+    color: #54768d;
+    margin-bottom: 18px;
+}
+
+#inquiry-guest .btn {
+    background: #56a9dc;
+    border-color: #56a9dc;
+    border-radius: 9px;
+    padding: 11px 25px;
+    font-weight: 600;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    #contact {
+        margin: 35px 15px !important;
+        padding: 30px 18px !important;
+    }
+
+    #contact h2 {
+        font-size: 25px;
+    }
+
+    #inquiry-form {
+        padding: 20px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    #contact {
+        padding: 25px 13px !important;
+        border-radius: 16px;
+    }
+
+    #contact h2 {
+        font-size: 22px;
+    }
+
+    #inquiry-form {
+        padding: 16px 12px;
+    }
+}
