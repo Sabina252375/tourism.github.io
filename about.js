@@ -87,7 +87,7 @@ $(document).ready(function () {
 
         // Task 6: Show loading spinner
         button.prop("disabled", true);
-
+        
         button.html(
             '<span class="spinner"></span>Please wait...'
         );
@@ -98,11 +98,9 @@ $(document).ready(function () {
                 "https://jsonplaceholder.typicode.com/posts",
                 {
                     method: "POST",
-
                     headers: {
                         "Content-Type": "application/json"
                     },
-
                     body: JSON.stringify({
                         name: name,
                         email: email,
@@ -228,6 +226,3 @@ if (registrationForm && registrationMessage) {
         registrationForm.reset();
     });
 }
-
-
-
