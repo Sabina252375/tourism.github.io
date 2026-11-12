@@ -382,3 +382,39 @@ footer {
     box-shadow: 0 0 0 4px rgba(0, 119, 182, 0.2);
     outline: none;
 }
+/* Profile Icon in Navbar */
+
+.profile-nav-link {
+    font-size: 25px;
+    color: #e78fb3 !important;
+    transition: all 0.3s ease;
+}
+
+.profile-nav-link:hover {
+    color: #d45d91 !important;
+    transform: scale(1.15);
+}
+/* Favorite buttons */
+
+.favorite-btn {
+    border: none;
+    background: transparent;
+    color: #8a9ba8;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.favorite-btn:hover {
+    color: #e76f8a;
+    transform: scale(1.2);
+}
+
+.favorite-btn.active {
+    color: #e76f8a;
+}
+
+.favorite-btn.active i::before {
+    content: "\f415";
+}

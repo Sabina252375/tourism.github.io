@@ -135,3 +135,48 @@ $("#suggestions").on("click", ".suggestion", function () {
     $("#placeSearch").trigger("keyup");
 
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".favorite-btn");
+
+    let favorites = JSON.parse(localStorage.getItem("favoriteDestinations")) || [];
+
+    // Convert old saved favorites into objects
+    favorites = favorites.map(item =>
+        typeof item === "string" ? { name: item, image: "" } : item
+    );
+
+    function saveFavorites() {
+        localStorage.setItem("favoriteDestinations", JSON.stringify(favorites));
+    }
+
+    buttons.forEach(button => {
+        const place = button.dataset.place;
+        const image = button.closest(".card").querySelector("img").getAttribute("src");
+        const icon = button.querySelector("i");
+
+        if (favorites.some(item => item.name === place)) {
+            button.classList.add("active");
+            icon.className = "bi bi-heart-fill";
+        }
+
+        button.addEventListener("click", function () {
+            const index = favorites.findIndex(item => item.name === place);
+
+            if (index !== -1) {
+                favorites.splice(index, 1);
+                button.classList.remove("active");
+                icon.className = "bi bi-heart";
+            } else {
+                favorites.push({ name: place, image: image });
+                button.classList.add("active");
+                icon.className = "bi bi-heart-fill";
+            }
+
+            saveFavorites();
+        });
+    });
+
+    saveFavorites();
+});
