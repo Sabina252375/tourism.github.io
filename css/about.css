@@ -389,6 +389,7 @@ td {
     opacity: 1;
     visibility: visible;
 }
+<<<<<<< HEAD
 
 /* Loading Spinner */
 .spinner {
@@ -657,3 +658,15 @@ td {
         padding: 16px 12px;
     }
 }
+=======
+.profile-nav-link {
+    font-size: 25px;
+    color: #e78fb3 !important;
+    transition: all 0.3s ease;
+}
+
+.profile-nav-link:hover {
+    color: #d45d91 !important;
+    transform: scale(1.15);
+}
+>>>>>>> 43376ae41118189966ecbc4cab0eafdbc72ed48f
