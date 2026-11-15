@@ -1,0 +1,352 @@
+
+
+/* LIGHT MODE */
+:root {
+    --page-bg: #f4f8fc;
+    --card-bg: #ffffff;
+    --inner-bg: #eaf3fa;
+    --text: #354b5e;
+    --heading: #176b9b;
+    --muted: #647b8d;
+    --border: #d7e5ef;
+    --accent: #287eae;
+}
+
+/* DARK MODE */
+html[data-theme="dark"] {
+    color-scheme: dark;
+
+    --page-bg: #101b29;
+    --card-bg: #1b2a3a;
+    --inner-bg: #24374a;
+    --text: #dce7f0;
+    --heading: #91d5fa;
+    --muted: #b2c2d0;
+    --border: #344b60;
+    --accent: #75c5ef;
+}
+
+/* 1. ALL PAGES */
+
+html[data-theme="dark"],
+html[data-theme="dark"] body {
+    background: var(--page-bg) !important;
+    color: var(--text) !important;
+}
+
+html[data-theme="dark"] body {
+    transition: background .25s ease, color .25s ease;
+}
+
+html[data-theme="dark"] p,
+html[data-theme="dark"] li,
+html[data-theme="dark"] label,
+html[data-theme="dark"] td,
+html[data-theme="dark"] th,
+html[data-theme="dark"] span {
+    color: var(--text);
+}
+
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h5,
+html[data-theme="dark"] h6 {
+    color: var(--heading);
+}
+
+/* 2. HEADER AND NAVIGATION */
+
+html[data-theme="dark"] #main-header,
+html[data-theme="dark"] .profile-header {
+    background: var(--card-bg) !important;
+    border-color: var(--border) !important;
+}
+
+html[data-theme="dark"] .navbar,
+html[data-theme="dark"] .navbar.bg-light {
+    background: var(--card-bg) !important;
+}
+
+html[data-theme="dark"] .navbar .nav-link,
+html[data-theme="dark"] .profile-header nav a,
+html[data-theme="dark"] #main-header nav a {
+    color: var(--text) !important;
+}
+
+html[data-theme="dark"] .navbar .nav-link:hover,
+html[data-theme="dark"] .profile-header nav a:hover {
+    color: var(--accent) !important;
+}
+
+html[data-theme="dark"] .logo {
+    color: var(--heading) !important;
+}
+
+/* 3. SIDEBAR */
+
+html[data-theme="dark"] .sidebar {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border);
+}
+
+html[data-theme="dark"] .sidebar a {
+    color: var(--accent) !important;
+}
+
+/* 4. HOME PAGE */
+
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .card-body,
+html[data-theme="dark"] .color-switcher,
+html[data-theme="dark"] .faq-section,
+html[data-theme="dark"] .faq-item {
+    background: var(--card-bg) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+html[data-theme="dark"] .faq-question {
+    background: var(--inner-bg) !important;
+    color: var(--heading) !important;
+}
+
+html[data-theme="dark"] .faq-answer,
+html[data-theme="dark"] .faq-answer p {
+    background: var(--card-bg) !important;
+    color: var(--text) !important;
+}
+
+html[data-theme="dark"] .faq-search-input {
+    background: var(--inner-bg) !important;
+    border-color: var(--border) !important;
+}
+
+/* 5. ALMATY AND AKTAU */
+
+html[data-theme="dark"] .place-card,
+html[data-theme="dark"] .activity-box,
+html[data-theme="dark"] .info-box,
+html[data-theme="dark"] .ready-section,
+html[data-theme="dark"] .trip-modal-content,
+html[data-theme="dark"] .music-player,
+html[data-theme="dark"] .search-section,
+html[data-theme="dark"] #suggestions,
+html[data-theme="dark"] .suggestion {
+    background: var(--card-bg) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+html[data-theme="dark"] .search-title,
+html[data-theme="dark"] .trip-modal-content h2 {
+    color: var(--heading) !important;
+}
+
+html[data-theme="dark"] .search-description,
+html[data-theme="dark"] .music-title {
+    color: var(--muted) !important;
+}
+
+html[data-theme="dark"] .suggestion {
+    color: var(--text) !important;
+}
+
+/* 6. BALKHASH */
+
+html[data-theme="dark"] .tourism-stats,
+html[data-theme="dark"] .stat-card,
+html[data-theme="dark"] #dateTimeSection {
+    background: var(--card-bg) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+html[data-theme="dark"] .stat-card h3,
+html[data-theme="dark"] #currentDateTime {
+    color: var(--heading) !important;
+}
+
+html[data-theme="dark"] .table-section th {
+    background: var(--inner-bg) !important;
+    color: var(--heading) !important;
+}
+
+/* 7. BURABAY */
+
+html[data-theme="dark"] .tourism-card,
+html[data-theme="dark"] .lake,
+html[data-theme="dark"] .lake-text,
+html[data-theme="dark"] .place-card {
+    background: var(--card-bg) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+html[data-theme="dark"] .lake-text h3,
+html[data-theme="dark"] .place-card h3 {
+    color: var(--heading) !important;
+}
+
+html[data-theme="dark"] .lake-description,
+html[data-theme="dark"] .place-card p {
+    color: var(--text) !important;
+    opacity: 1 !important;
+}
+
+html[data-theme="dark"] #burabayCarousel,
+html[data-theme="dark"] #burabayCarousel .carousel-item {
+    background: var(--card-bg) !important;
+}
+
+/* 8. ABOUT US */
+
+html[data-theme="dark"] .contacts,
+html[data-theme="dark"] #contact,
+html[data-theme="dark"] #inquiry-form,
+html[data-theme="dark"] .registration-section,
+html[data-theme="dark"] #inquiry-guest {
+    background: var(--card-bg) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+html[data-theme="dark"] #inquiry-form .form-label,
+html[data-theme="dark"] #contact-form label,
+html[data-theme="dark"] #registration-form label {
+    color: var(--text) !important;
+}
+
+html[data-theme="dark"] #inquiry-form .form-check,
+html[data-theme="dark"] #inquiry-form .form-control,
+html[data-theme="dark"] #inquiry-form .form-select {
+    background: var(--inner-bg) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+/* 9. PROFILE */
+
+html[data-theme="dark"] .profile-card,
+html[data-theme="dark"] .profile-info,
+html[data-theme="dark"] .favorites-section,
+html[data-theme="dark"] .favorite-item,
+html[data-theme="dark"] .favorite-card,
+html[data-theme="dark"] .edit-form {
+    background: var(--card-bg) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+html[data-theme="dark"] .info-item p,
+html[data-theme="dark"] .favorite-card-info p {
+    color: var(--text) !important;
+}
+
+/* 10. LOGIN */
+
+html[data-theme="dark"] .auth-card,
+html[data-theme="dark"] .auth-tabs {
+    background: var(--card-bg) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+html[data-theme="dark"] .tab-btn {
+    color: var(--text) !important;
+}
+
+html[data-theme="dark"] .tab-btn.active {
+    background: #176b9b !important;
+    color: #ffffff !important;
+}
+
+html[data-theme="dark"] .auth-heading p,
+html[data-theme="dark"] .switch-text {
+    color: var(--muted) !important;
+}
+
+/* 11. ALL INPUTS */
+
+html[data-theme="dark"] input,
+html[data-theme="dark"] textarea,
+html[data-theme="dark"] select,
+html[data-theme="dark"] .form-control,
+html[data-theme="dark"] .form-select {
+    background: var(--inner-bg) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+html[data-theme="dark"] input::placeholder,
+html[data-theme="dark"] textarea::placeholder {
+    color: var(--muted) !important;
+}
+
+/* 12. LINKS */
+
+html[data-theme="dark"] a {
+    color: var(--accent);
+}
+
+/* 13. FOOTER */
+
+html[data-theme="dark"] footer {
+    background: var(--card-bg) !important;
+    color: var(--muted) !important;
+    border-color: var(--border) !important;
+}
+
+/* 14. THEME BUTTON */
+
+#theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    padding: 8px 15px;
+    margin-left: 12px;
+
+    border: 1px solid #c7dce9;
+    border-radius: 25px;
+
+    background: #eaf4fa;
+    color: #176b9b;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: all .25s ease;
+}
+
+#theme-toggle:hover {
+    background: #d8ebf7;
+    transform: translateY(-1px);
+}
+
+html[data-theme="dark"] #theme-toggle {
+    background: #293f54;
+    color: #b9e4ff;
+    border-color: #49647b;
+}
+
+html[data-theme="dark"] #theme-toggle:hover {
+    background: #35536c;
+}
+
+/* 15. IMAGES */
+
+html[data-theme="dark"] img {
+    filter: none !important;
+}
+
+/* 16. MOBILE */
+
+@media (max-width: 991px) {
+    #theme-toggle {
+        margin: 10px 0;
+    }
+}
