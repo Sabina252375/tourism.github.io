@@ -1,21 +1,5 @@
-function updateDateTime() {
-    const now = new Date();
 
-    const formattedDateTime = now.toLocaleString("en-US", {
-        month: "long",
-        day: "numeric",
-        year: "numeric",
-        hour: "numeric",
-        minute: "2-digit",
-        second: "2-digit",
-        hour12: true
-    });
-
-    document.getElementById("currentDateTime").textContent = formattedDateTime;
-}
-
-updateDateTime();
-setInterval(updateDateTime, 1000);
+// Sound Effects — Sea Waves
 
 const soundButtons = document.querySelectorAll(".sound-button");
 const seaWavesSound = document.getElementById("seaWavesSound");
@@ -25,10 +9,12 @@ soundButtons.forEach(function (button) {
         if (!seaWavesSound) return;
 
         seaWavesSound.currentTime = 0;
-        seaWavesSound.play();
+
+        seaWavesSound.play().catch(function (error) {
+            console.log("Sound playback error:", error);
+        });
     });
 });
-
 const activitySelect = document.getElementById("activitySelect");
 const activityInfo = document.getElementById("activityInfo");
 
@@ -95,4 +81,69 @@ $(document).ready(function () {
 
     });
 
+});
+// Favorite Destinations
+document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".favorite-btn");
+
+    let favorites = JSON.parse(
+        localStorage.getItem("favoriteDestinations")
+    ) || [];
+
+    favorites = favorites.map(item =>
+        typeof item === "string"
+            ? { name: item, image: "" }
+            : item
+    );
+
+    function saveFavorites() {
+        localStorage.setItem(
+            "favoriteDestinations",
+            JSON.stringify(favorites)
+        );
+    }
+
+    buttons.forEach(button => {
+        const place = button.dataset.place;
+        const card = button.closest(".place-card, .card");
+        const imageElement = card ? card.querySelector("img") : null;
+        const image = imageElement
+            ? imageElement.getAttribute("src")
+            : "";
+
+        const icon = button.querySelector("i");
+
+        const isFavorite = favorites.some(
+            item => item.name === place
+        );
+
+        if (isFavorite) {
+            button.classList.add("active");
+            if (icon) icon.className = "bi bi-heart-fill";
+        }
+
+        button.addEventListener("click", function (event) {
+            event.stopPropagation();
+
+            const index = favorites.findIndex(
+                item => item.name === place
+            );
+
+            if (index !== -1) {
+                favorites.splice(index, 1);
+                button.classList.remove("active");
+                if (icon) icon.className = "bi bi-heart";
+            } else {
+                favorites.push({
+                    name: place,
+                    image: image
+                });
+
+                button.classList.add("active");
+                if (icon) icon.className = "bi bi-heart-fill";
+            }
+
+            saveFavorites();
+        });
+    });
 });

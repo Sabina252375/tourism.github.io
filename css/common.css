@@ -1,0 +1,227 @@
+/* ================================
+   SAPAR — COMMON STYLES
+================================ */
+
+/* Global settings */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+
+    gap: 30px;
+
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular',
+        'Lucida Grande', 'Lucida Sans Unicode',
+        Geneva, Verdana, sans-serif;
+}
+
+
+/* =================================
+   HEADER — ALL SAPAR PAGES
+================================= */
+
+#main-header {
+    grid-area: header;
+    width: 100%;
+    min-height: 90px;
+    padding: 15px 0;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+#main-header .logo {
+    margin: 0;
+    padding: 0;
+
+    color: #212529;
+    font-size: 32px;
+    font-weight: 700;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+#main-header .navbar {
+    padding: 0;
+    margin-left: auto;
+    background: transparent !important;
+}
+
+#main-header .navbar .container-fluid {
+    padding: 0;
+    background: transparent;
+}
+
+#main-header .navbar-collapse {
+    background: transparent;
+}
+
+#main-header .navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#main-header .nav-link {
+    color: #333333;
+    font-size: 17px;
+    font-weight: 500;
+    transition: color 0.25s ease;
+}
+
+#main-header .nav-link:hover {
+    color: #2c6e49;
+}
+
+#main-header .nav-link.active {
+    color: #2c6e49;
+    font-weight: 700;
+}
+
+#main-header .profile-nav-link {
+    color: #e78fb3 !important;
+    font-size: 25px;
+}
+
+#main-header .profile-nav-link:hover {
+    color: #d45d91 !important;
+    transform: scale(1.1);
+}
+
+/* Mobile navigation */
+@media (max-width: 768px) {
+    #main-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    #main-header .navbar {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    #main-header .navbar-nav {
+        flex-wrap: wrap;
+        gap: 5px 12px;
+    }
+}
+
+
+/* Sidebar */
+.sidebar {
+    grid-area: sidebar;
+    align-self: start;
+
+    height: fit-content;
+    padding: 25px;
+
+    background-color: #F0F8FC;
+    border-radius: 20px;
+}
+
+.sidebar a {
+    display: block;
+    margin-bottom: 12px;
+
+    color: #2c6e49;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.sidebar a:hover {
+    color: #e76f51;
+}
+
+/* Main content */
+main {
+    grid-area: main;
+    min-width: 0;
+}
+
+/* Footer */
+footer {
+    grid-area: footer;
+    width: 100%;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 0 0 16px;
+    font-size: 16px;
+}
+
+footer p:last-child {
+    margin-bottom: 0;
+}
+
+/* Scroll progress */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 6px;
+
+    background: #2c6e9f;
+    z-index: 9999999;
+    transition: width 0.1s ease;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    body {
+        display: block;
+        padding: 0 15px !important;
+    }
+
+    #main-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    main {
+        width: 100%;
+    }
+
+    footer {
+        margin-top: 35px;
+    }
+}

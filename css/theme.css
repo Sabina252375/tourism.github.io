@@ -1,6 +1,9 @@
 
+/* =========================================
+   SAPAR — LIGHT AND DARK THEME
+========================================= */
 
-/* LIGHT MODE */
+/* 1. LIGHT MODE VARIABLES */
 :root {
     --page-bg: #f4f8fc;
     --card-bg: #ffffff;
@@ -12,7 +15,7 @@
     --accent: #287eae;
 }
 
-/* DARK MODE */
+/* 2. DARK MODE VARIABLES */
 html[data-theme="dark"] {
     color-scheme: dark;
 
@@ -26,8 +29,7 @@ html[data-theme="dark"] {
     --accent: #75c5ef;
 }
 
-/* 1. ALL PAGES */
-
+/* 3. GENERAL DARK MODE */
 html[data-theme="dark"],
 html[data-theme="dark"] body {
     background: var(--page-bg) !important;
@@ -35,7 +37,7 @@ html[data-theme="dark"] body {
 }
 
 html[data-theme="dark"] body {
-    transition: background .25s ease, color .25s ease;
+    transition: background 0.25s ease, color 0.25s ease;
 }
 
 html[data-theme="dark"] p,
@@ -56,8 +58,7 @@ html[data-theme="dark"] h6 {
     color: var(--heading);
 }
 
-/* 2. HEADER AND NAVIGATION */
-
+/* 4. HEADER AND NAVIGATION */
 html[data-theme="dark"] #main-header,
 html[data-theme="dark"] .profile-header {
     background: var(--card-bg) !important;
@@ -76,7 +77,8 @@ html[data-theme="dark"] #main-header nav a {
 }
 
 html[data-theme="dark"] .navbar .nav-link:hover,
-html[data-theme="dark"] .profile-header nav a:hover {
+html[data-theme="dark"] .profile-header nav a:hover,
+html[data-theme="dark"] #main-header nav a:hover {
     color: var(--accent) !important;
 }
 
@@ -84,8 +86,7 @@ html[data-theme="dark"] .logo {
     color: var(--heading) !important;
 }
 
-/* 3. SIDEBAR */
-
+/* 5. SIDEBAR */
 html[data-theme="dark"] .sidebar {
     background: var(--card-bg) !important;
     border: 1px solid var(--border);
@@ -95,8 +96,7 @@ html[data-theme="dark"] .sidebar a {
     color: var(--accent) !important;
 }
 
-/* 4. HOME PAGE */
-
+/* 6. HOME PAGE */
 html[data-theme="dark"] .card,
 html[data-theme="dark"] .card-body,
 html[data-theme="dark"] .color-switcher,
@@ -118,13 +118,14 @@ html[data-theme="dark"] .faq-answer p {
     color: var(--text) !important;
 }
 
+html[data-theme="dark"] #faq-search,
 html[data-theme="dark"] .faq-search-input {
     background: var(--inner-bg) !important;
+    color: var(--text) !important;
     border-color: var(--border) !important;
 }
 
-/* 5. ALMATY AND AKTAU */
-
+/* 7. ALMATY AND AKTAU */
 html[data-theme="dark"] .place-card,
 html[data-theme="dark"] .activity-box,
 html[data-theme="dark"] .info-box,
@@ -153,8 +154,7 @@ html[data-theme="dark"] .suggestion {
     color: var(--text) !important;
 }
 
-/* 6. BALKHASH */
-
+/* 8. BALKHASH */
 html[data-theme="dark"] .tourism-stats,
 html[data-theme="dark"] .stat-card,
 html[data-theme="dark"] #dateTimeSection {
@@ -173,8 +173,7 @@ html[data-theme="dark"] .table-section th {
     color: var(--heading) !important;
 }
 
-/* 7. BURABAY */
-
+/* 9. BURABAY */
 html[data-theme="dark"] .tourism-card,
 html[data-theme="dark"] .lake,
 html[data-theme="dark"] .lake-text,
@@ -200,8 +199,7 @@ html[data-theme="dark"] #burabayCarousel .carousel-item {
     background: var(--card-bg) !important;
 }
 
-/* 8. ABOUT US */
-
+/* 10. ABOUT US */
 html[data-theme="dark"] .contacts,
 html[data-theme="dark"] #contact,
 html[data-theme="dark"] #inquiry-form,
@@ -226,8 +224,7 @@ html[data-theme="dark"] #inquiry-form .form-select {
     border-color: var(--border) !important;
 }
 
-/* 9. PROFILE */
-
+/* 11. PROFILE */
 html[data-theme="dark"] .profile-card,
 html[data-theme="dark"] .profile-info,
 html[data-theme="dark"] .favorites-section,
@@ -240,17 +237,32 @@ html[data-theme="dark"] .edit-form {
 }
 
 html[data-theme="dark"] .info-item p,
+html[data-theme="dark"] .info-item span,
 html[data-theme="dark"] .favorite-card-info p {
     color: var(--text) !important;
 }
 
-/* 10. LOGIN */
+html[data-theme="dark"] .profile-hero h1,
+html[data-theme="dark"] .profile-card h2,
+html[data-theme="dark"] .favorites-section h2 {
+    color: var(--heading) !important;
+}
 
+html[data-theme="dark"] .profile-hero p {
+    color: var(--muted) !important;
+}
+
+/* 12. LOGIN */
 html[data-theme="dark"] .auth-card,
 html[data-theme="dark"] .auth-tabs {
     background: var(--card-bg) !important;
     color: var(--text) !important;
     border-color: var(--border) !important;
+}
+
+html[data-theme="dark"] .auth-heading h1,
+html[data-theme="dark"] .auth-card form h2 {
+    color: var(--heading) !important;
 }
 
 html[data-theme="dark"] .tab-btn {
@@ -267,8 +279,7 @@ html[data-theme="dark"] .switch-text {
     color: var(--muted) !important;
 }
 
-/* 11. ALL INPUTS */
-
+/* 13. ALL INPUTS */
 html[data-theme="dark"] input,
 html[data-theme="dark"] textarea,
 html[data-theme="dark"] select,
@@ -284,22 +295,19 @@ html[data-theme="dark"] textarea::placeholder {
     color: var(--muted) !important;
 }
 
-/* 12. LINKS */
-
+/* 14. LINKS */
 html[data-theme="dark"] a {
     color: var(--accent);
 }
 
-/* 13. FOOTER */
-
+/* 15. FOOTER */
 html[data-theme="dark"] footer {
     background: var(--card-bg) !important;
     color: var(--muted) !important;
     border-color: var(--border) !important;
 }
 
-/* 14. THEME BUTTON */
-
+/* 16. THEME BUTTON */
 #theme-toggle {
     display: inline-flex;
     align-items: center;
@@ -319,7 +327,7 @@ html[data-theme="dark"] footer {
     font-weight: 600;
 
     cursor: pointer;
-    transition: all .25s ease;
+    transition: all 0.25s ease;
 }
 
 #theme-toggle:hover {
@@ -337,16 +345,60 @@ html[data-theme="dark"] #theme-toggle:hover {
     background: #35536c;
 }
 
-/* 15. IMAGES */
-
+/* 17. IMAGES */
 html[data-theme="dark"] img {
     filter: none !important;
 }
 
-/* 16. MOBILE */
-
+/* 18. MOBILE */
 @media (max-width: 991px) {
     #theme-toggle {
         margin: 10px 0;
     }
+}
+
+/* =================================
+   WEATHER — DARK MODE
+================================= */
+
+html[data-theme="dark"] .weather-section {
+    background: var(--card-bg) !important;
+    border-color: var(--border) !important;
+}
+
+html[data-theme="dark"] .weather-card {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+html[data-theme="dark"] .weather-section h2,
+html[data-theme="dark"] .weather-card h3,
+html[data-theme="dark"] .weather-temperature,
+html[data-theme="dark"] .weather-details p {
+    color: var(--heading) !important;
+}
+
+html[data-theme="dark"] .weather-section > p,
+html[data-theme="dark"] .weather-description,
+html[data-theme="dark"] .weather-details,
+html[data-theme="dark"] .weather-updated,
+html[data-theme="dark"] .weather-section > small {
+    color: var(--muted) !important;
+}
+
+html[data-theme="dark"] .weather-details {
+    border-color: var(--border);
+}
+
+html[data-theme="dark"] .weather-loading {
+    color: var(--heading);
+}
+
+html[data-theme="dark"] .weather-error {
+    color: #ff8f87;
+}
+
+html[data-theme="dark"] .weather-retry {
+    background: var(--accent);
+    color: #101b29;
 }

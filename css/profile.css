@@ -1,427 +1,454 @@
 
-* {
-    box-sizing: border-box;
-}
+/* =========================================
+   SAPAR — PROFILE PAGE
+========================================= */
 
-body {
-    margin: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    color: #354b5e;
-    background: linear-gradient(135deg, #f0f8fc, #e5f3fa, #f8fcff);
+/* 1. PAGE LAYOUT */
+
+body.profile-page {
+    width: 100%;
+    max-width: 1200px;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-/* HEADER */
-
-.profile-header {
-    width: 100%;
-    padding: 20px 5%;
-    background: #ffffff;
-    box-shadow: 0 3px 15px rgba(0, 119, 182, 0.10);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.logo {
-    color: #0077b6;
-    font-size: 30px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-decoration: none;
-}
-
-.logo:hover {
-    color: #023e8a;
-}
-
-.profile-header nav {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 22px;
-}
-
-.profile-header nav a {
-    color: #35566b;
-    font-size: 16px;
-    font-weight: 500;
-    text-decoration: none;
-    transition: 0.3s ease;
-}
-
-.profile-header nav a:hover {
-    color: #0077b6;
-}
-
-/* MAIN CONTAINER */
-
-.profile-container {
-    width: 100%;
-    max-width: 1100px;
     margin: 0 auto;
-    padding: 45px 20px 60px;
-    flex: 1;
+    padding: 0 15px !important;
+
+    display: block;
+
+    background-color: #ffffff;
+    color: #212529;
+    font-size: larger;
+    line-height: normal;
+    font-family: var(--bs-body-font-family);
 }
 
-/* PROFILE HERO */
+body.profile-page p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular',
+        'Lucida Grande', 'Lucida Sans Unicode',
+        Geneva, Verdana, sans-serif;
+}
+
+/* 2. MAIN CONTAINER */
+
+body.profile-page main.profile-container {
+    display: block;
+    width: 100%;
+    max-width: 750px;
+    min-width: 0;
+
+    margin: 45px auto 70px;
+    padding: 0 15px;
+
+    text-align: center;
+}
+
+/* 3. PROFILE HERO */
 
 .profile-hero {
-    text-align: center;
     margin-bottom: 35px;
+    text-align: center;
 }
 
 .profile-avatar {
-    width: 95px;
-    height: 95px;
-    margin: 0 auto 18px;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 15px;
+
     display: flex;
-    justify-content: center;
     align-items: center;
-    background: #e1f2fa;
-    border: 3px solid #b5dff0;
+    justify-content: center;
+
     border-radius: 50%;
-    color: #0077b6;
-    font-size: 48px;
-    box-shadow: 0 5px 18px rgba(0, 119, 182, 0.12);
+    background-color: #eaf3fa;
+    border: 3px solid #c5e5f5;
+
+    color: #176b9b;
+    font-size: 42px;
+
+    box-shadow: 0 5px 15px rgba(0, 119, 182, 0.08);
 }
 
 .profile-hero h1 {
-    color: #0077b6;
-    font-size: 36px;
+    margin-bottom: 8px;
+    color: #212529;
+    font-size: 38px;
     font-weight: 700;
-    margin-bottom: 10px;
 }
 
 .profile-hero p {
-    color: #587386;
+    margin: 0;
+    color: #647b8d;
     font-size: 17px;
 }
 
-/* PROFILE CARD */
+/* 4. PROFILE CARD */
 
 .profile-card {
     width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 40px;
-    background: #ffffff;
-    border: 1px solid #d5eaf4;
+    padding: 35px 40px;
+
+    background-color: #ffffff;
+    border: 1px solid #d7e5ef;
     border-radius: 25px;
-    text-align: center;
-    box-shadow: 0 10px 35px rgba(0, 119, 182, 0.10);
-    transition: 0.3s ease;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 
-.profile-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 40px rgba(0, 119, 182, 0.16);
-}
-
-.profile-card h2 {
-    color: #0077b6;
-    font-size: 28px;
+.profile-card > h2 {
+    margin-bottom: 25px;
+    color: #212529;
+    font-size: 27px;
     font-weight: 700;
-    margin-bottom: 30px;
 }
 
-/* PERSONAL INFORMATION */
+/* 5. PERSONAL INFORMATION */
 
 .profile-info {
-    padding: 25px;
-    background: #f0f8fc;
-    border-radius: 18px;
+    padding: 20px 25px;
+
+    background-color: #F0F8FC;
+    border-radius: 20px;
+
     text-align: left;
 }
 
 .info-item {
     display: flex;
-    align-items: flex-start;
-    gap: 18px;
-    padding: 15px 5px;
+    align-items: center;
+    gap: 22px;
+
+    padding: 18px 5px;
+    border-bottom: 1px solid #d7e5ef;
 }
 
-.info-item + .info-item {
-    border-top: 1px solid #d8eaf3;
+.info-item:last-child {
+    border-bottom: none;
 }
 
 .info-item > i {
-    color: #0077b6;
-    font-size: 23px;
-    margin-top: 3px;
+    min-width: 28px;
+    color: #287eae;
+    font-size: 25px;
 }
 
 .info-item span {
     display: block;
-    color: #4385a5;
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 7px;
+    margin-bottom: 4px;
+
+    color: #287eae;
+    font-size: 15px;
+    font-weight: 700;
 }
 
 .info-item p {
-    color: #354b5e;
-    font-size: 16px;
-    font-weight: 500;
     margin: 0;
+
+    color: #354b5e;
+    font-size: 17px;
+    font-weight: 500;
+
     overflow-wrap: anywhere;
 }
 
-/* LOG OUT BUTTON */
+/* 6. FAVORITE DESTINATIONS */
 
-.logout-btn {
+.favorites-section {
     margin-top: 30px;
-    padding: 13px 38px;
-    border: none;
-    border-radius: 30px;
-    background: #0077b6;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    padding: 25px;
+
+    background-color: #F0F8FC;
+    border: 1px solid #d7e5ef;
+    border-radius: 20px;
+
+    text-align: left;
 }
 
-.logout-btn i {
-    margin-right: 6px;
+.favorites-section h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    margin-bottom: 20px;
+
+    color: #212529;
+    font-size: 25px;
+    font-weight: 700;
 }
 
-.logout-btn:hover {
-    background: #023e8a;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 18px rgba(0, 119, 182, 0.22);
+.favorites-section h2 i {
+    color: #e76f8a;
 }
 
-/* FOOTER */
-
-footer {
+#favoriteDestinationsList {
     width: 100%;
-    padding: 22px 15px;
-    text-align: center;
-    background: #ffffff;
-    color: #587386;
-    border-top: 1px solid #d5eaf4;
-    margin-top: auto;
 }
 
-footer p {
-    margin: 5px 0;
+#favoriteDestinationsList > p {
+    color: #647b8d;
+    text-align: center;
+}
+
+/* Favorite cards */
+
+.favorite-card {
+    overflow: hidden;
+    margin-bottom: 15px;
+
+    background-color: #ffffff;
+    border: 1px solid #d7e5ef;
+    border-radius: 15px;
+
+    transition: transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.favorite-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.favorite-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.favorite-card-info {
+    padding: 15px;
+}
+
+.favorite-card-info h3 {
+    color: #212529;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.favorite-card-info p {
+    color: #647b8d;
     font-size: 15px;
 }
 
-/* RESPONSIVE DESIGN */
+/* 7. BUTTONS */
 
-@media (max-width: 768px) {
-    .profile-header {
-        flex-direction: column;
-        text-align: center;
-    }
+.edit-btn,
+.save-btn,
+.cancel-btn,
+.logout-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 
-    .profile-header nav {
-        justify-content: center;
-        gap: 12px 18px;
-    }
+    padding: 11px 22px;
+    margin: 12px 5px 0;
 
-    .profile-container {
-        padding: 35px 15px 45px;
+    border: none;
+    border-radius: 25px;
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.edit-btn,
+.save-btn {
+    background-color: #287eae;
+    color: #ffffff;
+}
+
+.edit-btn:hover,
+.save-btn:hover {
+    background-color: #176b9b;
+    transform: translateY(-2px);
+}
+
+.cancel-btn {
+    background-color: #eaf3fa;
+    color: #354b5e;
+    border: 1px solid #d7e5ef;
+}
+
+.cancel-btn:hover {
+    background-color: #d7eaf5;
+}
+
+.logout-btn {
+    background-color: #f8e9ed;
+    color: #c64f70;
+}
+
+.logout-btn:hover {
+    background-color: #f3d5df;
+    transform: translateY(-2px);
+}
+
+/* 8. EDIT FORMS */
+
+.edit-form {
+    margin-top: 25px;
+    padding: 25px;
+
+    background-color: #F0F8FC;
+    border: 1px solid #d7e5ef;
+    border-radius: 20px;
+
+    text-align: left;
+}
+
+.edit-form h3 {
+    margin-bottom: 20px;
+
+    color: #212529;
+    font-size: 23px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.edit-form .form-label {
+    color: #354b5e;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.edit-form .form-control {
+    min-height: 45px;
+
+    border: 1px solid #d7e5ef;
+    border-radius: 10px;
+
+    background-color: #ffffff;
+    color: #354b5e;
+
+    font-family: inherit;
+    font-size: 16px;
+}
+
+.edit-form .form-control:focus {
+    border-color: #287eae;
+    box-shadow: 0 0 0 3px rgba(40, 126, 174, 0.15);
+}
+
+#editMessage,
+#passwordMessage {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 15px;
+}
+
+/* 9. FOOTER */
+
+body.profile-page > footer {
+    width: 100%;
+    padding: 25px 15px;
+    margin-top: 40px;
+
+    background-color: transparent;
+    border-top: 1px solid #d7e5ef;
+
+    text-align: center;
+}
+
+body.profile-page > footer p {
+    margin: 5px 0;
+    color: #647b8d;
+    font-size: 14px;
+}
+
+body.profile-page > footer p:last-child {
+    margin-bottom: 0;
+}
+
+/* 10. TABLET */
+
+@media (max-width: 900px) {
+    body.profile-page main.profile-container {
+        max-width: 700px;
     }
 
     .profile-card {
-        padding: 30px 20px;
-    }
-
-    .profile-hero h1 {
-        font-size: 30px;
-    }
-
-    .profile-card h2 {
-        font-size: 24px;
+        padding: 30px;
     }
 }
 
-@media (max-width: 480px) {
-    .profile-header nav a {
-        font-size: 14px;
+/* 11. MOBILE */
+
+@media (max-width: 768px) {
+    body.profile-page main.profile-container {
+        margin-top: 30px;
+        margin-bottom: 45px;
     }
 
-    .profile-avatar {
-        width: 80px;
-        height: 80px;
-        font-size: 40px;
+    .profile-card {
+        padding: 25px 18px;
     }
 
     .profile-hero h1 {
-        font-size: 27px;
+        font-size: 32px;
     }
 
     .profile-info {
         padding: 15px;
     }
-}
-/* EDIT PROFILE */
 
-.edit-btn,
-.save-btn {
-    padding: 12px 25px;
-    border: none;
-    border-radius: 25px;
-    background: #0077b6;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
+    .info-item {
+        gap: 15px;
+    }
 
-.edit-btn {
-    margin-top: 25px;
-    margin-right: 10px;
-}
+    .favorites-section {
+        padding: 18px;
+    }
 
-.edit-btn:hover,
-.save-btn:hover {
-    background: #023e8a;
-    transform: translateY(-2px);
-}
-
-.edit-form {
-    margin-top: 25px;
-    padding: 25px;
-    background: #f0f8fc;
-    border-radius: 15px;
-    text-align: left;
-}
-
-.edit-form h3 {
-    color: #0077b6;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.edit-form .form-control {
-    border: 1px solid #c5e2f0;
-    border-radius: 10px;
-    padding: 11px;
-}
-
-.cancel-btn {
-    padding: 12px 25px;
-    border: 1px solid #0077b6;
-    border-radius: 25px;
-    background: white;
-    color: #0077b6;
-    cursor: pointer;
-    margin-left: 8px;
-}
-
-#editMessage {
-    margin-top: 15px;
-    font-weight: 600;
-}
-/* CHANGE PASSWORD */
-
-#changePasswordBtn {
-    margin-top: 15px;
-}
-
-#passwordMessage {
-    margin-top: 15px;
-    font-weight: 600;
-    text-align: center;
-}
-
-/* Favorite Destinations */
-.favorites-section {
-    margin-top: 30px;
-    padding: 20px;
-    background: #f0f8fc;
-    border: 1px solid #d6eaf5;
-    border-radius: 15px;
-    text-align: left;
-}
-
-.favorites-section h2 {
-    color: #0077b6;
-    font-size: 21px;
-    margin-bottom: 18px;
-}
-
-.favorites-section h2 i {
-    color: #e76f8a;
-    margin-right: 8px;
-}
-
-.favorite-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 15px;
-    margin-bottom: 10px;
-    background: white;
-    border-radius: 10px;
-    color: #34495e;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-    transition: 0.3s ease;
-}
-
-.favorite-item:hover {
-    transform: translateX(5px);
-    box-shadow: 0 4px 10px rgba(0, 119, 182, 0.12);
-}
-
-.favorite-item i {
-    color: #e76f8a;
-    font-size: 18px;
-}
-
-.favorite-item span {
-    font-weight: 500;
-}
-
-.favorite-card {
-    display: flex;
-    gap: 15px;
-    background: white;
-    border-radius: 12px;
-    padding: 12px;
-    margin-bottom: 15px;
-    align-items: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-}
-
-.favorite-card img {
-    width: 120px;
-    height: 90px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.favorite-card-info h3 {
-    color: #0077b6;
-    font-size: 18px;
-    margin: 0;
-}
-
-.favorite-card-info p {
-    margin: 5px 0;
-    color: #777;
-}
-
-.remove-favorite {
-    border: none;
-    background: transparent;
-    color: #dc3545;
-    cursor: pointer;
-    padding: 0;
-}
-
-@media (max-width: 480px) {
-    .favorite-card img {
-        width: 90px;
-        height: 75px;
+    .favorites-section h2 {
+        font-size: 21px;
     }
 }
- 
+
+/* 12. SMALL MOBILE */
+
+@media (max-width: 480px) {
+    body.profile-page {
+        padding: 0 10px !important;
+    }
+
+    body.profile-page main.profile-container {
+        padding: 0 5px;
+    }
+
+    .profile-card {
+        padding: 22px 12px;
+        border-radius: 18px;
+    }
+
+    .profile-card > h2 {
+        font-size: 23px;
+    }
+
+    .profile-avatar {
+        width: 85px;
+        height: 85px;
+        font-size: 35px;
+    }
+
+    .profile-hero h1 {
+        font-size: 29px;
+    }
+
+    .info-item p {
+        font-size: 14px;
+    }
+
+    .favorites-section {
+        padding: 15px;
+    }
+
+    .edit-btn,
+    .save-btn,
+    .cancel-btn,
+    .logout-btn {
+        width: 100%;
+        margin: 8px 0;
+    }
+}

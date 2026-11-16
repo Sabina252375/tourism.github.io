@@ -14,24 +14,73 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <!-- CSS -->
+     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/profile.css">
     <link rel="stylesheet" href="css/theme.css">
 </head>
 
-<body>
+<body class="profile-page">
 
-<header class="profile-header">
-    <a href="index.html" class="logo">SAPAR</a>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="almaty.html">Almaty</a>
-        <a href="aktau.html">Aktau</a>
-        <a href="balkhash.html">Balkhash</a>
-        <a href="burabay.html">Burabay</a>
-        <a href="about.html">About Us</a>
+
+<header id="main-header" class="py-3 mb-4">
+    <div class="logo">SAPAR</div>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="aktau.html">Aktau</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="almaty.html">Almaty</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="balkhash.html">Balkhash</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="burabay.html">Burabay</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link profile-nav-link active"
+                           href="profile.html"
+                           title="My Profile"
+                           aria-label="My Profile">
+                            <i class="bi bi-person-circle"></i>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
     </nav>
 </header>
+
+
 
 <main class="profile-container">
 
@@ -179,7 +228,7 @@
     <p>© 2026 SAPAR — Kazakhstan Guides</p>
     <p>Kenzhibayeva Sabina | Manatova Aruzhan | Kairova Zhanna</p>
 </footer>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="profile.js"></script>
 <script src="theme.js"></script>
 

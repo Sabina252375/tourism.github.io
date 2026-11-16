@@ -1,7 +1,10 @@
 
-
+/* =================================
+   WEATHER WIDGET
+================================= */
 
 .weather-section {
+    width: 100%;
     max-width: 750px;
     margin: 25px auto;
     padding: 20px 24px;
@@ -14,22 +17,20 @@
 }
 
 /* Header */
-
 .weather-section h2 {
+    margin-bottom: 5px;
     color: #216e9e;
     font-size: 21px;
     font-weight: 600;
-    margin-bottom: 5px;
 }
 
 .weather-section > p {
+    margin-bottom: 15px;
     color: #52758a;
     font-size: 13px;
-    margin-bottom: 15px;
 }
 
 /* Weather content */
-
 .weather-card {
     max-width: 100%;
     padding: 14px 0;
@@ -42,46 +43,43 @@
     text-align: left;
 }
 
-/* Icon */
-
+/* Weather icon */
 .weather-icon {
     display: inline-block;
-    font-size: 34px;
     margin-right: 15px;
+    font-size: 34px;
     vertical-align: middle;
 }
 
 /* City */
-
 .weather-card h3 {
+    margin: 5px 0;
     color: #216e9e;
     font-size: 16px;
-    margin: 5px 0;
 }
 
 /* Temperature */
-
 .weather-temperature {
     display: inline-block;
+    margin: 0 15px 0 0;
+
     color: #216e9e;
     font-size: 34px;
     font-weight: 600;
-    margin: 0 15px 0 0;
     vertical-align: middle;
 }
 
-/* Description */
-
+/* Weather description */
 .weather-description {
     display: inline-block;
+    margin: 0;
+
     color: #52758a;
     font-size: 14px;
-    margin: 0;
     vertical-align: middle;
 }
 
-/* Details */
-
+/* Weather details */
 .weather-details {
     display: flex;
     justify-content: flex-start;
@@ -105,95 +103,61 @@
 }
 
 .weather-details p {
+    margin: 0;
     color: #216e9e;
     font-size: 12px;
     font-weight: 600;
-    margin: 0;
 }
 
 .weather-details small {
     display: none;
 }
 
-/* Updated and source */
-
+/* Updated time and source */
 .weather-updated {
+    margin: 10px 0 0;
     color: #8299a9;
     font-size: 11px;
-    margin: 10px 0 0;
 }
 
 .weather-section > small {
     display: block;
+    margin-top: 8px;
     color: #8299a9;
     font-size: 10px;
-    margin-top: 8px;
 }
 
 /* Loading */
-
 .weather-loading {
+    padding: 12px 0;
     color: #216e9e;
     font-size: 13px;
-    padding: 12px 0;
 }
 
 /* Error */
-
 .weather-error {
     color: #c0392b;
     font-size: 13px;
 }
 
 .weather-retry {
+    padding: 7px 13px;
+
     background: #216e9e;
     color: white;
+
     border: none;
     border-radius: 6px;
-    padding: 7px 13px;
     cursor: pointer;
 }
 
 /* =================================
-   DARK MODE
-================================= */
-
-html[data-theme="dark"] .weather-section {
-    background: #1b2a3a !important;
-    border-color: #344b60 !important;
-}
-
-html[data-theme="dark"] .weather-card {
-    background: transparent !important;
-    box-shadow: none !important;
-}
-
-html[data-theme="dark"] .weather-section h2,
-html[data-theme="dark"] .weather-card h3,
-html[data-theme="dark"] .weather-temperature,
-html[data-theme="dark"] .weather-details p {
-    color: #91d5fa !important;
-}
-
-html[data-theme="dark"] .weather-section > p,
-html[data-theme="dark"] .weather-description,
-html[data-theme="dark"] .weather-details,
-html[data-theme="dark"] .weather-updated,
-html[data-theme="dark"] .weather-section > small {
-    color: #c4d5e2 !important;
-}
-
-html[data-theme="dark"] .weather-details {
-    border-color: #40566b;
-}
-
-/* =================================
-   MOBILE
+   RESPONSIVE DESIGN
 ================================= */
 
 @media (max-width: 600px) {
-
     .weather-section {
+        width: auto;
         margin: 20px 12px;
         padding: 15px;
     }
@@ -203,13 +167,13 @@ html[data-theme="dark"] .weather-details {
     }
 
     .weather-icon {
-        font-size: 27px;
         margin-right: 8px;
+        font-size: 27px;
     }
 
     .weather-temperature {
-        font-size: 29px;
         margin-right: 8px;
+        font-size: 29px;
     }
 
     .weather-description {

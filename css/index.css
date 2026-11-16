@@ -1,58 +1,11 @@
- 
-body {
-    max-width: 1200px;
-    font-size: larger;
-    display: grid;
-    grid-template-columns: 220px minmax(0, 1fr);
-    grid-template-rows: auto 1fr auto auto;
-    grid-template-areas:
-        "header header"
-        "sidebar main"
-        "faq faq"
-        "footer footer";
-    gap: 30px;
-}
 
-p {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
+/* ================================
+   HOME PAGE — INDEX
+================================ */
 
-#main-header {
-    grid-area: header;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.sidebar {
-    grid-area: sidebar;
-    background-color: #F0F8FC;
-    border-radius: 20px;
-    height: fit-content;
-}
-
-.sidebar a {
-    display: block;
-    text-decoration: none;
-    color: #2c6e49;
-}
-
-.sidebar a:hover {
-    color: #e76f51;
-}
-
-.logo {
-    font-size: 30px;
-    font-weight: bold;
-}
-
-main {
-    grid-area: main;
-}
-
+/* Hero section */
 .hero {
-    height: 300px;
+    min-height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,13 +23,15 @@ main {
 
 .hero-content p {
     max-width: 800px;
+    margin: 0 auto;
 }
 
-.section p {
+/* Introduction sections */
+.section {
     text-align: center;
 }
 
-.section {
+.section p {
     text-align: center;
 }
 
@@ -84,33 +39,35 @@ main {
     max-width: 900px;
 }
 
+/* Destination cards */
 .card-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 30px;
 }
 
-.card {
+.card-container .card {
     border-radius: 15px;
     background-color: #F0F8FC;
 }
 
-.card img {
+.card-container .card img {
     width: 100%;
     height: 250px;
     object-fit: cover;
-    border-radius: 40px;
+    border-radius: 20px;
 }
 
-.card a {
+.card-container .card a {
     color: black;
     text-decoration: none;
 }
 
-.card a:hover {
+.card-container .card a:hover {
     text-decoration: underline;
 }
 
+/* Color switcher */
 .color-switcher {
     text-align: center;
     padding: 25px 20px;
@@ -145,12 +102,12 @@ main {
     background: #234b68;
 }
 
+/* FAQ section */
 .faq-section {
-    grid-area: faq;
-    display: block;
     width: 100%;
     max-width: 900px;
     justify-self: center;
+
     margin: 30px 0;
     padding: 40px 24px;
     box-sizing: border-box;
@@ -169,65 +126,36 @@ main {
     margin-bottom: 30px;
 }
 
-.faq-search-box {
+/* FAQ search */
+.faq-search {
     width: 90%;
     max-width: 700px;
     margin: 0 auto 30px;
     text-align: center;
 }
 
-.faq-search-input {
-    display: flex;
-    align-items: center;
+#faq-search {
     width: 100%;
-    box-sizing: border-box;
     padding: 12px 18px;
     border: 1px solid #ddd;
     border-radius: 30px;
     background: #fff;
-}
-
-#faq-search {
-    flex: 1;
-    min-width: 0;
-    border: none;
-    outline: none;
-    padding: 8px;
     font-size: 18px;
+    outline: none;
 }
 
-.search-icon {
-    font-size: 22px;
-    margin-right: 10px;
+#faq-search:focus {
+    border-color: #438ac0;
 }
 
-#clear-search {
-    border: none;
-    background: none;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-#search-result-count {
-    margin-top: 10px;
-    color: #777;
-}
-
-.search-highlight {
-    background-color: #dcecf8;
-    color: #234b68;
-    font-weight: 600;
-    border-radius: 4px;
-    padding: 2px 3px;
-}
-
+/* FAQ items */
 .faq-item {
     width: 100%;
     margin-bottom: 14px;
     border: 1px solid #d6e4f0;
     border-radius: 10px;
     overflow: hidden;
-    background: #ffffff;
+    background: #fff;
 }
 
 .faq-question {
@@ -236,16 +164,18 @@ main {
     border: none;
     background: #eef6fc;
     color: #234b68;
+
     font-family: inherit;
     font-size: 17px;
     font-weight: 600;
     text-align: left;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 16px;
+
     cursor: pointer;
-    box-sizing: border-box;
     transition: background 0.2s ease;
 }
 
@@ -265,7 +195,6 @@ main {
     max-height: 0;
     overflow: hidden;
     width: 100%;
-    box-sizing: border-box;
     transition: max-height 0.35s ease;
 }
 
@@ -275,7 +204,7 @@ main {
     font-size: 16px;
     line-height: 1.8;
     color: #505a65;
-    background: #ffffff;
+    background: #fff;
 }
 
 .faq-question:focus-visible {
@@ -283,47 +212,37 @@ main {
     outline-offset: -3px;
 }
 
-footer {
-    grid-area: footer;
-    display: block;
-    width: 100%;
-    padding: 20px 0;
-    margin-top: 30px;
-    box-sizing: border-box;
+.search-highlight {
+    background-color: #dcecf8;
+    color: #234b68;
+    font-weight: 600;
+    border-radius: 4px;
+    padding: 2px 3px;
 }
 
-footer p {
-    margin: 0 0 16px;
-    font-size: 16px;
-    text-align: left;
+/* Home page layout with FAQ */
+body {
+    grid-template-rows: auto 1fr auto auto;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "faq faq"
+        "footer footer";
 }
 
-footer p:last-child {
-    margin-bottom: 0;
+.faq-section {
+    grid-area: faq;
 }
 
-@media (max-width: 600px) {
-    body {
-        display: block;
-        padding: 0 20px;
-    }
-
-    #main-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .sidebar {
-        margin-bottom: 30px;
-    }
-
+/* Responsive */
+@media (max-width: 768px) {
     .hero {
-        height: auto;
         min-height: 300px;
+        height: auto;
     }
 
     .hero-content h2 {
-        font-size: 40px;
+        font-size: 36px;
     }
 
     .hero-content p {
@@ -339,7 +258,7 @@ footer p:last-child {
         gap: 20px;
     }
 
-    .card img {
+    .card-container .card img {
         height: 220px;
     }
 
@@ -355,7 +274,7 @@ footer p:last-child {
         font-size: 15px;
     }
 
-    .faq-search-box {
+    .faq-search {
         width: 100%;
     }
 
@@ -367,29 +286,4 @@ footer p:last-child {
     .faq-answer p {
         padding: 15px 16px;
     }
-
-
-    footer {
-        margin-top: 50px;
-    }
-}
-#scroll-progress {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 6px;
-    background: #2c6e9f;
-    z-index: 9999999;
-    transition: width 0.1s ease;
-}
-.profile-nav-link {
-    font-size: 25px;
-    color: #e78fb3 !important;
-    transition: all 0.3s ease;
-}
-
-.profile-nav-link:hover {
-    color: #d45d91 !important;
-    transform: scale(1.15);
 }

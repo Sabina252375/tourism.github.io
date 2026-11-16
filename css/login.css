@@ -1,46 +1,47 @@
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+/* =================================
+   LOGIN / SIGN UP PAGE
+================================= */
 
-body {
+/* Page layout */
+body.login-page {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    font-family: 'Segoe UI', Arial, sans-serif;
+
     background: linear-gradient(135deg, #eaf6fc, #f7fbfe);
     color: #294b60;
+    font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-/*NAVIGATION*/
-
-#main-header {
+/* Navigation */
+body.login-page #main-header {
     width: 100%;
     padding: 20px 6%;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+
     background: rgba(255, 255, 255, 0.9);
     box-shadow: 0 3px 15px rgba(35, 85, 115, 0.08);
 }
 
-.logo {
+body.login-page .logo {
     font-size: 30px;
     font-weight: 800;
     color: #2479ad;
     letter-spacing: 2px;
 }
 
-#main-header nav {
+body.login-page #main-header nav {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
 
-#main-header nav a {
+body.login-page #main-header nav a {
     color: #294b60;
     text-decoration: none;
     font-size: 15px;
@@ -48,12 +49,11 @@ body {
     transition: color 0.3s ease;
 }
 
-#main-header nav a:hover {
+body.login-page #main-header nav a:hover {
     color: #2479ad;
 }
 
-/*AUTH CONTAINER*/
-
+/* Authentication container */
 .auth-container {
     flex: 1;
     display: flex;
@@ -66,12 +66,15 @@ body {
     width: 100%;
     max-width: 480px;
     padding: 40px;
+
     background: #ffffff;
     border-radius: 25px;
     box-shadow: 0 12px 40px rgba(36, 121, 173, 0.13);
+
     animation: cardAppear 0.6s ease;
 }
 
+/* Card animation */
 @keyframes cardAppear {
     from {
         opacity: 0;
@@ -84,8 +87,7 @@ body {
     }
 }
 
-/*HEADING*/
-
+/* Heading */
 .auth-heading {
     text-align: center;
     margin-bottom: 30px;
@@ -104,8 +106,7 @@ body {
     line-height: 1.6;
 }
 
-/*LOGIN / SIGNUP TABS*/
-
+/* Login / Signup tabs */
 .auth-tabs {
     display: flex;
     padding: 5px;
@@ -119,8 +120,10 @@ body {
     padding: 12px;
     border: none;
     border-radius: 10px;
+
     background: transparent;
     color: #587487;
+
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
@@ -137,8 +140,7 @@ body {
     box-shadow: 0 3px 10px rgba(36, 121, 173, 0.2);
 }
 
-/*FORM*/
-
+/* Forms */
 .auth-card form h2 {
     margin-bottom: 22px;
     color: #174d70;
@@ -161,10 +163,13 @@ body {
 .form-group input {
     width: 100%;
     padding: 14px 16px;
+
     border: 1px solid #d3e3ed;
     border-radius: 12px;
+
     background: #f9fcfe;
     color: #294b60;
+
     font-size: 15px;
     outline: none;
     transition: all 0.3s ease;
@@ -180,16 +185,18 @@ body {
     box-shadow: 0 0 0 4px rgba(57, 135, 181, 0.12);
 }
 
-/*SUBMIT BUTTON*/
-
+/* Submit button */
 .auth-submit {
     width: 100%;
     padding: 15px;
     margin-top: 8px;
+
     border: none;
     border-radius: 12px;
+
     background: #2479ad;
     color: #ffffff;
+
     font-size: 16px;
     font-weight: 700;
     cursor: pointer;
@@ -211,8 +218,7 @@ body {
     cursor: not-allowed;
 }
 
-/*FORM MESSAGES*/
-
+/* Form messages */
 .form-message:empty {
     display: none;
 }
@@ -221,9 +227,11 @@ body {
     padding: 12px 14px;
     margin-bottom: 15px;
     border-radius: 10px;
+
     font-size: 14px;
     line-height: 1.5;
     overflow-wrap: anywhere;
+
     animation: messageAppear 0.3s ease;
 }
 
@@ -239,8 +247,19 @@ body {
     }
 }
 
-/*SWITCH TEXT*/
+.form-message.error {
+    color: #b42318;
+    background: #fef0ef;
+    border: 1px solid #f5c2c0;
+}
 
+.form-message.success {
+    color: #167344;
+    background: #eaf8ef;
+    border: 1px solid #b7e4c7;
+}
+
+/* Switch text */
 .switch-text {
     margin-top: 23px;
     text-align: center;
@@ -252,6 +271,7 @@ body {
     border: none;
     background: none;
     color: #2479ad;
+
     font-size: 14px;
     font-weight: 700;
     cursor: pointer;
@@ -262,34 +282,33 @@ body {
     text-decoration: underline;
 }
 
-/*FOOTER*/
-
-footer {
+/* Footer */
+body.login-page footer {
+    width: 100%;
     padding: 23px 15px;
+
     text-align: center;
     background: #e2f0f8;
     color: #587487;
     font-size: 13px;
 }
 
-footer p {
+body.login-page footer p {
     margin-bottom: 6px;
 }
 
-footer p:last-child {
+body.login-page footer p:last-child {
     margin-bottom: 0;
 }
 
-/*RESPONSIVE DESIGN*/
-
+/* Tablet */
 @media (max-width: 768px) {
-
-    #main-header {
+    body.login-page #main-header {
         flex-direction: column;
         padding: 18px 15px;
     }
 
-    #main-header nav {
+    body.login-page #main-header nav {
         justify-content: center;
         gap: 12px 18px;
     }
@@ -297,11 +316,10 @@ footer p:last-child {
     .auth-card {
         padding: 30px 25px;
     }
-
 }
 
+/* Mobile */
 @media (max-width: 480px) {
-
     .auth-container {
         padding: 30px 14px;
     }
@@ -315,26 +333,11 @@ footer p:last-child {
         font-size: 25px;
     }
 
-    #main-header nav a {
+    body.login-page #main-header nav a {
         font-size: 13px;
     }
 
     .auth-card form h2 {
         font-size: 21px;
     }
-
-}
-
-/* Success and error messages */
-
-.form-message.error {
-    color: #b42318;
-    background: #fef0ef;
-    border: 1px solid #f5c2c0;
-}
-
-.form-message.success {
-    color: #167344;
-    background: #eaf8ef;
-    border: 1px solid #b7e4c7;
 }

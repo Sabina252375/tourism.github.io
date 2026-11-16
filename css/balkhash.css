@@ -1,81 +1,64 @@
-body{
-    max-width: 1200px;
-    margin: 0 auto;
-    font-size: larger;
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas:
-        "header header"
-        "sidebar main"
-        "footer footer";
-    gap: 30px;
-}
-p{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
- #main-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    grid-area: header;
-}
+/* =================================
+   BALKHASH PAGE
+================================= */
 
-.logo {
-    font-size: 30px;
-    font-weight: bold;
-}
-
-
-#first h1{
+/* First section */
+#first h1 {
     text-align: center;
 }
 
+/* Lakes section */
 .lakes-section img {
     border-radius: 40px;
 }
 
-
+/* City hero */
 .city-hero {
-    border-radius: 40px;
     min-height: 400px;
+    border-radius: 40px;
+
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+
     background-size: cover;
     background-position: center;
 }
 
-.hero-content h1 {
+.city-hero .hero-content h1 {
     font-size: 55px;
 }
 
+/* City introduction */
 .city-intro {
     display: flex;
     align-items: center;
     gap: 50px;
 }
 
-.city-intro > div {
+.city-intro>div {
     flex: 1;
+    min-width: 0;
 }
 
 .city-image {
     width: 45%;
     border-radius: 40px;
+    object-fit: cover;
 }
 
+/* Destination cards */
 .cards-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 30px;
     min-width: 0;
 }
+
 .card-group {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 30px;
 }
 
@@ -88,32 +71,30 @@ p{
     object-fit: cover;
 }
 
-@media (max-width: 600px) {
-    .card-group,
-    .cards-container {
-        grid-template-columns: 1fr;
-    }
-}
-
+/* Place cards */
 .place-card {
-     flex: 1;
+    flex: 1;
     display: flex;
     flex-direction: column;
+
     border-radius: 15px;
     background-color: #F0F8FC;
     transition: 0.3s;
 }
+
 .place-card:hover {
     transform: translateY(-7px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
+
 .place-image {
     width: 100%;
     height: 250px;
     object-fit: cover;
-    border-radius: 40px;
+    border-radius: 30px;
 }
 
+/* Lakes table */
 .table-section table {
     width: 100%;
     border-collapse: collapse;
@@ -127,6 +108,8 @@ p{
 .table-section th {
     background-color: #F0F8FC;
 }
+
+/* Activities */
 .activities-section {
     display: flex;
     gap: 30px;
@@ -136,101 +119,24 @@ p{
 .activities-section .btn-group {
     width: 100%;
 }
+
 .activity-box,
 .info-box {
     flex: 1;
+    min-width: 0;
     border-radius: 15px;
     background-color: #F0F8FC;
 }
-.sidebar {
-    grid-area: sidebar;
-    background-color: #F0F8FC;
-    border-radius: 20px;
-    height: fit-content;
-}
 
-.sidebar a {
-    display: block;
-    text-decoration: none;
-    color: #2c6e49;
-}
-
-.sidebar a:hover {
-    color: #e76f51;
-}
-
-main {
-    grid-area: main;
-    min-width: 0;
-}
-
-footer {
-    grid-area: footer;
-}
-@media (max-width: 600px) {
-
-    body {
-        display: block;
-    }
-
-    #main-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    
-
-    .city-hero {
-        min-height: 300px;
-    }
-
-    .hero-content h1 {
-        font-size: 40px;
-    }
-
-    .city-intro {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .city-image {
-        width: 100%;
-    }
-
-    .activities-section {
-        flex-direction: column;
-    }
-
-    .activity-box,
-    .info-box {
-        width: 100%;
-    }
-
-    .activities-section .btn-group {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-}
-#dateTimeSection {
-    background-color: #F0F8FC;
-    border-radius: 20px;
-}
-
-#currentDateTime {
-    font-size: 22px;
-    font-weight: bold;
-    color: #2c6e49;
-}
-
-/* Task 5: Animated Number Counter */
-
+/* Animated number counter */
 .tourism-stats {
     text-align: center;
     padding: 40px 20px;
     margin: 40px 0;
+
     background: linear-gradient(135deg, #e0f2fe, #caf0f8);
     border-radius: 20px;
+
     width: 100%;
     box-sizing: border-box;
 }
@@ -241,7 +147,7 @@ footer {
     font-size: 30px;
 }
 
-.tourism-stats > p {
+.tourism-stats>p {
     color: #52758a;
     margin-bottom: 30px;
 }
@@ -258,12 +164,13 @@ footer {
 .stat-card {
     flex: 1;
     min-width: 0;
+
     background: white;
     padding: 25px 15px;
     border-radius: 18px;
+
     box-shadow: 0 5px 15px rgba(0, 119, 182, 0.15);
     transition: transform 0.3s ease;
-    box-sizing: border-box;
 }
 
 .stat-card:hover {
@@ -282,9 +189,82 @@ footer {
     margin-bottom: 0;
 }
 
-/* Responsive design */
+/* Favorite destinations */
+.favorite-btn {
+    background: none;
+    border: none;
+    color: #777;
 
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+
+    transition: 0.3s ease;
+}
+
+.favorite-btn:hover {
+    color: #e63946;
+    transform: scale(1.15);
+}
+
+.favorite-btn.active {
+    color: #e63946;
+}
+
+.favorite-btn i {
+    pointer-events: none;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .cards-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Mobile */
 @media (max-width: 600px) {
+    #first h1 {
+        font-size: 40px;
+    }
+
+    .city-hero {
+        min-height: 300px;
+    }
+
+    .city-hero .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .city-intro {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .city-image {
+        width: 100%;
+    }
+
+    .card-group,
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+
+    .activities-section {
+        flex-direction: column;
+    }
+
+    .activity-box,
+    .info-box {
+        width: 100%;
+    }
+
+    .activities-section .btn-group {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
     .stats-container {
         flex-direction: column;
         align-items: center;
@@ -294,14 +274,161 @@ footer {
         width: 100%;
         max-width: 300px;
     }
-}
-.profile-nav-link {
-    font-size: 25px;
-    color: #e78fb3 !important;
-    transition: all 0.3s ease;
+
+    .table-section {
+        overflow-x: auto;
+    }
 }
 
-.profile-nav-link:hover {
-    color: #d45d91 !important;
-    transform: scale(1.15);
+/* =================================
+   POPULAR ACTIVITIES TABLE
+================================= */
+
+.table-section {
+    width: 100%;
+    margin: 25px 0 40px;
+    overflow-x: auto;
+}
+
+.table-section table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+}
+
+.table-section th {
+    padding: 16px 15px;
+    background-color: #eaf5fa;
+    color: #294b60;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+}
+
+.table-section td {
+    padding: 16px 15px;
+    color: #354b5e;
+    font-size: 16px;
+    border-bottom: 1px solid #edf2f5;
+}
+
+.table-section tr:last-child td {
+    border-bottom: none;
+}
+
+/* Dark mode */
+html[data-theme="dark"] .table-section table {
+    background: var(--card-bg);
+}
+
+html[data-theme="dark"] .table-section th {
+    background: var(--inner-bg);
+    color: var(--heading);
+}
+
+html[data-theme="dark"] .table-section td {
+    background: var(--card-bg);
+    color: var(--text);
+    border-color: var(--border);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .table-section th,
+    .table-section td {
+        padding: 12px 10px;
+        font-size: 14px;
+    }
+}
+
+/* =================================
+   POPULAR ACTIVITIES TABLE
+================================= */
+
+.table-section {
+    width: 100%;
+    margin: 25px 0 40px;
+    overflow-x: auto;
+}
+
+.table-section table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+}
+
+.table-section th {
+    padding: 16px 15px;
+    background-color: #eaf5fa;
+    color: #294b60;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+}
+
+.table-section td {
+    padding: 16px 15px;
+    color: #354b5e;
+    font-size: 16px;
+    border-bottom: 1px solid #edf2f5;
+}
+
+.table-section tr:last-child td {
+    border-bottom: none;
+}
+
+/* Dark mode */
+html[data-theme="dark"] .table-section table {
+    background: var(--card-bg);
+}
+
+html[data-theme="dark"] .table-section th {
+    background: var(--inner-bg);
+    color: var(--heading);
+}
+
+html[data-theme="dark"] .table-section td {
+    background: var(--card-bg);
+    color: var(--text);
+    border-color: var(--border);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .table-section th,
+    .table-section td {
+        padding: 12px 10px;
+        font-size: 14px;
+    }
+}
+
+.table-section table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+}
+
+.table-section th {
+    background-color: #eaf5fa;
+    color: #294b60;
+    font-weight: 700;
+    text-align: left;
+    padding: 16px;
+}
+
+.table-section td {
+    padding: 16px;
+    color: #354b5e;
+    border-bottom: 1px solid #edf2f5;
+}
+
+html[data-theme="dark"] .table-section table,
+html[data-theme="dark"] .table-section td {
+    background: var(--card-bg);
+    color: var(--text);
+}
+
+html[data-theme="dark"] .table-section th {
+    background: var(--inner-bg);
+    color: var(--heading);
 }

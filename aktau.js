@@ -53,3 +53,71 @@ document.querySelectorAll(".copy-button").forEach((button) => {
         }
     });
 });
+
+
+// Favorite Destinations
+document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".favorite-btn");
+
+    let favorites = JSON.parse(
+        localStorage.getItem("favoriteDestinations")
+    ) || [];
+
+    // Keep the same format on all pages
+    favorites = favorites.map(item =>
+        typeof item === "string"
+            ? { name: item, image: "" }
+            : item
+    );
+
+    function saveFavorites() {
+        localStorage.setItem(
+            "favoriteDestinations",
+            JSON.stringify(favorites)
+        );
+    }
+
+    buttons.forEach(button => {
+        const place = button.dataset.place;
+        const card = button.closest(".place-card, .card");
+        const imageElement = card ? card.querySelector("img") : null;
+        const image = imageElement
+            ? imageElement.getAttribute("src")
+            : "";
+
+        const icon = button.querySelector("i");
+
+        const isFavorite = favorites.some(
+            item => item.name === place
+        );
+
+        if (isFavorite) {
+            button.classList.add("active");
+            icon.className = "bi bi-heart-fill";
+        }
+
+        button.addEventListener("click", function (event) {
+            event.stopPropagation();
+
+            const index = favorites.findIndex(
+                item => item.name === place
+            );
+
+            if (index !== -1) {
+                favorites.splice(index, 1);
+                button.classList.remove("active");
+                icon.className = "bi bi-heart";
+            } else {
+                favorites.push({
+                    name: place,
+                    image: image
+                });
+
+                button.classList.add("active");
+                icon.className = "bi bi-heart-fill";
+            }
+
+            saveFavorites();
+        });
+    });
+});

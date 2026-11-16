@@ -1,82 +1,52 @@
-body {
-    max-width: 1200px;
-    margin: 0 auto;
-    font-size: larger;
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas:
-        "header header"
-        "sidebar main"
-        "footer footer";
-    gap: 30px;
-}
 
-main {
-    grid-area: main;
-}
+/* =================================
+   ABOUT US PAGE
+================================= */
 
-footer {
-    grid-area: footer;
-}
-
-p {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular',
-        'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-a:link {
+/* General links */
+main a:link {
     color: #2c6e49;
 }
 
-a:visited {
+main a:visited {
     color: #6a4c93;
 }
 
-a:hover {
+main a:hover {
     color: #e76f51;
 }
 
-a:active {
+main a:active {
     color: darkblue;
 }
 
-#main-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    grid-area: header;
-}
-
-.logo {
-    font-size: 30px;
-    font-weight: bold;
-}
-
-.sidebar {
-    grid-area: sidebar;
-    background-color: #F0F8FC;
-    border-radius: 20px;
-    height: fit-content;
-}
-
-.sidebar a {
-    display: block;
-    margin-bottom: 15px;
-    text-decoration: none;
-    color: #2c6e49;
-}
-
-.sidebar a:hover {
-    color: #e76f51;
-}
-
-/* Styles for this page */
-
+/* Lakes images */
 .lakes-section img {
     border-radius: 40px;
 }
 
+/* Contact section */
+.contacts {
+    background: rgba(219, 241, 250, 0.45);
+    border: 1px solid rgba(95, 160, 190, 0.25);
+    border-radius: 28px;
+    padding: 35px;
+}
+
+.contacts h2 {
+    color: #174d70;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.contacts > p {
+    font-size: 17px;
+    color: #526b7b;
+    margin-bottom: 28px;
+}
+
+/* Contact form */
 #contact-form {
     width: 100%;
     max-width: 620px;
@@ -97,11 +67,14 @@ a:active {
 #contact-form textarea {
     width: 100%;
     padding: 14px 16px;
+
     font-size: 16px;
     color: #233f50;
+
     background: rgba(255, 255, 255, 0.65);
     border: 1px solid rgba(82, 140, 170, 0.3);
     border-radius: 13px;
+
     transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
     box-sizing: border-box;
 }
@@ -125,10 +98,12 @@ a:active {
     padding: 14px 20px;
     font-size: 17px;
     font-weight: 600;
+
     background-color: #2479ad;
     border: 1px solid #2479ad;
     color: white;
     border-radius: 13px;
+
     transition: 0.3s;
     cursor: pointer;
 }
@@ -139,92 +114,12 @@ a:active {
     color: white;
 }
 
-.contacts h2 {
-    color: #174d70;
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 12px;
+#contact-form select#place option {
+    font-size: 25px;
+    padding: 15px 20px;
 }
 
-.contacts > p {
-    font-size: 17px;
-    color: #526b7b;
-    margin-bottom: 28px;
-}
-
-.contacts {
-    background: rgba(219, 241, 250, 0.45);
-    border: 1px solid rgba(95, 160, 190, 0.25);
-    border-radius: 28px;
-    padding: 35px;
-}
-
-hr {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.hero img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    border-radius: 50px;
-}
-
-table {
-    width: 500px;
-    margin: 20px auto;
-    border-collapse: collapse;
-}
-
-th,
-td {
-    padding: 10px;
-    text-align: center;
-}
-
-@media (max-width: 600px) {
-    body {
-        display: block;
-        padding: 0 20px;
-    }
-
-    #main-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .sidebar {
-        margin-bottom: 30px;
-    }
-
-    #contact-form {
-        width: 100%;
-    }
-
-    table {
-        width: 100%;
-    }
-
-    .hero img {
-        width: 100%;
-        height: auto;
-    }
-
-    footer {
-        margin-top: 50px;
-    }
-
-    .registration-section {
-        padding: 22px 16px;
-        border-radius: 20px;
-    }
-
-    .registration-section h2 {
-        font-size: 27px;
-    }
-}
-
+/* Contact form messages */
 #contact-form-message:empty {
     display: none;
 }
@@ -233,9 +128,11 @@ td {
     padding: 18px 20px;
     margin-bottom: 18px;
     border-radius: 14px;
+
     font-size: 18px;
     line-height: 1.6;
     font-weight: 600;
+
     overflow-wrap: anywhere;
     animation: messageAppear 0.3s ease;
 }
@@ -252,9 +149,11 @@ td {
     }
 }
 
+/* Registration section */
 .registration-section {
     padding: 35px;
     border-radius: 28px;
+
     background: rgba(219, 241, 250, 0.45);
     border: 1px solid rgba(95, 160, 190, 0.3);
 }
@@ -271,6 +170,7 @@ td {
     margin-bottom: 28px;
 }
 
+/* Registration form */
 #registration-form {
     max-width: 620px;
     margin: 0 auto;
@@ -287,11 +187,14 @@ td {
 #registration-form input {
     width: 100%;
     padding: 14px 16px;
+
     font-size: 16px;
     color: #233f50;
+
     background: rgba(255, 255, 255, 0.7);
     border: 1px solid rgba(82, 140, 170, 0.3);
     border-radius: 13px;
+
     box-sizing: border-box;
 }
 
@@ -304,13 +207,16 @@ td {
 #registration-form button {
     width: 100%;
     padding: 14px;
+
     background: #2479ad;
     color: white;
     border: none;
     border-radius: 13px;
+
     font-size: 17px;
     font-weight: 600;
     cursor: pointer;
+
     transition: background 0.25s, transform 0.25s;
 }
 
@@ -319,6 +225,7 @@ td {
     transform: translateY(-2px);
 }
 
+/* Registration messages */
 #registration-message:empty {
     display: none;
 }
@@ -327,25 +234,23 @@ td {
     padding: 16px 18px;
     margin: 0 0 18px;
     border-radius: 13px;
+
     font-size: 17px;
     font-weight: 600;
     line-height: 1.6;
     overflow-wrap: anywhere;
 }
-#contact-form select#place option {
-    font-size: 25px;     
-    padding: 15px 20px;  
-}
 
-/* Task 6: Loading Spinner */
-
+/* Loading spinner */
 .spinner {
     display: inline-block;
     width: 16px;
     height: 16px;
+
     border: 3px solid white;
     border-top: 3px solid transparent;
     border-radius: 50%;
+
     animation: spin 0.7s linear infinite;
     margin-right: 8px;
 }
@@ -360,313 +265,99 @@ td {
     }
 }
 
-/* Task 7: Toast Notification */
-
+/* Toast notification */
 .toast-message {
     position: fixed;
     bottom: 30px;
     right: 30px;
 
-    background:  #185d88;
+    background: #185d88;
     color: white;
 
-    padding: 15px 25px;
-    border-radius: 10px;
+    padding: 20px 25px;
+    min-width: 300px;
+    max-width: calc(100vw - 40px);
+
+    border-radius: 12px;
+    font-size: 20px;
 
     opacity: 0;
     visibility: hidden;
 
     transition: opacity 0.4s;
     z-index: 9999;
-
-    font-size: 30px;
-    padding: 30px 35px;
-    min-width: 350px;
-    border-radius: 12px;
 }
 
 .toast-message.show {
     opacity: 1;
     visibility: visible;
 }
-<<<<<<< HEAD
 
-/* Loading Spinner */
-.spinner {
-    display: inline-block;
-    width: 17px;
-    height: 17px;
-    margin-right: 9px;
-    vertical-align: middle;
-    border: 3px solid rgba(255, 255, 255, 0.4);
-    border-top-color: white;
-    border-radius: 50%;
-    animation: inquiry-spin 0.7s linear infinite;
-}
-
-@keyframes inquiry-spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-/* Inquiry Toast Notification */
-.success-toast {
-    position: fixed;
-    top: 25px;
-    right: 25px;
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px 22px;
-    background: #eaf8ef;
-    color: #167344;
-    border: 1px solid #b7e4c7;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-15px);
-    transition: 0.3s ease;
-}
-
-.success-toast.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-@media (max-width: 480px) {
-    .success-toast {
-        left: 15px;
-        right: 15px;
-        top: 15px;
-    }
-}
-
-/* ==========================================
-   SAPAR - BLUE PERSONALIZED TRAVEL INQUIRY
-========================================== */
-
-#contact {
-    position: relative;
-    overflow: hidden;
-    max-width: 950px;
-    margin: 60px auto !important;
-    padding: 45px !important;
-    background: linear-gradient(145deg, #ffffff, #eff8ff);
-    border: 1px solid #d5eafa;
-    border-radius: 24px;
-    box-shadow: 0 12px 35px rgba(54, 130, 180, 0.10);
-}
-
-/* Decorative top line */
-#contact::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 6px;
-    background: linear-gradient(90deg, #56a9dc, #a8d9f5);
-}
-
-#contact h2 {
-    color: #2878aa;
-    font-size: 30px;
-    font-weight: 750;
-    text-align: center;
-    margin-bottom: 12px;
-}
-
-#contact > p {
-    max-width: 600px;
-    margin: 0 auto 30px;
-    color: #6b8293;
-    text-align: center;
-    line-height: 1.7;
-}
-
-/* Form card */
-#inquiry-form {
+/* Hero image */
+.hero img {
+    display: block;
     max-width: 100%;
-    margin: 0 auto;
-    padding: 28px;
-    background: #ffffff;
-    border: 1px solid #e0edf6;
-    border-radius: 18px;
+    height: auto;
+    border-radius: 50px;
 }
 
-#inquiry-form h4 {
-    color: #2878aa;
-    font-size: 19px;
-    font-weight: 700;
+/* Tables */
+main table {
+    width: 500px;
+    max-width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+main th,
+main td {
+    padding: 10px;
+    text-align: center;
+}
+
+hr {
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
-/* Labels */
-#inquiry-form .form-label {
-    color: #405e73;
-    font-weight: 600;
-    margin-bottom: 8px;
-}
-
-/* Inputs and select */
-#inquiry-form .form-control,
-#inquiry-form .form-select {
-    min-height: 48px;
-    padding: 12px 15px;
-    border: 1px solid #d7e8f4;
-    border-radius: 10px;
-    background-color: #fafdff;
-    transition: all 0.25s ease;
-}
-
-#inquiry-form textarea.form-control {
-    min-height: 130px;
-    resize: vertical;
-}
-
-#inquiry-form .form-control:focus,
-#inquiry-form .form-select:focus {
-    border-color: #65b3e2;
-    box-shadow: 0 0 0 4px rgba(86, 169, 220, 0.13);
-    background-color: #ffffff;
-}
-
-/* Account information */
-#inquiry-form input[readonly] {
-    background: #edf7fd;
-    color: #54768d;
-    border-color: #dcecf7;
-}
-
-/* Interest options */
-#inquiry-form .form-check {
-    padding: 12px 15px 12px 38px;
-    margin-bottom: 9px;
-    background: #f5faff;
-    border: 1px solid #e0edf6;
-    border-radius: 10px;
-    transition: all 0.2s ease;
-}
-
-#inquiry-form .form-check:hover {
-    background: #eaf6ff;
-    border-color: #a8d5ef;
-}
-
-#inquiry-form .form-check-input {
-    cursor: pointer;
-}
-
-#inquiry-form .form-check-input:checked {
-    background-color: #56a9dc;
-    border-color: #56a9dc;
-}
-
-#inquiry-form .form-check-label {
-    color: #49677d;
-    cursor: pointer;
-}
-
-/* Main button */
-#inquiry-form button[type="submit"] {
-    display: block;
-    width: 100%;
-    min-height: 52px;
-    margin-top: 25px;
-    padding: 13px 22px;
-    color: #ffffff;
-    background: #56a9dc;
-    border: 1px solid #56a9dc;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: 650;
-    letter-spacing: 0.3px;
-    box-shadow: 0 5px 13px rgba(86, 169, 220, 0.20);
-    transition: all 0.25s ease;
-}
-
-#inquiry-form button[type="submit"]:hover {
-    background: #398fc5;
-    border-color: #398fc5;
-    box-shadow: 0 8px 18px rgba(86, 169, 220, 0.28);
-    transform: translateY(-2px);
-}
-
-#inquiry-form button[type="submit"]:active {
-    transform: translateY(0);
-}
-
-#inquiry-form button[type="submit"]:disabled {
-    opacity: 0.75;
-    cursor: wait;
-    transform: none;
-}
-
-/* Guest message */
-#inquiry-guest {
-    padding: 30px;
-    background: #f5faff;
-    border: 1px solid #dcecf7;
-    border-radius: 16px;
-    text-align: center;
-}
-
-#inquiry-guest p {
-    color: #54768d;
-    margin-bottom: 18px;
-}
-
-#inquiry-guest .btn {
-    background: #56a9dc;
-    border-color: #56a9dc;
-    border-radius: 9px;
-    padding: 11px 25px;
-    font-weight: 600;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    #contact {
-        margin: 35px 15px !important;
-        padding: 30px 18px !important;
+/* Responsive */
+@media (max-width: 600px) {
+    #contact-form {
+        width: 100%;
     }
 
-    #contact h2 {
-        font-size: 25px;
+    .hero img {
+        width: 100%;
+        height: auto;
     }
 
-    #inquiry-form {
-        padding: 20px 15px;
+    .registration-section {
+        padding: 22px 16px;
+        border-radius: 20px;
+    }
+
+    .registration-section h2 {
+        font-size: 27px;
+    }
+
+    .contacts {
+        padding: 22px 16px;
+    }
+
+    .contacts h2 {
+        font-size: 27px;
+    }
+
+    main table {
+        width: 100%;
+    }
+
+    .toast-message {
+        right: 15px;
+        bottom: 15px;
+        min-width: 0;
+        width: calc(100% - 30px);
+        font-size: 16px;
+        padding: 16px;
     }
 }
-
-@media (max-width: 480px) {
-    #contact {
-        padding: 25px 13px !important;
-        border-radius: 16px;
-    }
-
-    #contact h2 {
-        font-size: 22px;
-    }
-
-    #inquiry-form {
-        padding: 16px 12px;
-    }
-}
-=======
-.profile-nav-link {
-    font-size: 25px;
-    color: #e78fb3 !important;
-    transition: all 0.3s ease;
-}
-
-.profile-nav-link:hover {
-    color: #d45d91 !important;
-    transform: scale(1.15);
-}
->>>>>>> 43376ae41118189966ecbc4cab0eafdbc72ed48f
