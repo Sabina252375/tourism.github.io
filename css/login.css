@@ -500,3 +500,49 @@ body.login-page footer p:last-child {
         font-size: 18px;
     }
 }
+/* FIX: LOGIN PAGE MOBILE HEADER */
+@media (max-width: 768px) {
+
+    body.login-page #main-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        gap: 8px;
+        min-height: 75px;
+        padding: 12px 0;
+    }
+
+    body.login-page #main-header .logo {
+        font-size: 27px;
+        flex-shrink: 0;
+    }
+
+    body.login-page #main-header .navbar {
+        width: auto;
+        margin-left: auto;
+        flex-shrink: 0;
+    }
+
+    body.login-page #main-header .header-actions {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+        flex-shrink: 0;
+    }
+
+    body.login-page #main-header .profile-nav-link {
+        font-size: 23px;
+    }
+
+    body.login-page #main-header #theme-toggle {
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

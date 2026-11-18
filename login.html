@@ -24,69 +24,42 @@
 <body class="px-2 px-md-4 login-page">
 
     <!-- Navigation -->
-    <header id="main-header" class="py-3 mb-4">
 
-        <div class="logo">SAPAR</div>
+<header id="main-header">
+    <div class="logo">SAPAR</div>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light"
-             aria-label="Main navigation">
+    <nav class="navbar navbar-expand-lg navbar-light p-0">
+        <div class="container-fluid">
 
-            <div class="container-fluid">
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <button class="navbar-toggler" type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarNav"
-                        aria-controls="navbarNav"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation">
-
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarNav">
-
-                    <ul class="navbar-nav">
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="aktau.html">Aktau</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="almaty.html">Almaty</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="balkhash.html">Balkhash</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="burabay.html">Burabay</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html">About Us</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link profile-nav-link"
-                               href="profile.html"
-                               title="My Profile"
-                               aria-label="My Profile">
-                                <i class="bi bi-person-circle"></i>
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aktau.html">Aktau</a></li>
+                    <li class="nav-item"><a class="nav-link" href="almaty.html">Almaty</a></li>
+                    <li class="nav-item"><a class="nav-link" href="balkhash.html">Balkhash</a></li>
+                    <li class="nav-item"><a class="nav-link" href="burabay.html">Burabay</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-    </header>
+    <div class="header-actions" id="header-actions">
+        <a class="profile-nav-link" href="profile.html" aria-label="My Profile">
+            <i class="bi bi-person-circle"></i>
+        </a>
+    </div>
+</header>
+
 
     <!-- Login Section -->
     <main class="auth-container">

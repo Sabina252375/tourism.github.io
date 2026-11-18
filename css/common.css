@@ -1,3 +1,4 @@
+
 /* ================================
    SAPAR — COMMON STYLES
 ================================ */
@@ -43,6 +44,7 @@ p {
    HEADER — ALL SAPAR PAGES
 ================================= */
 
+
 #main-header {
     grid-area: header;
     width: 100%;
@@ -53,11 +55,12 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 25px;
+    gap: 15px;
 
     background: transparent;
     border: none;
     box-shadow: none;
+    position: relative;
 }
 
 #main-header .logo {
@@ -108,37 +111,60 @@ p {
     font-weight: 700;
 }
 
+
+/* Profile and Theme — outside navigation menu */
+
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
 #main-header .profile-nav-link {
-    color: #e78fb3 !important;
+    color: #e78fb3;
     font-size: 25px;
+    text-decoration: none;
+    transition: color 0.25s ease, transform 0.25s ease;
 }
 
 #main-header .profile-nav-link:hover {
-    color: #d45d91 !important;
+    color: #d45d91;
     transform: scale(1.1);
 }
 
-/* Mobile navigation */
-@media (max-width: 768px) {
-    #main-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
 
-    #main-header .navbar {
-        width: 100%;
-        margin-left: 0;
-    }
+/* Theme button */
 
-    #main-header .navbar-nav {
-        flex-wrap: wrap;
-        gap: 5px 12px;
-    }
+#theme-toggle {
+    padding: 9px 16px;
+
+    border: 1px solid #607b91;
+    border-radius: 30px;
+
+    background: #29445a;
+    color: #dce7f0;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+    white-space: nowrap;
+
+    transition: transform 0.25s ease,
+                background-color 0.25s ease;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.05);
 }
 
 
-/* Sidebar */
+/* =================================
+   SIDEBAR
+================================= */
+
 .sidebar {
     grid-area: sidebar;
     align-self: start;
@@ -163,13 +189,21 @@ p {
     color: #e76f51;
 }
 
-/* Main content */
+
+/* =================================
+   MAIN CONTENT
+================================= */
+
 main {
     grid-area: main;
     min-width: 0;
 }
 
-/* Footer */
+
+/* =================================
+   FOOTER
+================================= */
+
 footer {
     grid-area: footer;
     width: 100%;
@@ -186,7 +220,11 @@ footer p:last-child {
     margin-bottom: 0;
 }
 
-/* Scroll progress */
+
+/* =================================
+   SCROLL PROGRESS
+================================= */
+
 #scroll-progress {
     position: fixed;
     top: 0;
@@ -199,27 +237,114 @@ footer p:last-child {
     transition: width 0.1s ease;
 }
 
-/* Responsive layout */
+
+/* =================================
+   RESPONSIVE DESIGN — TABLET & MOBILE
+================================= */
+
 @media (max-width: 768px) {
+
     body {
         display: block;
         padding: 0 15px !important;
     }
 
+    /* Header stays in one row */
+
     #main-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+
+        min-height: 75px;
+        gap: 8px;
+        padding: 12px 0;
+    }
+
+    #main-header .logo {
+        font-size: 27px;
+    }
+
+    /* Navigation and burger */
+
+    #main-header .navbar {
+        width: auto;
+        margin-left: auto;
+        flex-shrink: 0;
+    }
+
+    #main-header .navbar .container-fluid {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    #main-header .navbar-toggler {
+        padding: 6px;
+        border: 1px solid var(--border, #ccc);
+    }
+
+    /* Dropdown menu */
+
+    #main-header .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        right: 0;
+
+        width: 220px;
+        padding: 12px;
+
+        background: var(--card-bg, #ffffff);
+        border: 1px solid var(--border, #dddddd);
+        border-radius: 12px;
+
+        z-index: 1000;
+    }
+
+    #main-header .navbar-nav {
+        display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 15px;
+        gap: 5px;
     }
+
+    #main-header .nav-link {
+        width: 100%;
+    }
+
+    /* Profile and Theme stay outside menu */
+
+    .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        flex-shrink: 0;
+    }
+
+    #main-header .profile-nav-link {
+        font-size: 23px;
+    }
+
+    #theme-toggle {
+        padding: 7px 10px;
+        font-size: 13px;
+    }
+
+    /* Sidebar */
 
     .sidebar {
         width: 100%;
         margin-bottom: 25px;
     }
 
+    /* Main */
+
     main {
         width: 100%;
     }
+
+    /* Footer */
 
     footer {
         margin-top: 35px;
