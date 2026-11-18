@@ -1,4 +1,3 @@
-
 /* =================================
    LOGIN / SIGN UP PAGE
 ================================= */
@@ -14,46 +13,91 @@ body.login-page {
     font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-/* Navigation */
+/* =================================
+   HEADER — SAME AS ABOUT US
+================================= */
+
 body.login-page #main-header {
+    grid-area: header;
     width: 100%;
-    padding: 20px 6%;
+    min-height: 90px;
+    padding: 15px 0 !important;
+    margin: 0 0 24px 0 !important;
 
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    justify-content: space-between;
+    gap: 25px;
 
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 3px 15px rgba(35, 85, 115, 0.08);
+    background: transparent;
+    border: none;
+    box-shadow: none;
 }
 
-body.login-page .logo {
-    font-size: 30px;
-    font-weight: 800;
-    color: #2479ad;
-    letter-spacing: 2px;
-}
+body.login-page #main-header .logo {
+    margin: 0;
+    padding: 0;
 
-body.login-page #main-header nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
+    color: #212529;
+    font-size: 32px !important;
+    font-weight: 700;
+    letter-spacing: normal;
 
-body.login-page #main-header nav a {
-    color: #294b60;
     text-decoration: none;
-    font-size: 15px;
-    font-weight: 600;
-    transition: color 0.3s ease;
+    flex-shrink: 0;
 }
 
-body.login-page #main-header nav a:hover {
-    color: #2479ad;
+body.login-page #main-header .navbar {
+    padding: 0;
+    margin-left: auto;
+    background: transparent !important;
 }
 
-/* Authentication container */
+body.login-page #main-header .navbar .container-fluid {
+    padding: 0;
+    background: transparent;
+}
+
+body.login-page #main-header .navbar-collapse {
+    background: transparent;
+}
+
+body.login-page #main-header .navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+body.login-page #main-header .nav-link {
+    color: #333333;
+    font-size: 17px;
+    font-weight: 500;
+    transition: color 0.25s ease;
+}
+
+body.login-page #main-header .nav-link:hover {
+    color: #2c6e49;
+}
+
+body.login-page #main-header .nav-link.active {
+    color: #2c6e49;
+    font-weight: 700;
+}
+
+body.login-page #main-header .profile-nav-link {
+    color: #e78fb3 !important;
+    font-size: 25px;
+}
+
+body.login-page #main-header .profile-nav-link:hover {
+    color: #d45d91 !important;
+    transform: scale(1.1);
+}
+
+/* =================================
+   AUTHENTICATION CONTAINER
+================================= */
+
 .auth-container {
     flex: 1;
     display: flex;
@@ -87,7 +131,10 @@ body.login-page #main-header nav a:hover {
     }
 }
 
-/* Heading */
+/* =================================
+   HEADING
+================================= */
+
 .auth-heading {
     text-align: center;
     margin-bottom: 30px;
@@ -106,11 +153,15 @@ body.login-page #main-header nav a:hover {
     line-height: 1.6;
 }
 
-/* Login / Signup tabs */
+/* =================================
+   LOGIN / SIGNUP TABS
+================================= */
+
 .auth-tabs {
     display: flex;
     padding: 5px;
     margin-bottom: 30px;
+
     background: #edf5fa;
     border-radius: 13px;
 }
@@ -118,6 +169,7 @@ body.login-page #main-header nav a:hover {
 .tab-btn {
     flex: 1;
     padding: 12px;
+
     border: none;
     border-radius: 10px;
 
@@ -127,6 +179,7 @@ body.login-page #main-header nav a:hover {
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
+
     transition: all 0.3s ease;
 }
 
@@ -140,7 +193,10 @@ body.login-page #main-header nav a:hover {
     box-shadow: 0 3px 10px rgba(36, 121, 173, 0.2);
 }
 
-/* Forms */
+/* =================================
+   FORMS
+================================= */
+
 .auth-card form h2 {
     margin-bottom: 22px;
     color: #174d70;
@@ -155,6 +211,7 @@ body.login-page #main-header nav a:hover {
 .form-group label {
     display: block;
     margin-bottom: 8px;
+
     color: #294b60;
     font-size: 14px;
     font-weight: 650;
@@ -172,6 +229,7 @@ body.login-page #main-header nav a:hover {
 
     font-size: 15px;
     outline: none;
+
     transition: all 0.3s ease;
 }
 
@@ -185,7 +243,54 @@ body.login-page #main-header nav a:hover {
     box-shadow: 0 0 0 4px rgba(57, 135, 181, 0.12);
 }
 
-/* Submit button */
+/* =================================
+   SHOW / HIDE PASSWORD
+================================= */
+
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper input {
+    width: 100%;
+    padding-right: 45px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 30px;
+    height: 30px;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    background: transparent;
+    color: #3987b5;
+
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.toggle-password:hover {
+    color: #185d88;
+}
+
+.toggle-password:focus {
+    outline: none;
+}
+
+/* =================================
+   SUBMIT BUTTON
+================================= */
+
 .auth-submit {
     width: 100%;
     padding: 15px;
@@ -200,6 +305,7 @@ body.login-page #main-header nav a:hover {
     font-size: 16px;
     font-weight: 700;
     cursor: pointer;
+
     transition: all 0.3s ease;
 }
 
@@ -218,7 +324,10 @@ body.login-page #main-header nav a:hover {
     cursor: not-allowed;
 }
 
-/* Form messages */
+/* =================================
+   FORM MESSAGES
+================================= */
+
 .form-message:empty {
     display: none;
 }
@@ -226,12 +335,12 @@ body.login-page #main-header nav a:hover {
 .form-message:not(:empty) {
     padding: 12px 14px;
     margin-bottom: 15px;
-    border-radius: 10px;
 
+    border-radius: 10px;
     font-size: 14px;
     line-height: 1.5;
-    overflow-wrap: anywhere;
 
+    overflow-wrap: anywhere;
     animation: messageAppear 0.3s ease;
 }
 
@@ -259,10 +368,14 @@ body.login-page #main-header nav a:hover {
     border: 1px solid #b7e4c7;
 }
 
-/* Switch text */
+/* =================================
+   SWITCH TEXT
+================================= */
+
 .switch-text {
     margin-top: 23px;
     text-align: center;
+
     color: #718797;
     font-size: 14px;
 }
@@ -282,7 +395,21 @@ body.login-page #main-header nav a:hover {
     text-decoration: underline;
 }
 
-/* Footer */
+/* =================================
+   SUCCESS TOAST
+================================= */
+
+.success-toast {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 9999;
+}
+
+/* =================================
+   FOOTER
+================================= */
+
 body.login-page footer {
     width: 100%;
     padding: 23px 15px;
@@ -301,16 +428,26 @@ body.login-page footer p:last-child {
     margin-bottom: 0;
 }
 
-/* Tablet */
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+
 @media (max-width: 768px) {
+
     body.login-page #main-header {
         flex-direction: column;
-        padding: 18px 15px;
+        align-items: flex-start;
+        gap: 15px;
     }
 
-    body.login-page #main-header nav {
-        justify-content: center;
-        gap: 12px 18px;
+    body.login-page #main-header .navbar {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    body.login-page #main-header .navbar-nav {
+        flex-wrap: wrap;
+        gap: 5px 12px;
     }
 
     .auth-card {
@@ -318,8 +455,8 @@ body.login-page footer p:last-child {
     }
 }
 
-/* Mobile */
 @media (max-width: 480px) {
+
     .auth-container {
         padding: 30px 14px;
     }
@@ -333,11 +470,11 @@ body.login-page footer p:last-child {
         font-size: 25px;
     }
 
-    body.login-page #main-header nav a {
-        font-size: 13px;
-    }
-
     .auth-card form h2 {
         font-size: 21px;
+    }
+
+    .toggle-password {
+        font-size: 18px;
     }
 }

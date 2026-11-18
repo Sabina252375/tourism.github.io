@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,26 +10,81 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
           rel="stylesheet">
 
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <!-- Custom CSS -->
-     <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/theme.css">
 </head>
 
-<body class="login-page">
+<body class="px-2 px-md-4 login-page">
 
     <!-- Navigation -->
-    <header id="main-header">
+    <header id="main-header" class="py-3 mb-4">
+
         <div class="logo">SAPAR</div>
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="aktau.html">Aktau</a>
-            <a href="almaty.html">Almaty</a>
-            <a href="balkhash.html">Balkhash</a>
-            <a href="burabay.html">Burabay</a>
-            <a href="about.html">About Us</a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light"
+             aria-label="Main navigation">
+
+            <div class="container-fluid">
+
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="aktau.html">Aktau</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="almaty.html">Almaty</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="balkhash.html">Balkhash</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="burabay.html">Burabay</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link profile-nav-link"
+                               href="profile.html"
+                               title="My Profile"
+                               aria-label="My Profile">
+                                <i class="bi bi-person-circle"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
         </nav>
+
     </header>
 
     <!-- Login Section -->
@@ -45,6 +99,7 @@
 
             <!-- Login / Sign Up Tabs -->
             <div class="auth-tabs">
+
                 <button type="button"
                         id="login-tab"
                         class="tab-btn active">
@@ -56,6 +111,7 @@
                         class="tab-btn">
                     Sign Up
                 </button>
+
             </div>
 
             <!-- Login Form -->
@@ -73,10 +129,20 @@
 
                 <div class="form-group">
                     <label for="login-password">Password</label>
-                    <input
-                        type="password"
-                        id="login-password"
-                        placeholder="Enter your password">
+
+                    <div class="password-wrapper">
+                        <input
+                            type="password"
+                            id="login-password"
+                            placeholder="Enter your password">
+
+                        <button type="button"
+                                class="toggle-password"
+                                onclick="togglePassword('login-password', this)"
+                                aria-label="Show password">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                    </div>
                 </div>
 
                 <p id="login-message" class="form-message"
@@ -126,20 +192,40 @@
 
                 <div class="form-group">
                     <label for="signup-password">Password</label>
-                    <input
-                        type="password"
-                        id="signup-password"
-                        placeholder="Create a password">
+
+                    <div class="password-wrapper">
+                        <input
+                            type="password"
+                            id="signup-password"
+                            placeholder="Create a password">
+
+                        <button type="button"
+                                class="toggle-password"
+                                onclick="togglePassword('signup-password', this)"
+                                aria-label="Show password">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                    </div>
                 </div>
 
                 <div class="form-group">
                     <label for="confirm-password">
                         Confirm Password
                     </label>
-                    <input
-                        type="password"
-                        id="confirm-password"
-                        placeholder="Confirm your password">
+
+                    <div class="password-wrapper">
+                        <input
+                            type="password"
+                            id="confirm-password"
+                            placeholder="Confirm your password">
+
+                        <button type="button"
+                                class="toggle-password"
+                                onclick="togglePassword('confirm-password', this)"
+                                aria-label="Show password">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                    </div>
                 </div>
 
                 <p id="signup-message" class="form-message"
@@ -173,15 +259,19 @@
     </footer>
 
     <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <script src="auth.js" defer></script>
 
     <!-- Success Toast -->
-     <div id="success-toast" class="success-toast">
+    <div id="success-toast" class="success-toast">
         <span>✓</span>
         <span id="toast-message">
             Account created successfully!
         </span>
     </div>
-<script src="theme.js"></script>
+
+    <script src="theme.js"></script>
+
 </body>
 </html>

@@ -305,3 +305,13 @@
         height: 190px;
     }
 }
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 6px;
+    background-color: #2c6e9f;
+    z-index: 999999;
+    transition: width 0.1s ease;
+}

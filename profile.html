@@ -5,232 +5,276 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>SAPAR - My Profile</title>
+    <title>Login | SAPAR</title>
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
 
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <!-- CSS -->
-     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/profile.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/theme.css">
 </head>
 
-<body class="profile-page">
+<body class="login-page">
 
+    <!-- Navigation -->
+    <header id="main-header" class="py-3 mb-4">
 
+        <div class="logo">SAPAR</div>
 
-<header id="main-header" class="py-3 mb-4">
-    <div class="logo">SAPAR</div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light"
+             aria-label="Main navigation">
 
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
+            <div class="container-fluid">
 
-            <button class="navbar-toggler" type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav"
-                    aria-controls="navbarNav"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
+                <div class="collapse navbar-collapse" id="navbarNav">
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="aktau.html">Aktau</a>
-                    </li>
+                    <ul class="navbar-nav">
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="almaty.html">Almaty</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="balkhash.html">Balkhash</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="aktau.html">Aktau</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="burabay.html">Burabay</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="almaty.html">Almaty</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About Us</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="balkhash.html">Balkhash</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link profile-nav-link active"
-                           href="profile.html"
-                           title="My Profile"
-                           aria-label="My Profile">
-                            <i class="bi bi-person-circle"></i>
-                        </a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="burabay.html">Burabay</a>
+                        </li>
 
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link profile-nav-link"
+                               href="profile.html"
+                               title="My Profile"
+                               aria-label="My Profile">
+                                <i class="bi bi-person-circle"></i>
+                            </a>
+                        </li>
 
+                    </ul>
 
-<main class="profile-container">
-
-    <!-- Profile Welcome -->
-    <section class="profile-hero">
-        <div class="profile-avatar">
-            <i class="bi bi-person-fill"></i>
-        </div>
-
-        <h1>My Profile</h1>
-        <p>Welcome to your personal SAPAR account!</p>
-    </section>
-
-    <!-- Personal Information -->
-    <section class="profile-card">
-
-        <h2>Personal Information</h2>
-
-        <div class="profile-info">
-
-            <div class="info-item">
-                <i class="bi bi-person"></i>
-                <div>
-                    <span>Full Name</span>
-                    <p id="profileName">Loading...</p>
                 </div>
             </div>
+        </nav>
 
-            <div class="info-item">
-                <i class="bi bi-envelope"></i>
-                <div>
-                    <span>Email Address</span>
-                    <p id="profileEmail">Loading...</p>
-                </div>
+    </header>
+
+    <!-- Login Section -->
+    <main class="auth-container">
+
+        <div class="auth-card">
+
+            <div class="auth-heading">
+                <h1>Welcome to SAPAR!</h1>
+                <p>Discover Kazakhstan. Start your journey with us.</p>
             </div>
-                <div class="info-item">
-    <i class="bi bi-telephone"></i>
-    <div>
-        <span>Phone Number</span>
-        <p id="profilePhone">Loading...</p>
-    </div>
 
-</div>
+            <!-- Login / Sign Up Tabs -->
+            <div class="auth-tabs">
+
+                <button type="button"
+                        id="login-tab"
+                        class="tab-btn active">
+                    Log In
+                </button>
+
+                <button type="button"
+                        id="signup-tab"
+                        class="tab-btn">
+                    Sign Up
+                </button>
+
+            </div>
+
+            <!-- Login Form -->
+            <form id="login-form" novalidate>
+
+                <h2>Welcome Back</h2>
+
+                <div class="form-group">
+                    <label for="login-email">Email Address</label>
+                    <input
+                        type="text"
+                        id="login-email"
+                        placeholder="Enter your email">
+                </div>
+
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+
+                    <div class="password-wrapper">
+                        <input
+                            type="password"
+                            id="login-password"
+                            placeholder="Enter your password">
+
+                        <button type="button"
+                                class="toggle-password"
+                                onclick="togglePassword('login-password', this)"
+                                aria-label="Show password">
+                            <i class="bi bi-eye-slash"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <p id="login-message" class="form-message"
+                   aria-live="polite"></p>
+
+                <button type="submit" class="auth-submit">
+                    Log In
+                </button>
+
+                <p class="switch-text">
+                    Don't have an account?
+                    <button type="button" id="go-signup">
+                        Sign Up
+                    </button>
+                </p>
+
+            </form>
+
+            <!-- Sign Up Form -->
+            <form id="signup-form" novalidate hidden>
+
+                <h2>Create Account</h2>
+
+                <div class="form-group">
+                    <label for="signup-name">Full Name</label>
+                    <input
+                        type="text"
+                        id="signup-name"
+                        placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="signup-email">Email Address</label>
+                    <input
+                        type="text"
+                        id="signup-email"
+                        placeholder="Enter your email">
+                </div>
+
+                <div class="form-group">
+                    <label for="signup-phone">Phone Number</label>
+                    <input
+                        type="text"
+                        id="signup-phone"
+                        placeholder="+7 777 123 4567">
+                </div>
+
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+
+                    <div class="password-wrapper">
+                        <input
+                            type="password"
+                            id="signup-password"
+                            placeholder="Create a password">
+
+                        <button type="button"
+                                class="toggle-password"
+                                onclick="togglePassword('signup-password', this)"
+                                aria-label="Show password">
+                            <i class="bi bi-eye-slash"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">
+                        Confirm Password
+                    </label>
+
+                    <div class="password-wrapper">
+                        <input
+                            type="password"
+                            id="confirm-password"
+                            placeholder="Confirm your password">
+
+                        <button type="button"
+                                class="toggle-password"
+                                onclick="togglePassword('confirm-password', this)"
+                                aria-label="Show password">
+                            <i class="bi bi-eye-slash"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <p id="signup-message" class="form-message"
+                   aria-live="polite"></p>
+
+                <button type="submit" class="auth-submit">
+                    Create Account
+                </button>
+
+                <p class="switch-text">
+                    Already have an account?
+                    <button type="button" id="go-login">
+                        Log In
+                    </button>
+                </p>
+
+            </form>
 
         </div>
-        <div class="favorites-section">
-    <h2><i class="bi bi-heart-fill"></i> My Favorite Destinations</h2>
-    <div id="favoriteDestinationsList">
-        <p>Loading favorites...</p>
-    </div>
-</div>
-<!-- Edit Profile Button -->
-<button id="editProfileBtn" class="edit-btn">
-    <i class="bi bi-pencil-square"></i>
-    Edit Profile
-</button>
 
-<!-- Edit Profile Form -->
-<div id="editProfileForm" class="edit-form" style="display: none;">
+    </main>
 
-    <h3>Edit Your Information</h3>
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 SAPAR — Kazakhstan Guides</p>
+        <p>
+            Kenzhibayeva Sabina |
+            Manatova Aruzhan |
+            Kairova Zhanna
+        </p>
+    </footer>
 
-    <div class="mb-3 text-start">
-        <label for="editName" class="form-label">Full Name</label>
-        <input type="text" id="editName" class="form-control">
-    </div>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <div class="mb-3 text-start">
-        <label for="editEmail" class="form-label">Email Address</label>
-        <input type="email" id="editEmail" class="form-control">
-    </div>
+    <!-- Authentication JavaScript -->
+    <script src="auth.js" defer></script>
 
-    <div class="mb-3 text-start">
-        <label for="editPhone" class="form-label">Phone Number</label>
-        <input type="tel" id="editPhone" class="form-control">
+    <!-- Success Toast -->
+    <div id="success-toast" class="success-toast">
+        <span>✓</span>
+        <span id="toast-message">
+            Account created successfully!
+        </span>
     </div>
 
-    <button type="button" id="saveProfileBtn" class="save-btn">
-        Save Changes
-    </button>
-
-    <button type="button" id="cancelEditBtn" class="cancel-btn">
-        Cancel
-    </button>
-
-    <p id="editMessage"></p>
-
-</div>
-<!-- Change Password Button -->
-<button id="changePasswordBtn" class="edit-btn">
-    <i class="bi bi-lock"></i>
-    Change Password
-</button>
-
-<!-- Change Password Form -->
-<div id="changePasswordForm" class="edit-form" style="display: none;">
-
-    <h3>Change Your Password</h3>
-
-    <div class="mb-3 text-start">
-        <label for="currentPassword" class="form-label">
-            Current Password
-        </label>
-        <input type="password" id="currentPassword"
-               class="form-control">
-    </div>
-
-    <div class="mb-3 text-start">
-        <label for="newPassword" class="form-label">
-            New Password
-        </label>
-        <input type="password" id="newPassword"
-               class="form-control">
-    </div>
-
-    <div class="mb-3 text-start">
-        <label for="confirmNewPassword" class="form-label">
-            Confirm New Password
-        </label>
-        <input type="password" id="confirmNewPassword"
-               class="form-control">
-    </div>
-
-    <button type="button" id="savePasswordBtn" class="save-btn">
-        Update Password
-    </button>
-
-    <button type="button" id="cancelPasswordBtn" class="cancel-btn">
-        Cancel
-    </button>
-
-    <p id="passwordMessage"></p>
-
-</div>
-        <button id="logoutBtn" class="logout-btn">
-            <i class="bi bi-box-arrow-right"></i>
-            Log Out
-        </button>
-
-    </section>
-
-</main>
-
-<footer>
-    <p>© 2026 SAPAR — Kazakhstan Guides</p>
-    <p>Kenzhibayeva Sabina | Manatova Aruzhan | Kairova Zhanna</p>
-</footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="profile.js"></script>
-<script src="theme.js"></script>
+    <!-- Theme JavaScript -->
+    <script src="theme.js"></script>
 
 </body>
 </html>
