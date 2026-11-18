@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
 
     // Get current user from localStorage
@@ -230,6 +229,7 @@ savePasswordBtn.addEventListener("click", function () {
         localStorage.removeItem("currentUser");
         window.location.href = "login.html";
     });
+    
 
 });
 

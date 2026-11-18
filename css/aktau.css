@@ -208,3 +208,15 @@ main .nav-menu a:focus-visible {
     z-index: 999999;
     transition: width 0.1s ease;
 }
+/* Hover effect — Things to do */
+#things .row > div > div {
+    background-color: #F0F8FC;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+#things .row > div > div:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}

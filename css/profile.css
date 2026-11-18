@@ -451,3 +451,37 @@ body.profile-page > footer p:last-child {
         margin: 8px 0;
     }
 }
+
+/* Remove Favorite Button */
+.remove-favorite {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 8px 16px;
+    margin-top: 8px;
+
+    background-color: #2479ad;
+    color: white;
+
+    border: 1px solid #2479ad;
+    border-radius: 8px;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.remove-favorite:hover {
+    background-color: #185d88;
+    border-color: #185d88;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.remove-favorite i {
+    font-size: 15px;
+}
