@@ -1,20 +1,3 @@
-
-// Sound Effects — Sea Waves
-
-const soundButtons = document.querySelectorAll(".sound-button");
-const seaWavesSound = document.getElementById("seaWavesSound");
-
-soundButtons.forEach(function (button) {
-    button.addEventListener("click", function () {
-        if (!seaWavesSound) return;
-
-        seaWavesSound.currentTime = 0;
-
-        seaWavesSound.play().catch(function (error) {
-            console.log("Sound playback error:", error);
-        });
-    });
-});
 const activitySelect = document.getElementById("activitySelect");
 const activityInfo = document.getElementById("activityInfo");
 
