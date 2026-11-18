@@ -12,7 +12,7 @@
     --about-border: #d6e5ed;
 }
 
-/* General */
+/* GENERAL */
 
 main {
     min-width: 0;
@@ -48,16 +48,13 @@ main p {
 .section-label {
     display: inline-block;
     margin-bottom: 9px;
-
     color: var(--about-blue);
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 1.3px;
 }
 
-/* =================================
-   ABOUT OUR GUIDES
-================================= */
+/* ABOUT OUR GUIDES */
 
 .hero {
     padding: 10px 0 25px;
@@ -78,12 +75,11 @@ main p {
     height: auto;
     max-height: 520px;
     object-fit: cover;
-
     margin: 25px auto;
     border-radius: 16px;
 }
 
-/* Services */
+/* SERVICES */
 
 .services {
     margin-top: 30px;
@@ -96,7 +92,6 @@ main p {
 .service-item {
     padding: 17px 20px;
     margin-bottom: 15px;
-
     border-left: 3px solid #8dbbd5;
 }
 
@@ -109,9 +104,7 @@ main p {
     font-size: 14px;
 }
 
-/* =================================
-   TEAM
-================================= */
+/* TEAM */
 
 .team-section {
     padding: 25px 0;
@@ -123,6 +116,7 @@ main p {
 }
 
 .team-table-wrapper {
+    width: 100%;
     overflow-x: auto;
     border: 1px solid var(--about-border);
     border-radius: 10px;
@@ -133,25 +127,22 @@ main p {
     width: 100%;
     min-width: 390px;
     margin: 0 !important;
-
     border-collapse: collapse;
+    border-spacing: 0;
     font-size: 14px;
 }
 
 .team-table caption {
     padding: 14px 16px;
-
     color: var(--about-dark-blue);
     font-size: 16px;
     font-weight: 700;
     text-align: left;
-
     caption-side: top;
 }
 
 .team-table th {
     padding: 13px 12px;
-
     color: white;
     background: var(--about-dark-blue);
     text-align: left;
@@ -159,8 +150,7 @@ main p {
 }
 
 .team-table td {
-    padding: 13px 12px;
-
+    padding: 14px 16px;
     color: var(--about-text);
     text-align: left;
     border-bottom: 1px solid #e5edf2;
@@ -174,13 +164,10 @@ main p {
     background: #f5f9fb;
 }
 
-/* =================================
-   PERSONALIZED TRAVEL INQUIRY
-================================= */
+/* PERSONALIZED TRAVEL INQUIRY */
 
 .contacts {
     padding: 30px !important;
-
     background: #f3f8fb;
     border: 1px solid var(--about-border);
     border-radius: 14px;
@@ -209,7 +196,7 @@ main p {
     border-color: var(--about-dark-blue);
 }
 
-/* Keep hidden forms hidden */
+/* KEEP HIDDEN FORMS HIDDEN */
 
 #inquiry-guest[hidden],
 #inquiry-form[hidden] {
@@ -235,10 +222,8 @@ main p {
 #inquiry-form select,
 #inquiry-form textarea {
     padding: 11px 13px;
-
     color: var(--about-text);
     background: white;
-
     border: 1px solid #cbdde7;
     border-radius: 8px;
 }
@@ -255,18 +240,45 @@ main p {
     background: #edf3f6;
 }
 
+/* CHECKBOXES */
+
 #inquiry-form .form-check {
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px !important;
     margin-bottom: 8px;
+    background: #eaf4f9;
+    border-radius: 6px;
+    pointer-events: auto !important;
+}
+
+#inquiry-form input[type="checkbox"].form-check-input {
+    appearance: auto !important;
+    -webkit-appearance: checkbox !important;
+    position: static !important;
+    float: none !important;
+    display: inline-block !important;
+    width: 16px !important;
+    height: 16px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    opacity: 1 !important;
+    cursor: pointer !important;
+    accent-color: #2479ad;
+    pointer-events: auto !important;
+    flex-shrink: 0;
 }
 
 #inquiry-form .form-check-label {
+    margin: 0 !important;
+    color: #294b60 !important;
     font-weight: 400;
+    cursor: pointer !important;
+    pointer-events: auto !important;
 }
 
-#inquiry-form .form-check-input:checked {
-    background-color: var(--about-blue);
-    border-color: var(--about-blue);
-}
+/* FORM BUTTON */
 
 #inquiry-form hr {
     margin: 22px 0;
@@ -275,12 +287,10 @@ main p {
 
 #inquiry-form button {
     padding: 10px 22px;
-
     color: white;
     background: var(--about-blue);
     border: 1px solid var(--about-blue);
     border-radius: 8px;
-
     font-weight: 600;
 }
 
@@ -289,7 +299,7 @@ main p {
     border-color: var(--about-dark-blue);
 }
 
-/* Form messages */
+/* FORM MESSAGES */
 
 #inquiry-form-message:empty {
     display: none;
@@ -301,21 +311,16 @@ main p {
     font-size: 14px;
 }
 
-/* =================================
-   LOADING SPINNER
-================================= */
+/* LOADING SPINNER */
 
 .spinner {
     display: inline-block;
     width: 16px;
     height: 16px;
-
     margin-right: 8px;
-
     border: 3px solid white;
     border-top-color: transparent;
     border-radius: 50%;
-
     animation: spin 0.7s linear infinite;
 }
 
@@ -325,30 +330,23 @@ main p {
     }
 }
 
-/* =================================
-   TOAST NOTIFICATION
-================================= */
+/* TOAST NOTIFICATION */
 
 .toast-message {
     position: fixed;
     bottom: 25px;
     right: 25px;
     z-index: 9999;
-
     padding: 15px 22px;
     min-width: 250px;
     max-width: calc(100vw - 40px);
-
     color: white;
     background: #185d88;
     border-radius: 9px;
-
     font-size: 15px;
-
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
-
     transition: 0.3s ease;
 }
 
@@ -358,9 +356,7 @@ main p {
     transform: translateY(0);
 }
 
-/* =================================
-   FOOTER
-================================= */
+/* FOOTER */
 
 footer {
     color: var(--about-muted);
@@ -378,22 +374,98 @@ footer a:hover {
     color: var(--about-dark-blue);
 }
 
-/* =================================
-   SCROLL PROGRESS
-================================= */
+/* SCROLL PROGRESS */
 
 #scroll-progress {
     position: fixed;
     top: 0;
     left: 0;
-
     width: 0;
     height: 4px;
-
     background-color: var(--about-blue);
     z-index: 999999;
-
     transition: width 0.1s ease;
+}
+
+/* =================================
+   DARK THEME
+================================= */
+
+html[data-theme="dark"] main {
+    color: #dce7f0;
+}
+
+html[data-theme="dark"] main h2,
+html[data-theme="dark"] main h3,
+html[data-theme="dark"] main h4 {
+    color: #91d5fa;
+}
+
+html[data-theme="dark"] main p {
+    color: #b2c2d0;
+}
+
+/* Team table */
+
+html[data-theme="dark"] .team-table-wrapper {
+    background: #1c2d3d;
+    border-color: #40566a;
+}
+
+html[data-theme="dark"] .team-table caption {
+    color: #9bd5f3;
+}
+
+html[data-theme="dark"] .team-table thead th {
+    background: #244b67;
+    color: white;
+}
+
+html[data-theme="dark"] .team-table tbody td {
+    background: #1c2d3d;
+    color: #e0eaf2;
+    border-color: #40566a;
+}
+
+/* Contacts */
+
+html[data-theme="dark"] .contacts {
+    background: #1b2a3a;
+    border-color: #344b60;
+}
+
+html[data-theme="dark"] #inquiry-form label {
+    color: #dce7f0;
+}
+
+html[data-theme="dark"] #inquiry-form input:not([type="checkbox"]),
+html[data-theme="dark"] #inquiry-form select,
+html[data-theme="dark"] #inquiry-form textarea {
+    background: #24374a;
+    color: #dce7f0;
+    border-color: #344b60;
+}
+
+html[data-theme="dark"] #inquiry-form input[readonly] {
+    background: #263d51;
+}
+
+/* Dark checkboxes */
+
+html[data-theme="dark"] #inquiry-form .form-check {
+    background: #263d51;
+}
+
+html[data-theme="dark"] #inquiry-form .form-check-label {
+    color: #e0eaf2 !important;
+}
+
+html[data-theme="dark"] #inquiry-form input[type="checkbox"].form-check-input {
+    accent-color: #75c5ef;
+}
+
+html[data-theme="dark"] #inquiry-form hr {
+    border-color: #40566a;
 }
 
 /* =================================
@@ -454,109 +526,4 @@ footer a:hover {
     .contacts {
         padding: 18px 14px !important;
     }
-}
-
-
-/* FIX: TEAM TABLE */
-
-.team-table-wrapper {
-    width: 100%;
-    overflow-x: auto;
-    border: 1px solid var(--about-border);
-    border-radius: 10px;
-}
-
-.team-table {
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-.team-table tbody tr,
-.team-table tbody tr:nth-child(even),
-.team-table tbody tr:nth-child(odd) {
-    background: transparent !important;
-}
-
-.team-table tbody td {
-    background: transparent !important;
-    color: inherit;
-    padding: 14px 16px;
-}
-
-.team-table tbody tr + tr td {
-    border-top: 1px solid var(--about-border);
-}
-
-/* FIX: CHECKBOXES */
-
-#inquiry-form .form-check {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 7px 0 7px 1.5em;
-    margin-bottom: 5px;
-    background: transparent !important;
-}
-
-#inquiry-form .form-check-label {
-    background: transparent !important;
-    color: inherit;
-    cursor: pointer;
-}
-
-#inquiry-form .form-check-input {
-    flex-shrink: 0;
-    cursor: pointer;
-}
-
-/* DARK THEME */
-
-body.dark-mode .team-table-wrapper {
-    background: #1c2d3d;
-    border-color: #40566a;
-}
-
-body.dark-mode .team-table caption {
-    color: #9bd5f3;
-}
-
-body.dark-mode .team-table thead th {
-    background: #244b67 !important;
-    color: white !important;
-}
-
-body.dark-mode .team-table tbody td {
-    background: #1c2d3d !important;
-    color: #e0eaf2 !important;
-}
-
-body.dark-mode .team-table tbody tr + tr td {
-    border-color: #40566a;
-}
-
-body.dark-mode #inquiry-form .form-check {
-    background: transparent !important;
-}
-
-body.dark-mode #inquiry-form .form-check-label {
-    color: #e0eaf2 !important;
-}
-
-body.dark-mode #inquiry-form .form-check-input {
-    background-color: #263d51;
-    border-color: #7895a9;
-}
-
-body.dark-mode #inquiry-form .form-check-input:checked {
-    background-color: #2479ad;
-    border-color: #2479ad;
-}
-/* Team table text color */
-.team-table tbody td {
-    color: #000000 !important;
-}
-
-.team-table caption {
-    color: #000000 !important;
 }

@@ -1,5 +1,3 @@
-
-
 // Get saved theme from localStorage
 const savedTheme = localStorage.getItem("sapar-theme") || "light";
 

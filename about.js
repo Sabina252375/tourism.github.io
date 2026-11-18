@@ -1,5 +1,9 @@
+
 document.addEventListener("DOMContentLoaded", function () {
 
+    // =================================
+    // CONTACT FORM
+    // =================================
 
     const contactForm = document.getElementById("contact-form");
 
@@ -49,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
                 contactForm.reset();
+
                 showToast("Your message has been sent successfully!");
 
             } catch (error) {
@@ -61,9 +66,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-
+    // =================================
     // PERSONALIZED TRAVEL INQUIRY
-
+    // =================================
 
     const inquiryForm = document.getElementById("inquiry-form");
     const guestMessage = document.getElementById("inquiry-guest");
@@ -81,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Show form only for logged-in users
+
         if (currentUser) {
             inquiryForm.hidden = false;
             guestMessage.hidden = true;
@@ -98,6 +104,9 @@ document.addEventListener("DOMContentLoaded", function () {
             inquiryForm.hidden = true;
             guestMessage.hidden = false;
         }
+
+
+        // Submit inquiry
 
         inquiryForm.addEventListener("submit", async function (event) {
             event.preventDefault();
@@ -119,7 +128,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 return checkbox.value;
             });
 
-            // Validation
+
+            // VALIDATION
+
             if (!destination) {
                 messageElement.textContent =
                     "Please choose a destination.";
@@ -141,7 +152,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
 
-            // Check authentication again
+
+            // CHECK LOGIN AGAIN
+
             let loggedInUser = null;
 
             try {
@@ -158,13 +171,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
 
+
             const submitButton =
                 inquiryForm.querySelector('button[type="submit"]');
 
             const originalButtonText = submitButton.innerHTML;
 
             try {
+
                 // Task 6: Loading Spinner
+
                 submitButton.disabled = true;
                 submitButton.innerHTML =
                     '<span class="spinner"></span>Sending inquiry...';
@@ -173,12 +189,16 @@ document.addEventListener("DOMContentLoaded", function () {
                     setTimeout(resolve, 1000);
                 });
 
-                // Get existing requests
+
+                // GET EXISTING REQUESTS
+
                 const requests = JSON.parse(
                     localStorage.getItem("saparRequests") || "[]"
                 );
 
-                // Create new inquiry
+
+                // CREATE NEW INQUIRY
+
                 const newRequest = {
                     id: Date.now(),
                     name: loggedInUser.name,
@@ -191,25 +211,37 @@ document.addEventListener("DOMContentLoaded", function () {
                     status: "Pending"
                 };
 
+
+                // SAVE INQUIRY
+
                 requests.push(newRequest);
 
-                // Save inquiry
                 localStorage.setItem(
                     "saparRequests",
                     JSON.stringify(requests)
                 );
 
+
+                // CLEAR VALIDATION MESSAGE
+
                 messageElement.textContent = "";
                 messageElement.className = "mb-3";
 
-                // Task 7: Toast Notification
+
+                // Task 7: SUCCESS NOTIFICATION
+
                 showToast(
                     "Your travel inquiry was sent successfully!"
                 );
 
+
+                // RESET FORM
+
                 inquiryForm.reset();
 
-                // Restore account information
+
+                // RESTORE ACCOUNT INFORMATION
+
                 document.getElementById("inquiry-name").value =
                     loggedInUser.name || "";
 
@@ -219,42 +251,43 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("inquiry-phone").value =
                     loggedInUser.phone || "";
 
+
             } catch (error) {
+
                 messageElement.textContent =
                     "Unable to send inquiry. Please try again.";
 
                 messageElement.className = "text-danger mb-3";
 
             } finally {
+
                 submitButton.disabled = false;
                 submitButton.innerHTML = originalButtonText;
+
             }
         });
     }
 
 
-    // TOAST NOTIFICATION FUNCTION
-
+    // =================================
+    // TOAST NOTIFICATION
+    // =================================
 
     function showToast(message) {
 
-        let toast = document.getElementById("sapar-toast");
+        let toast = document.getElementById("success-toast");
 
         if (!toast) {
             toast = document.createElement("div");
-            toast.id = "sapar-toast";
-            toast.className = "success-toast";
-
-            toast.innerHTML = `
-                <span>✓</span>
-                <span id="sapar-toast-message"></span>
-            `;
-
+            toast.id = "success-toast";
             document.body.appendChild(toast);
         }
 
-        document.getElementById("sapar-toast-message").textContent =
-            message;
+        toast.className = "toast-message";
+        toast.textContent = "✓ " + message;
+
+        toast.setAttribute("role", "status");
+        toast.setAttribute("aria-live", "polite");
 
         toast.classList.add("show");
 
@@ -264,18 +297,28 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
-// Scroll Progress Bar
+
+
+// =================================
+// SCROLL PROGRESS BAR
+// =================================
+
 window.addEventListener("scroll", function () {
+
     const scrollTop = window.scrollY;
-    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+    const scrollHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
 
     const progress = scrollHeight > 0
         ? (scrollTop / scrollHeight) * 100
         : 0;
 
-    const progressBar = document.getElementById("scroll-progress");
+    const progressBar =
+        document.getElementById("scroll-progress");
 
     if (progressBar) {
         progressBar.style.width = progress + "%";
     }
+
 });
